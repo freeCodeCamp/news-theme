@@ -1,3 +1,5 @@
+![freeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
+
 # news-theme
 
 The [Ghost](http://github.com/tryghost/ghost/) for [freeCodeCamp.org News](https://www.freecodecamp.org/news).
@@ -78,4 +80,4 @@ You can add your own SVG icons in the same manner.
 
 ## Copyright & License
 
-Copyright (c) 2019 freeCodeCamp.org - Released under the [MIT license](LICENSE).
+Copyright (c) 2019 freeCodeCamp.org - Released under the [MIT license](LICENSE.md).
