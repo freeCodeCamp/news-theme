@@ -1,45 +1,33 @@
 {
-    "name": "casper",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-    "demo": "https://demo.ghost.io",
+    "name": "freecodecamp-news-theme",
+    "description": "The Ghost theme for https://www.freecodecamp.org/news",
+    "demo": "https://www.freecodecamp.org/news",
     "version": "2.9.0",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
     },
     "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
-    },
     "scripts": {
+        "develop": "dev",
         "dev": "gulp",
         "zip": "gulp zip",
         "test": "gscan ."
     },
-    "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
+        "url": "https://github.com/freeCodeCamp/news-theme.git"
     },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+    "bugs": "https://github.com/freeCodeCamp/news-theme/issues",
+    "contributors": "https://github.com/freeCodeCamp/news-theme/graphs/contributors",
+    "author": {
+        "email": "team@freecodecamp.org",
+        "name": "freeCodeCamp.org",
+        "url": "https://www.freecodecamp.org"
+    },
+    "keywords": [
+        "ghost-theme"
+    ],
     "devDependencies": {
         "autoprefixer": "6.3.6",
         "cssnano": "3.7.1",
