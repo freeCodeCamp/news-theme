@@ -21,13 +21,16 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
     <div class="inner">
-
         <div class="post-feed">
-            {{#foreach posts}}
-
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{#get "posts" include="tags,author" filter="featured:true" limit="all" as |featured|}}
+            {{#foreach featured}}
             {{> "post-card"}}
-
+            {{/foreach}}
+            {{/get}}
+            {{#foreach posts}}
+            {{^if featured}}
+            {{> "post-card"}}
+            {{/if}}
             {{/foreach}}
         </div>
 
