@@ -375,16 +375,17 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-wrap: wrap;
     margin: 0 -20px;
+    max-width: 875px;
     padding: 40px 0 0 0;
 }
 
 .post-card {
-    flex: 1 1 300px;
+    flex: 1 1 100%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     margin: 0 20px 40px;
-    min-height: 250px;
+    min-height: 100px;
     background: #fff center center;
     background-size: cover;
     border-radius: 5px;
@@ -600,71 +601,71 @@ make sure this only happens on large viewports / desktop-ish devices.
  */
 
 @media (min-width: 795px) {
-    .home-template .post-card {
+    .post-feed {
+        margin: auto;
+        max-width: 875px;
+        align-self: center;
+    }
+    .post-card {
         flex: 1 1 100%;
         flex-direction: row;
     }
 
-    .home-template .post-card .post-card-image-link {
+    .post-card .post-card-image-link {
         position: relative;
         flex: 1 1 auto;
         border-radius: 5px 0 0 5px;
     }
 
-    .home-template .post-card .post-card-image {
+    .post-card .post-card-image {
         position: absolute;
         width: 100%;
         height: 100%;
     }
 
-    .home-template .post-card .post-card-content {
+    .post-card .post-card-content {
         flex: 0 1 70%;
     }
 
-    .home-template .post-card h2 {
+    .post-card h2 {
         font-size: 2.6rem;
     }
 
-    .home-template .post-card p {
+    .post-card p {
         font-size: 1.8rem;
         line-height: 1.55em;
     }
 
-    .home-template .post-card .post-card-content-link {
+    .post-card .post-card-content-link {
         padding: 30px 40px 0;
     }
 
-    .home-template .post-card .post-card-meta {
+    .post-card .post-card-meta {
         padding: 0 40px 30px;
     }
 
     .home-template .featured.post-card {
-        flex: 1 1 100%;
         display: flex;
         flex-direction: column;
         overflow: hidden;
         margin: 0 20px 40px;
         min-height: 500px;
-        background: #fff center center;
         background-size: cover;
         border-radius: 5px;
-        box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px,
-            rgba(39, 44, 49, 0.03) 1px 3px 8px;
-        transition: all 0.5s ease;
     }
 
     .home-template .featured .post-card-content {
-        flex: 0 1 30%;
+        flex: 0 1 auto;
+    }
+    .home-template .featured .post-card-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
     }
 }
 
 .home-template .site-header:after {
     display: none;
-}
-
-.home-template .post-card {
-    flex: 1 1 100%;
-    min-height: 200px;
 }
 
 /* Adjust some margins for smaller screens */

@@ -24,10 +24,6 @@
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
 
-            <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}</p>
-            </section>
-
         </a>
 
         <footer class="post-card-meta">
@@ -50,8 +46,7 @@
                 </li>
                 {{/foreach}}
             </ul>
-
-            <span class="reading-time">{{reading_time}}</span>
+            <time class="reading-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
 
         </footer>
 
