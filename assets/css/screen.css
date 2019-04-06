@@ -40,7 +40,6 @@ body {
     height: 100%;
     background-position: center center;
     background-size: cover;
-    border-radius: 100%;
 }
 
 .hidden {
@@ -388,7 +387,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     min-height: 100px;
     background: #fff center center;
     background-size: cover;
-    border-radius: 5px;
     box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px,
         rgba(39, 44, 49, 0.03) 1px 3px 8px;
     transition: all 0.5s ease;
@@ -405,7 +403,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: block;
     overflow: hidden;
-    border-radius: 5px 5px 0 0;
 }
 
 .post-card-image {
@@ -614,7 +611,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card .post-card-image-link {
         position: relative;
         flex: 1 1 auto;
-        border-radius: 5px 0 0 5px;
     }
 
     .post-card .post-card-image {
@@ -651,7 +647,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin: 0 20px 40px;
         min-height: 500px;
         background-size: cover;
-        border-radius: 5px;
     }
 
     .home-template .featured .post-card-content {
@@ -732,7 +727,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-image {
     margin: 0 -10vw -165px;
     background: var(--lightgrey) center center;
-    border-radius: 5px;
     overflow: hidden;
 }
 
@@ -745,7 +739,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 @media (max-width: 1170px) {
     .post-full-image {
         margin: 0 -4vw -100px;
-        border-radius: 0;
     }
     .post-full-image img {
         height: 600px;
@@ -938,7 +931,6 @@ Usage (In Ghost editor):
     line-height: 1em;
     font-weight: 400 !important;
     background: var(--whitegrey);
-    border-radius: 3px;
 }
 
 .post-full-content p code {
@@ -955,7 +947,6 @@ Usage (In Ghost editor):
     font-size: 1.4rem;
     line-height: 1.5em;
     background: color(var(--darkgrey) l(-3%));
-    border-radius: 5px;
 }
 
 .post-full-content pre code {
@@ -1434,7 +1425,6 @@ Usage (In Ghost editor):
     font-size: 1.4rem;
     letter-spacing: 0.2px;
     background: white;
-    border-radius: 6px;
     box-shadow: rgba(39, 44, 49, 0.08) 0 12px 26px,
         rgba(39, 44, 49, 0.03) 1px 3px 8px;
     opacity: 0;
@@ -1470,7 +1460,6 @@ Usage (In Ghost editor):
     padding: 30px 20px 20px 20px;
     color: #fff;
     background: var(--darkgrey);
-    border-radius: 6px 6px 0 0;
 }
 
 .author-card .basic-info h2 {
@@ -1539,7 +1528,6 @@ Usage (In Ghost editor):
     color: #fff;
     background: var(--darkgrey) center center;
     background-size: cover;
-    border-radius: 5px;
     box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px,
         rgba(39, 44, 49, 0.03) 1px 3px 8px;
 }
@@ -1557,8 +1545,6 @@ Usage (In Ghost editor):
         rgba(0, 40, 60, 0.8) 0%,
         rgba(0, 20, 40, 0.7) 100%
     );
-    border-radius: 5px;
-
     backdrop-filter: blur(2px);
 }
 
@@ -2171,7 +2157,6 @@ Usage (In Ghost editor):
     font-weight: normal;
     letter-spacing: 0.5px;
     user-select: text;
-    border-radius: 8px;
     transition: border-color 0.15s linear;
 
     -webkit-appearance: none;
@@ -2297,7 +2282,6 @@ Usage (In Ghost editor):
     width: 2px;
     height: 2px;
     background: #fff;
-    border-radius: 100%;
 }
 
 .site-footer-nav a:first-of-type:before {
