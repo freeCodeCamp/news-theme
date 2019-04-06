@@ -88,19 +88,6 @@ body {
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
 
-@media (min-width: 900px) {
-    .home-template .post-feed,
-    .tag-template .post-feed,
-    .author-template .post-feed {
-        margin-top: -70px;
-        padding-top: 0;
-    }
-    .home-template .site-nav {
-        position: relative;
-        top: -70px;
-    }
-}
-
 /* 4. Site Header
 /* ---------------------------------------------------------- */
 
@@ -725,7 +712,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 0 -10vw -165px;
     background: var(--lightgrey) center center;
     overflow: hidden;
 }
@@ -737,9 +723,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 @media (max-width: 1170px) {
-    .post-full-image {
-        margin: 0 -4vw -100px;
-    }
     .post-full-image img {
         height: 600px;
     }
@@ -771,34 +754,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-full-content {
         font-size: 1.9rem;
     }
-}
-
-.post-full-content:before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39, 44, 49, 0.15);
-    filter: blur(5px);
-    transform: rotate(-5deg);
-}
-
-.post-full-content:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    right: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39, 44, 49, 0.15);
-    filter: blur(5px);
-    transform: rotate(5deg);
 }
 
 .no-image .post-full-content {
