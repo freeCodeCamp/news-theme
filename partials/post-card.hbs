@@ -46,7 +46,7 @@
                 </li>
                 {{/foreach}}
             </ul>
-            <time class="reading-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+            <time class="publish-date" {{date published_at timeago=""}}">{{date published_at timeago="true"}}</time>
 
         </footer>
 
