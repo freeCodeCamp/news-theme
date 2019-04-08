@@ -29,8 +29,6 @@ production stylesheet in assets/built/screen.css
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,500");
-
 @import "global.css";
 
 body {
@@ -105,26 +103,13 @@ body {
     color: #fff;
     background: color(var(--theme-color)) no-repeat center center;
     background-size: cover;
-    font-family: Lato;
+    font-family: "Lato", sans-serif;
 }
 
 /*.site-header a {
     font-size: 18px;
     font-weight: 400;
 }*/
-
-.site-header:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0;
-    z-index: 10;
-    display: block;
-    height: 80px;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-}
 
 .site-header.no-image:before,
 .site-header.no-image:after {
@@ -262,7 +247,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .nav li a:hover {
-    color: #006400;
+    color: var(--theme-color);
     text-decoration: none;
 }
 
@@ -382,14 +367,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     min-height: 100px;
     background: #fff center center;
     background-size: cover;
-    box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px,
-        rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    box-shadow: rgba(10, 10, 46, 0.06) 8px 14px 38px,
+        rgba(10, 10, 46, 0.03) 1px 3px 8px;
     transition: all 0.5s ease;
 }
 
 .post-card:hover {
-    box-shadow: rgba(39, 44, 49, 0.07) 8px 28px 50px,
-        rgba(39, 44, 49, 0.04) 1px 6px 12px;
+    box-shadow: rgba(10, 10, 46, 0.07) 8px 28px 50px,
+        rgba(10, 10, 46, 0.04) 1px 6px 12px;
     transition: all 0.4s ease;
     transform: translate3D(0, -1px, 0) scale(1.02);
 }
@@ -412,7 +397,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-grow: 1;
     display: block;
     padding: 25px 25px 0;
-    color: var(--darkgrey);
+    color: var(--gray90);
 }
 
 .post-card-content-link:hover {
@@ -422,7 +407,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-tags {
     display: block;
     margin-bottom: 4px;
-    color: var(--midgrey);
+    color: var(--gray75);
     font-size: 1.2rem;
     line-height: 1.15em;
     font-weight: 500;
@@ -442,7 +427,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-excerpt {
-    font-family: Georgia, serif;
+    font-family: "Lato", sans-serif;
 }
 
 .post-card-meta {
@@ -576,7 +561,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .reading-time {
     flex-shrink: 0;
     margin-left: 20px;
-    color: var(--midgrey);
+    color: var(--gray75);
     font-size: 1.2rem;
     line-height: 33px;
     font-weight: 500;
@@ -706,12 +691,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-meta-date {
-    color: var(--blue);
+    color: var(--gray75);
 }
 
 .post-full-title {
     margin: 0;
-    color: color(var(--darkgrey) l(-5%));
+    color: var(--gray90);
 }
 
 .date-divider {
@@ -747,7 +732,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 auto;
     padding: 70px 100px 0;
     min-height: 230px;
-    font-family: Georgia, serif;
+    font-family: "Lato", sans-serif;
     font-size: 2.2rem;
     line-height: 1.6em;
     background: #fff;
@@ -799,13 +784,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a {
-    color: #000;
+    color: var(--gray75);
     word-break: break-word;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    text-decoration: underline;
 }
 
 .post-full-content a:hover {
-    color: var(--blue);
     text-decoration: none;
 }
 
@@ -1005,8 +989,8 @@ Usage (In Ghost editor):
     margin: 0.5em 0;
     padding: 1em 0 1.5em;
     border: 0;
-    color: var(--blue);
-    font-family: Georgia, serif;
+    color: var(--dark-blue);
+    font-family: "Lato", sans-serif;
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -1305,7 +1289,7 @@ Usage (In Ghost editor):
 
 .author-card-content p {
     margin: 0;
-    color: var(--midgrey);
+    color: var(--gray75);
     line-height: 1.3em;
 }
 
@@ -1317,18 +1301,17 @@ Usage (In Ghost editor):
 .author-card-button {
     display: block;
     padding: 9px 16px;
-    border: color(var(--midgrey) l(+20%)) 1px solid;
-    color: var(--midgrey);
+    border: var(--gray75) 1px solid;
+    color: var(--gray75);
     font-size: 1.2rem;
     line-height: 1;
     font-weight: 500;
-    border-radius: 20px;
     transition: all ease 0.2s;
 }
 
 .author-card-button:hover {
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--dark-blue);
+    color: var(--dark-blue);
     text-decoration: none;
 }
 
@@ -1351,7 +1334,7 @@ Usage (In Ghost editor):
 
 .post-full-authors-content p {
     margin-bottom: 0;
-    color: var(--midgrey);
+    color: var(--);
     font-size: 1.4rem;
     letter-spacing: 0.2px;
     text-align: center;
@@ -1749,7 +1732,7 @@ Usage (In Ghost editor):
     width: 100%;
     height: 2px;
     border: none;
-    color: var(--blue);
+    color: var(--dark-blue);
     background: transparent;
 
     appearance: none;
@@ -1760,11 +1743,11 @@ Usage (In Ghost editor):
 }
 
 .progress::-webkit-progress-value {
-    background-color: var(--blue);
+    background-color: var(--dark-blue);
 }
 
 .progress::-moz-progress-bar {
-    background-color: var(--blue);
+    background-color: var(--dark-blue);
 }
 
 .progress-container {
@@ -1781,7 +1764,7 @@ Usage (In Ghost editor):
     display: block;
     width: 50%;
     height: inherit;
-    background-color: var(--blue);
+    background-color: var(--dark-blue);
 }
 
 @media (max-width: 900px) {
@@ -1953,7 +1936,7 @@ Usage (In Ghost editor):
     justify-content: center;
     align-items: center;
     margin: 0 0 10px 0;
-    font-family: Georgia, serif;
+    font-family: "Lato", sans-serif;
     font-style: italic;
 }
 
@@ -2090,7 +2073,7 @@ Usage (In Ghost editor):
 .subscribe-overlay-description {
     margin: 0 auto 50px;
     max-width: 650px;
-    font-family: Georgia, serif;
+    font-family: "Lato", sans-serif;
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: 300;
