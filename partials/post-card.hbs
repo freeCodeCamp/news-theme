@@ -26,6 +26,7 @@
 
         </a>
 
+
         <footer class="post-card-meta">
 
             <ul class="author-list">
@@ -46,8 +47,11 @@
                 </li>
                 {{/foreach}}
             </ul>
-            <time class="publish-date" {{date published_at timeago=""}}">{{date published_at timeago="true"}}</time>
 
+            {{#primary_author}}
+            <a class="meta-item" href="{{url}}">{{name}}</a>
+            {{/primary_author}}
+            <time class="meta-item">{{date published_at timeago="true"}}</time>
         </footer>
 
     </div>{{!--/.post-card-content--}}

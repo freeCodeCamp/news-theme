@@ -557,7 +557,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
 }
 
-.publish-date,
+.meta-item,
 .reading-time {
     flex-shrink: 0;
     margin-left: 20px;
@@ -567,6 +567,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+}
+
+.post-meta-item-group {
+    height: 29px;
+    background: pink;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Special Styling for home page grid (below):
@@ -877,7 +884,7 @@ Usage (In Ghost editor):
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 400 !important;
-    background: var(--whitegrey);
+    background: var(--gray15);
 }
 
 .post-full-content p code {
@@ -1334,7 +1341,7 @@ Usage (In Ghost editor):
 
 .post-full-authors-content p {
     margin-bottom: 0;
-    color: var(--);
+    color: var(--gray90);
     font-size: 1.4rem;
     letter-spacing: 0.2px;
     text-align: center;
