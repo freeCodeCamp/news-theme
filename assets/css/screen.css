@@ -28,6 +28,9 @@ production stylesheet in assets/built/screen.css
 
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,500");
+
 @import "global.css";
 
 body {
@@ -68,6 +71,12 @@ body {
     padding: 0 4vw;
 }
 
+/* padding ported from master */
+.nav-padding {
+    position: relative;
+    padding: 0 15px;
+}
+
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
@@ -93,24 +102,16 @@ body {
 
 .site-header {
     position: relative;
-    padding-top: 12px;
-    padding-bottom: 12px;
     color: #fff;
-    background: color(var(--green)) no-repeat center center;
+    background: color(var(--theme-color)) no-repeat center center;
     background-size: cover;
+    font-family: Lato;
 }
 
-.site-header:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    display: block;
-    background: rgba(0, 0, 0, 0.18);
-}
+/*.site-header a {
+    font-size: 18px;
+    font-weight: 400;
+}*/
 
 .site-header:after {
     content: "";
@@ -176,14 +177,15 @@ body {
 /* ---------------------------------------------------------- */
 
 .site-nav {
-    position: relative;
     z-index: 300;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     overflow-y: hidden;
     height: 40px;
-    font-size: 1.2rem;
+    font-size: 18px;
+    font-family: Lato, sans-serif;
+    height: 38px;
 }
 
 .site-nav-left {
@@ -211,8 +213,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo {
     flex-shrink: 0;
     display: block;
-    margin-right: 24px;
-    padding: 11px 0;
+    margin: 0 5px;
     color: #fff;
     font-size: 1.7rem;
     line-height: 1em;
@@ -227,7 +228,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo img {
     display: block;
     width: auto;
-    height: 21px;
+    height: 25px;
+    margin-top: 7px;
 }
 
 .nav {
@@ -237,31 +239,38 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     list-style: none;
 }
 
+.nav {
+    height: 38px;
+}
+
 .nav li {
     display: block;
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
 }
 
 .nav li a {
     display: block;
     margin: 0;
-    padding: 10px 12px;
+    padding: 5px 15px;
     color: #fff;
-    opacity: 0.8;
+    opacity: 1;
+}
+
+.nav li:hover {
+    background: white;
 }
 
 .nav li a:hover {
+    color: #006400;
     text-decoration: none;
-    opacity: 1;
 }
 
 .site-nav-right {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 38px;
 }
 
 .social-links {
@@ -339,14 +348,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     fill: #fff;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     .site-header {
         padding-right: 0;
         padding-left: 0;
     }
     .site-nav-left {
         margin-right: 0;
-        padding-left: 4vw;
     }
     .site-nav-right {
         display: none;
@@ -2251,3 +2259,6 @@ Usage (In Ghost editor):
         margin-left: 0;
     }
 }
+
+/* 12. Global nav
+/* ---------------------------------------------------------- */

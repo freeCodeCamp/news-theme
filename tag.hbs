@@ -3,19 +3,19 @@
 
 {{#tag}}
 {{> header background=feature_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
-    <div class="inner">
-        {{> "site-nav"}}
-        <div class="site-header-content">
-            <h1 class="site-title">{{name}}</h1>
-            <h2 class="site-description">
-                {{#if description}}
-                    {{description}}
-                {{else}}
-                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </h2>
-        </div>
+<div>
+    {{> "site-nav"}}
+    <div class="site-header-content">
+        <h1 class="site-title">{{name}}</h1>
+        <h2 class="site-description">
+            {{#if description}}
+            {{description}}
+            {{else}}
+            A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+            {{/if}}
+        </h2>
     </div>
+</div>
 </header>
 {{/tag}}
 
@@ -24,8 +24,8 @@
     <div class="inner">
         <div class="post-feed">
             {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
             {{/foreach}}
         </div>
     </div>
