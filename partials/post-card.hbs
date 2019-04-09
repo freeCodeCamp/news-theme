@@ -14,8 +14,9 @@
     {{/if}}
 
     <div class="post-card-content">
+        {{!--
 
-        <a class="post-card-content-link" href="{{url}}">
+                <a class="post-card-content-link" href="{{url}}">
 
             <header class="post-card-header">
                 {{#if primary_tag}}
@@ -25,6 +26,27 @@
             </header>
 
         </a>
+        
+        --}}
+
+        <div class="post-card-content-link">
+
+            <header class="post-card-header">
+                {{#if primary_tag}}
+                <span class="post-card-tags">
+                    <a href="{{primary_tag.url}}">
+                        {{primary_tag.name}}
+                    </a>
+                </span>
+                {{/if}}
+                <h2 class="post-card-title">
+                    <a href="{{url}}">
+                        {{title}}
+                    </a>
+                </h2>
+            </header>
+
+        </div>
 
 
         <footer class="post-card-meta">

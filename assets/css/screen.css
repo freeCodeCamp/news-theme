@@ -367,16 +367,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     min-height: 100px;
     background: #fff center center;
     background-size: cover;
-    box-shadow: rgba(10, 10, 46, 0.06) 8px 14px 38px,
-        rgba(10, 10, 46, 0.03) 1px 3px 8px;
-    transition: all 0.5s ease;
 }
 
 .post-card:hover {
-    box-shadow: rgba(10, 10, 46, 0.07) 8px 28px 50px,
-        rgba(10, 10, 46, 0.04) 1px 6px 12px;
-    transition: all 0.4s ease;
-    transform: translate3D(0, -1px, 0) scale(1.02);
 }
 
 .post-card-image-link {
@@ -396,7 +389,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     flex-grow: 1;
     display: block;
-    padding: 25px 25px 0;
+    padding: 25px 0px 0px 0px;
     color: var(--gray90);
 }
 
@@ -404,9 +397,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-decoration: none;
 }
 
-.post-card-tags {
+.post-card-tags a {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 1.3rem;
     color: var(--gray75);
     font-size: 1.2rem;
     line-height: 1.15em;
@@ -417,6 +410,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-title {
     margin-top: 0;
+}
+
+.post-card-title a {
+    color: var(--gray90);
 }
 
 .post-card-content {
@@ -433,7 +430,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-meta {
     display: flex;
     align-items: flex-end;
-    padding: 0 25px 25px;
+    padding: 0 25px 25px 4px;
 }
 
 .author-profile-image,
@@ -593,6 +590,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card {
         flex: 1 1 100%;
         flex-direction: row;
+        box-shadow: none;
     }
 
     .post-card .post-card-image-link {
@@ -620,11 +618,19 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card .post-card-content-link {
-        padding: 30px 40px 0;
+        padding: 0px 0px 0px 30px;
+    }
+
+    .home-template .post-card.featured .post-card-content-link {
+        padding: 30px 0px 0px 0px;
     }
 
     .post-card .post-card-meta {
-        padding: 0 40px 30px;
+        padding: 0 0px 30px 34px;
+    }
+
+    .home-template .post-card.featured .post-card-meta {
+        padding: 0 0px 30px 4px;
     }
 
     .home-template .featured.post-card {
@@ -639,6 +645,11 @@ make sure this only happens on large viewports / desktop-ish devices.
     .home-template .featured .post-card-content {
         flex: 0 1 auto;
     }
+
+    .home-template .featured .post-card-image-link {
+        min-height: 400px;
+    }
+
     .home-template .featured .post-card-image {
         position: absolute;
         width: 100%;
