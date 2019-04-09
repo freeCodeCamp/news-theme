@@ -6,9 +6,12 @@
         <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
         {{/if}}
     </div>
-    <div class="site-nav-right">
+    <div class="site-nav-right large-screen-nav">
         {{#if @site.navigation}}
         {{navigation}}
         {{/if}}
+    </div>
+    <div class="site-nav-right toggle-button-nav">
+        <span>Menu</span>
     </div>
 </nav>

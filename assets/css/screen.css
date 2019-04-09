@@ -262,6 +262,22 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 38px;
 }
 
+.toggle-button-nav {
+    display: none;
+    padding: 2px 14px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 5px;
+    height: auto;
+}
+
+.toggle-button-nav:hover {
+    color: var(--theme-color);
+    background: white;
+}
+
 .social-links {
     flex-shrink: 0;
     display: flex;
@@ -345,8 +361,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     .site-nav-left {
         margin-right: 0;
     }
-    .site-nav-right {
+    .large-screen-nav {
         display: none;
+    }
+    .toggle-button-nav {
+        display: flex;
     }
 }
 
@@ -1812,9 +1831,6 @@ Usage (In Ghost editor):
     .floating-header-divider {
         visibility: hidden;
     }
-}
-
-@media (max-width: 450px) {
 }
 
 /* 7.6. Koenig Styles
