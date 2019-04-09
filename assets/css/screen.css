@@ -61,6 +61,7 @@ body {
 .site-main {
     z-index: 100;
     flex-grow: 1;
+    margin-top: var(--header-height);
 }
 
 /* Full width page blocks */
@@ -99,10 +100,11 @@ body {
 /* ---------------------------------------------------------- */
 
 .site-header {
-    position: relative;
+    position: fixed;
+    z-index: 1000;
     color: #fff;
-    background: color(var(--theme-color)) no-repeat center center;
-    background-size: cover;
+    width: 100%;
+    background: color(var(--theme-color));
     font-family: "Lato", sans-serif;
 }
 
@@ -116,15 +118,17 @@ body {
     display: none;
 }
 
-.site-header-content {
+.under-header-content {
+    background-color: var(--gray85);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10vw 4vw;
+    padding: 50px 10px;
     min-height: 200px;
     max-height: 450px;
     text-align: center;
+    color: white;
 }
 
 .site-title {
@@ -1504,12 +1508,7 @@ Usage (In Ghost editor):
     bottom: 0;
     left: 0;
     display: block;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 40, 60, 0.8) 0%,
-        rgba(0, 20, 40, 0.7) 100%
-    );
-    backdrop-filter: blur(2px);
+    background: var(--gray85);
 }
 
 .read-next-card-header {
@@ -1621,7 +1620,7 @@ Usage (In Ghost editor):
 .floating-header {
     visibility: hidden;
     position: fixed;
-    top: 0;
+    /*top: var(--header-height);*/
     right: 0;
     left: 0;
     z-index: 1000;
@@ -1926,7 +1925,7 @@ Usage (In Ghost editor):
 /* 8. Author Template
 /* ---------------------------------------------------------- */
 
-.site-header-content .author-profile-image {
+.under-header-content .author-profile-image {
     z-index: 10;
     flex-shrink: 0;
     margin: 0 0 20px 0;
@@ -1935,7 +1934,7 @@ Usage (In Ghost editor):
     box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
 }
 
-.site-header-content .author-bio {
+.under-header-content .author-bio {
     z-index: 10;
     flex-shrink: 0;
     margin: 5px 0 10px 0;
@@ -1947,7 +1946,7 @@ Usage (In Ghost editor):
     opacity: 0.8;
 }
 
-.site-header-content .author-meta {
+.under-header-content .author-meta {
     z-index: 10;
     flex-shrink: 0;
     display: flex;
@@ -1958,23 +1957,23 @@ Usage (In Ghost editor):
     font-style: italic;
 }
 
-.site-header-content .author-location svg {
+.under-header-content .author-location svg {
     height: 1.9rem;
     stroke: #fff;
 }
 
-.site-header-content .bull {
+.under-header-content .bull {
     display: inline-block;
     margin: 0 12px;
     opacity: 0.5;
 }
 
-.site-header-content .social-link:first-of-type {
+.under-header-content .social-link:first-of-type {
     padding-left: 4px;
 }
 
 @media (max-width: 500px) {
-    .site-header-content .author-bio {
+    .under-header-content .author-bio {
         font-size: 1.8rem;
         line-height: 1.15em;
         letter-spacing: 0;
