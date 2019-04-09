@@ -1620,13 +1620,13 @@ Usage (In Ghost editor):
 .floating-header {
     visibility: hidden;
     position: fixed;
-    /*top: var(--header-height);*/
+    top: var(--header-height);
     right: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 999;
     display: flex;
     align-items: center;
-    height: 60px;
+    height: var(--header-height);
     border-bottom: rgba(0, 0, 0, 0.06) 1px solid;
     background: rgba(255, 255, 255, 0.95);
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -1681,6 +1681,7 @@ Usage (In Ghost editor):
     font-weight: bold;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-left: 20px;
 }
 
 .floating-header-share {
@@ -1725,8 +1726,8 @@ Usage (In Ghost editor):
 .floating-header-share-fb {
     display: block;
     align-items: center;
-    width: 60px;
-    height: 60px;
+    width: var(--header-height);
+    height: var(--header-height);
     color: #fff;
     line-height: 48px;
     text-align: center;
@@ -1814,9 +1815,6 @@ Usage (In Ghost editor):
 }
 
 @media (max-width: 450px) {
-    .floating-header-share-label {
-        display: none;
-    }
 }
 
 /* 7.6. Koenig Styles
@@ -2206,7 +2204,7 @@ Usage (In Ghost editor):
     padding-top: 20px;
     padding-bottom: 60px;
     color: #fff;
-    background: color(var(--darkgrey) l(-15%));
+    background: var(--gray85);
 }
 
 .site-footer-content {
