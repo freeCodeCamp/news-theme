@@ -414,9 +414,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     background-size: cover;
 }
 
-.post-card:hover {
-}
-
 .post-card-image-link {
     position: relative;
     display: block;
@@ -625,6 +622,11 @@ the full width of the grid to give it more emphasis. Wrapped in a media query to
 make sure this only happens on large viewports / desktop-ish devices.
 
  */
+@media (min-width: 450px) {
+    .post-card-image {
+        height: 300px;
+    }
+}
 
 @media (min-width: 795px) {
     .post-feed {
@@ -786,7 +788,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 800px) {
     .post-full-image img {
-        height: 400px;
+        height: auto;
     }
 }
 
@@ -847,7 +849,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a {
-    color: var(--gray75);
+    color: var(--gray90);
     word-break: break-word;
     text-decoration: underline;
 }
@@ -1113,7 +1115,6 @@ Usage (In Ghost editor):
     }
     .post-full-image {
         margin-bottom: 4vw;
-        height: 350px;
     }
     .post-full-content {
         padding: 0;
@@ -1561,9 +1562,8 @@ Usage (In Ghost editor):
 
 .read-next-card-header-sitetitle {
     display: block;
-    font-size: 1.3rem;
+    font-size: 18px;
     line-height: 1.3em;
-    opacity: 0.8;
 }
 
 .read-next-card-header-title {
@@ -1582,7 +1582,7 @@ Usage (In Ghost editor):
 }
 
 .read-next-card-header-title a:hover {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .read-next-divider {
@@ -1613,7 +1613,7 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding: 0;
+    padding: 20px;
     text-align: center;
     list-style: none;
 }
@@ -1633,6 +1633,7 @@ Usage (In Ghost editor):
     border-bottom: rgba(255, 255, 255, 0.3) 1px solid;
     color: #fff;
     font-weight: 500;
+    font-size: 18px;
     vertical-align: top;
     transition: opacity 0.3s ease;
 }
@@ -1802,11 +1803,11 @@ Usage (In Ghost editor):
 }
 
 .progress::-webkit-progress-value {
-    background-color: var(--dark-blue);
+    background-color: var(--theme-color);
 }
 
 .progress::-moz-progress-bar {
-    background-color: var(--dark-blue);
+    background-color: var(--theme-color);
 }
 
 .progress-container {
