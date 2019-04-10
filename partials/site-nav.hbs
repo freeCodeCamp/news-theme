@@ -6,12 +6,30 @@
         <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
         {{/if}}
     </div>
-    <div class="site-nav-right large-screen-nav">
+    <div class="site-nav-right main-nav">
         {{#if @site.navigation}}
         {{navigation}}
         {{/if}}
     </div>
-    <div class="site-nav-right toggle-button-nav">
-        <span>Menu</span>
-    </div>
+    <button class="site-nav-right toggle-button-nav">
+        Menu
+    </button>
 </nav>
+
+{{#contentFor "scripts"}}
+<script>
+    console.log('outsite');
+    $(document).ready(function () {
+        console.log('ready');
+        $(".toggle-button-nav").click(function () {
+            $(".nav").toggleClass("show-main-nav-items");
+        });
+        $(".toggle-button-nav").click(function () {
+            $(".toggle-button-nav").toggleClass("reverse-toggle-color");
+        });
+        $(".toggle-button-nav").click(function () {
+            $(".site-nav").toggleClass("expand-nav");
+        });
+    });
+</script>
+{{/contentFor}}
