@@ -2262,7 +2262,7 @@ Usage (In Ghost editor):
     padding-bottom: 5px;
     font-weight: 700;
 }
-.row {
+.footer-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -2277,6 +2277,10 @@ Usage (In Ghost editor):
     padding-left: 15px;
     padding-right: 15px;
     font-size: 15px;
+}
+
+.footer-col-3 {
+    margin-top: -120px;
 }
 
 .footer-desc-col {
@@ -2303,14 +2307,15 @@ Usage (In Ghost editor):
         height: auto;
         font-size: 16.5;
     }
+
+    .footer-col-3 {
+        margin-top: 0px;
+    }
 }
 
 @media (min-width: 768px) {
     .footer-container {
         width: 750px;
-    }
-    .footer-desc-col {
-        flex: 3 0 44%;
     }
 }
 
