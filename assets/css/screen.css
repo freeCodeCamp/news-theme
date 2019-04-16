@@ -269,20 +269,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .toggle-button-nav {
     display: none;
-    padding: 2px 14px;
+    padding: 2px 14px 3px;
     border: 1px solid #fff;
     outline: none;
     background-color: var(--gray90);
     border-radius: 3px;
     cursor: pointer;
     margin-right: 5px;
-    margin-top: 5px;
+    margin-top: 4px;
     height: auto;
-}
-
-.toggle-button-nav:hover {
-    color: var(--theme-color);
-    background: white;
 }
 
 .social-links {
@@ -2240,60 +2235,100 @@ Usage (In Ghost editor):
 
 .site-footer {
     position: relative;
-    padding-top: 20px;
-    padding-bottom: 60px;
     color: #fff;
     background: var(--gray85);
 }
 
-.site-footer-content {
+.footer-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 16.5px;
+    overflow-x: hidden;
+}
+
+.footer-container p {
+    margin: 0 0 1.45rem;
+}
+
+.footer-container a {
+    color: white;
+}
+
+.footer-container .col-header {
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+.row {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.3rem;
 }
 
-.site-footer-content a {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.site-footer-content a:hover {
-    color: rgba(255, 255, 255, 1);
-    text-decoration: none;
-}
-
-.site-footer-nav {
+.footer-col-1,
+.footer-col-2,
+.footer-col-3 {
     display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
 }
 
-.site-footer-nav a {
-    position: relative;
-    margin-left: 20px;
+.footer-desc-col {
+    flex: 1 0 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.site-footer-nav a:before {
-    content: "";
-    position: absolute;
-    top: 11px;
-    left: -11px;
-    display: block;
-    width: 2px;
-    height: 2px;
-    background: #fff;
+.footer-desc-col a {
+    text-decoration: underline;
 }
 
-.site-footer-nav a:first-of-type:before {
-    display: none;
-}
-
-@media (max-width: 650px) {
-    .site-footer-content {
-        flex-direction: column;
+@media (min-width: 500px) {
+    .row {
+        flex-direction: row;
+        height: auto;
     }
-    .site-footer-nav a:first-child {
-        margin-left: 0;
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3 {
+        flex: 1 0 100px;
+        height: auto;
+        font-size: 16.5;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        width: 750px;
+    }
+    .footer-desc-col {
+        flex: 3 0 44%;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-container {
+        width: 970px;
+    }
+    .footer-desc-col {
+        flex: 3 0 25%;
+    }
+    .footer-col-3 {
+        flex: 2 0 100px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer-container {
+        width: 1170px;
     }
 }
 
