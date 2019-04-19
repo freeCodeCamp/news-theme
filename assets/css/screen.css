@@ -570,7 +570,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-size: 1.2rem;
     letter-spacing: 0.2px;
     white-space: nowrap;
-    background: var(--darkgrey);
+    background: var(--gray85);
     border-radius: 3px;
     box-shadow: rgba(39, 44, 49, 0.08) 0 12px 26px,
         rgba(39, 44, 49, 0.03) 1px 3px 8px;
@@ -855,7 +855,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-content strong,
 .post-full-content em {
-    color: color(var(--darkgrey) l(-5%));
+    color: color(var(--gray85) l(-5%));
 }
 
 .post-full-content small {
@@ -949,11 +949,11 @@ Usage (In Ghost editor):
     margin: 1.5em 0 3em;
     padding: 20px;
     max-width: 100%;
-    border: color(var(--darkgrey) l(-10%)) 1px solid;
+    border: var(--gray85) 1px solid;
     color: var(--whitegrey);
     font-size: 1.4rem;
     line-height: 1.5em;
-    background: color(var(--darkgrey) l(-3%));
+    background: var(--gray85);
 }
 
 .post-full-content pre code {
@@ -995,7 +995,7 @@ Usage (In Ghost editor):
 .post-full-content h4,
 .post-full-content h5,
 .post-full-content h6 {
-    color: color(var(--darkgrey) l(-5%));
+    color: var(--gray85);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -1177,7 +1177,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content table th {
-    color: var(--darkgrey);
+    color: var(--gray85);
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.2px;
@@ -1207,7 +1207,7 @@ Usage (In Ghost editor):
 .subscribe-form-title {
     margin: 0 0 3px 0;
     padding: 0;
-    color: var(--darkgrey);
+    color: var(--gray85);
     font-size: 3.5rem;
     line-height: 1;
     font-weight: 700;
@@ -1338,7 +1338,7 @@ Usage (In Ghost editor):
 }
 
 .author-card-name a {
-    color: var(--darkgrey);
+    color: var(--gray85);
     font-weight: 700;
 }
 
@@ -1402,7 +1402,7 @@ Usage (In Ghost editor):
 
 .post-full-authors-content a {
     display: inline-block;
-    color: color(var(--darkgrey) l(+20%));
+    color: color(var(--gray85) l(+20%));
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1464,7 +1464,7 @@ Usage (In Ghost editor):
     align-items: center;
     padding: 30px 20px 20px 20px;
     color: #fff;
-    background: var(--darkgrey);
+    background: var(--gray85);
 }
 
 .author-card .basic-info h2 {
@@ -1530,11 +1530,9 @@ Usage (In Ghost editor):
     overflow: hidden;
     margin: 0 20px 40px;
     padding: 25px;
-    color: #fff;
-    background: var(--darkgrey) center center;
+    color: var(--gray85);
+    background: var(--gray85) center center;
     background-size: cover;
-    box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px,
-        rgba(39, 44, 49, 0.03) 1px 3px 8px;
 }
 
 .read-next-card:before {
@@ -1545,7 +1543,7 @@ Usage (In Ghost editor):
     bottom: 0;
     left: 0;
     display: block;
-    background: var(--gray85);
+    background: var(--gray05);
 }
 
 .read-next-card-header {
@@ -1571,7 +1569,7 @@ Usage (In Ghost editor):
 }
 
 .read-next-card-header-title a {
-    color: #fff;
+    color: var(--gray85);
     font-weight: 300;
     text-decoration: none;
 }
@@ -1625,8 +1623,8 @@ Usage (In Ghost editor):
 .read-next-card-content li a {
     display: block;
     padding: 20px 0;
-    border-bottom: rgba(255, 255, 255, 0.3) 1px solid;
-    color: #fff;
+    border-bottom: var(--gray10) 1px solid;
+    color: var(--gray85);
     font-weight: 500;
     font-size: 18px;
     vertical-align: top;
@@ -1648,7 +1646,7 @@ Usage (In Ghost editor):
 }
 
 .read-next-card-footer a {
-    color: #fff;
+    color: var(--gray80);
 }
 
 /* 7.5. Floating Header
@@ -1689,7 +1687,7 @@ Usage (In Ghost editor):
 .floating-header-logo a {
     display: flex;
     align-items: center;
-    color: var(--darkgrey);
+    color: var(--gray85);
     line-height: 1.1em;
     font-weight: 700;
 }
@@ -1712,7 +1710,7 @@ Usage (In Ghost editor):
     flex: 1;
     overflow: hidden;
     margin: 0;
-    color: #2e2e2e;
+    color: var(--gray85);
     font-size: 1.6rem;
     line-height: 1.3em;
     font-weight: bold;
@@ -2235,8 +2233,8 @@ Usage (In Ghost editor):
 
 .site-footer {
     position: relative;
-    color: #fff;
-    background: var(--gray85);
+    color: var(--gray85);
+    background: var(--gray05);
 }
 
 .footer-container {
@@ -2255,7 +2253,7 @@ Usage (In Ghost editor):
 }
 
 .footer-container a {
-    color: white;
+    color: var(--gray85);
 }
 
 .footer-container .col-header {
