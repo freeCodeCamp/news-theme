@@ -409,7 +409,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     background-size: cover;
 }
 
-.post-card-image-link {
+.post-card-image-link,
+.no-feature-image-offsetter {
     position: relative;
     display: block;
     overflow: hidden;
@@ -635,7 +636,8 @@ make sure this only happens on large viewports / desktop-ish devices.
         box-shadow: none;
     }
 
-    .post-card .post-card-image-link {
+    .post-card .post-card-image-link,
+    .no-feature-image-offsetter {
         position: relative;
         flex: 1 1 auto;
     }
