@@ -1,5 +1,6 @@
 <nav class="site-nav nav-padding">
-    <div class="site-nav-left">
+    <div class="site-nav-left"></div>
+    <div class="site-nav-middle">
         {{#if @site.logo}}
         <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
         {{else}}
@@ -7,9 +8,11 @@
         {{/if}}
     </div>
     <div class="site-nav-right main-nav">
-        {{#if @site.navigation}}
-        {{navigation}}
-        {{/if}}
+        <div class="main-nav-group">
+            {{#if @site.navigation}}
+            {{navigation}}
+            {{/if}}
+        </div>
     </div>
     <button class="site-nav-right toggle-button-nav">
         Menu

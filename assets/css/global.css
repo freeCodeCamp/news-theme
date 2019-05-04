@@ -3,26 +3,15 @@
 
 :root {
     /* Colours */
-    --blue: #3eb0ef;
-    --green: #006400;
-    --purple: #ad26b4;
-    --yellow: #fecd35;
-    --red: #f05230;
-    --darkgrey: #15171a;
-    --midgrey: #738a94;
-    --lightgrey: #c5d2d9;
-    --whitegrey: #e5eff5;
-    --pink: #fa3a57;
-    --brown: #a3821a;
     --dark-blue: #002ead;
-    --theme-color: #0a0a2e;
-    --gray90: #0a0a2e;
-    --gray85: #1e2040;
-    --gray80: #292948;
-    --gray75: #43435d;
-    --gray15: #d4d4da;
-    --gray10: #e8e8eb;
-    --gray05: #f5f6f7;
+    --theme-color: #0a0a23;
+    --gray90: #0a0a23;
+    --gray85: #1b1b32;
+    --gray80: #2a2a40;
+    --gray75: #3b3b4f;
+    --gray15: #d0d0d5;
+    --gray10: #dfdfe2;
+    --gray05: #eeeef0;
     --gray00: #fff;
     --header-height: 38px;
 }
@@ -308,11 +297,13 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: "liga" on;
+    font-feature-settings: "liga1" on;
 }
 
 ::selection {
     text-shadow: none;
-    background: color(var(--blue) lightness(+30%));
+    background: var(--dark-blue);
+    color: var(--gray00);
 }
 
 hr {
@@ -323,7 +314,7 @@ hr {
     padding: 0;
     height: 1px;
     border: 0;
-    border-top: 1px solid color(var(--lightgrey) l(+10%));
+    border-top: 1px solid var(--lightgrey);
 }
 
 audio,
@@ -389,7 +380,7 @@ dt {
     float: left;
     margin: 0 20px 0 0;
     width: 120px;
-    color: var(--darkgrey);
+    color: var(--gray90);
     font-weight: 500;
     text-align: right;
 }
@@ -402,7 +393,7 @@ dd {
 blockquote {
     margin: 1.5em 0;
     padding: 0 1.6em 0 1.6em;
-    border-left: var(--whitegrey) 0.5em solid;
+    border-left: var(--gray10) 0.5em solid;
 }
 
 blockquote p {
