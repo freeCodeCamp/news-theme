@@ -39,9 +39,15 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <section class="post-full-content">
-                <div class="post-content">
-                    {{content}}
-                </div>
+                {{#has author="freeCodeCamp.org"}}
+                    <div class="post-content medium-migrated-article">
+                        {{content}}
+                    </div>
+                {{else}}
+                    <div class="post-content">
+                        {{content}}
+                    </div>
+                {{/has}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
