@@ -2320,13 +2320,15 @@ Usage (In Ghost editor):
 }
 
 @media (min-width: 768px) {
-    .footer-container {
+    .footer-container,
+    .tags-row {
         width: 750px;
     }
 }
 
 @media (min-width: 992px) {
-    .footer-container {
+    .footer-container,
+    .tags-row {
         width: 970px;
     }
     .footer-desc-col {
@@ -2338,7 +2340,8 @@ Usage (In Ghost editor):
 }
 
 @media (min-width: 1200px) {
-    .footer-container {
+    .footer-container,
+    .tags-row {
         width: 1170px;
     }
 }
@@ -2346,13 +2349,8 @@ Usage (In Ghost editor):
 /* 12. jumbotron
 /* ---------------------------------------------------------- */
 .jumbotron {
-    /* background: var(--gray05);
-    color: var(--gray85);
-    display: flex;
-    flex-direction: column;
-    padding: 20px; */
-    /* background: var(--gray75); */
-    background: var(--gray90);
+    /* background: var(--gray90); */
+    background: red;
 }
 
 .jumbotron a {
@@ -2360,10 +2358,34 @@ Usage (In Ghost editor):
     text-decoration: underline;
 }
 
-.jumbotron h1 {
-}
-
 .jumbotron h2 {
     margin: 0;
     font-size: 18px;
+}
+/* 13. tags
+/* ---------------------------------------------------------- */
+
+.tags-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    text-transform: uppercase;
+}
+
+.tags-row a {
+    color: var(--gray15);
+}
+
+.tags-row h3 {
+    margin: 0;
+}
+
+.tags-row .tag {
+    display: block;
+    margin: 0 5px;
+    background: var(--gray75);
+    padding: 3px 4px 4px 4px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
 }
