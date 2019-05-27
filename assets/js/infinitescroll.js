@@ -4,11 +4,12 @@
 
 (function(window, document) {
     // next link element
-    var nextElement = document.querySelector('link[rel=next]');
+
+    var nextElement = document.querySelector("link[rel=next]");
     if (!nextElement) return;
 
     // post feed element
-    var feedElement = document.querySelector('.post-feed');
+    var feedElement = document.querySelector(".post-feed");
     if (!feedElement) return;
 
     var buffer = 300;
@@ -22,24 +23,24 @@
 
     function onPageLoad() {
         if (this.status === 404) {
-            window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('resize', onResize);
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onResize);
             return;
         }
 
         // append contents
-        var postElements = this.response.querySelectorAll('.post-card');
-        postElements.forEach(function (item) {
+        var postElements = this.response.querySelectorAll(".post-card");
+        postElements.forEach(function(item) {
             feedElement.appendChild(item);
         });
 
         // set next link
-        var resNextElement = this.response.querySelector('link[rel=next]');
+        var resNextElement = this.response.querySelector("link[rel=next]");
         if (resNextElement) {
             nextElement.href = resNextElement.href;
         } else {
-            window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('resize', onResize);
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onResize);
         }
 
         // sync status
@@ -61,11 +62,11 @@
         loading = true;
 
         var xhr = new window.XMLHttpRequest();
-        xhr.responseType = 'document';
+        xhr.responseType = "document";
 
-        xhr.addEventListener('load', onPageLoad);
+        xhr.addEventListener("load", onPageLoad);
 
-        xhr.open('GET', nextElement.href);
+        xhr.open("GET", nextElement.href);
         xhr.send(null);
     }
 
@@ -85,8 +86,8 @@
         requestTick();
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onResize);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
 
     requestTick();
 })(window, document);

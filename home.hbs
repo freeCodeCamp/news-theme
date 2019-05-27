@@ -8,18 +8,9 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner">
         <div class="post-feed">
-            {{#get "posts" include="tags,authors" filter="featured:true" limit="all" as |featured|}}
-            {{#foreach featured}}
-            {{> "post-card"}}
-            {{/foreach}}
-            {{/get}}
             {{#foreach posts}}
-            {{^if featured}}
             {{> "post-card"}}
-            {{/if}}
             {{/foreach}}
-
         </div>
-
     </div>
 </main>

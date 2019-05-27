@@ -680,39 +680,8 @@ make sure this only happens on large viewports / desktop-ish devices.
         padding: 0px 0px 0px 30px;
     }
 
-    .home-template .post-card.featured .post-card-content-link {
-        padding: 30px 0px 0px 0px;
-    }
-
     .post-card .post-card-meta {
         padding: 0 0px 30px 34px;
-    }
-
-    .home-template .post-card.featured .post-card-meta {
-        padding: 0 0px 30px 4px;
-    }
-
-    .home-template .featured.post-card {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        margin: 0 20px 40px;
-        min-height: 500px;
-        background-size: cover;
-    }
-
-    .home-template .featured .post-card-content {
-        flex: 0 1 auto;
-    }
-
-    .home-template .featured .post-card-image-link {
-        min-height: 400px;
-    }
-
-    .home-template .featured .post-card-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
     }
 }
 
@@ -1322,13 +1291,21 @@ Usage (In Ghost editor):
 /* 7.2. Post Footer
 /* ---------------------------------------------------------- */
 
-.post-full-footer {
+.post-full-footer,
+.post-full-author-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 3vw 0 6vw 0;
     max-width: 840px;
+}
+
+.post-full-footer {
+    padding: 3vw 0 6vw 0;
+}
+
+.post-full-author-header {
+    padding: 0 0 3vw 0;
 }
 
 /* 7.2.1 Single Author Byline
@@ -1870,18 +1847,6 @@ Usage (In Ghost editor):
     flex-direction: column;
     align-items: center;
     max-width: 920px;
-}
-
-.medium-migrated-article > p:first-child {
-    text-align: center;
-}
-
-.medium-migrated-article > figure:first-of-type {
-    display: none;
-}
-
-.medium-migrated-article > h1 {
-    display: none;
 }
 
 .post-template .post-content > p:first-child {
