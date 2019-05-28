@@ -314,7 +314,7 @@ hr {
     padding: 0;
     height: 1px;
     border: 0;
-    border-top: 1px solid var(--lightgrey);
+    border-top: 1px solid var(--gray75);
 }
 
 audio,
