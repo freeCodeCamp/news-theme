@@ -25,12 +25,6 @@ into the {body} of the default.hbs template --}}
                 <h1 class="post-full-title">{{title}}</h1>
             </header>
 
-            <footer class="post-full-author-header ">
-
-                {{> "byline-single-header"}}
-
-            </footer>
-
             {{#if feature_image}}
             <figure class="post-full-image">
                 {{!-- This is a responsive image, it loads different sizes depending on device
@@ -46,13 +40,13 @@ into the {body} of the default.hbs template --}}
 
             <section class="post-full-content">
                 {{#has author="freeCodeCamp.org"}}
-                    <div class="post-content medium-migrated-article">
-                        {{content}}
-                    </div>
+                <div class="post-content medium-migrated-article">
+                    {{content}}
+                </div>
                 {{else}}
-                    <div class="post-content">
-                        {{content}}
-                    </div>
+                <div class="post-content">
+                    {{content}}
+                </div>
                 {{/has}}
             </section>
 
