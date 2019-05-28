@@ -1849,6 +1849,18 @@ Usage (In Ghost editor):
     max-width: 920px;
 }
 
+.medium-migrated-article > p:first-child {
+    text-align: center;
+}
+
+.medium-migrated-article > figure:first-of-type {
+    display: none;
+}
+
+.medium-migrated-article > h1 {
+    display: none;
+}
+
 .post-template .post-content > p:first-child {
     font-size: 1.25em;
     line-height: 1.5em;
