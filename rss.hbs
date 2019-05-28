@@ -2,19 +2,19 @@
     xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
     <channel>
         <title>
-            <![CDATA[ {{@blog.title}} ]]>
+            <![CDATA[ {{@site.title}} ]]>
         </title>
         <description>
-            <![CDATA[ {{@blog.description}} ]]>
+            <![CDATA[ {{@site.description}} ]]>
         </description>
-        <link>{{@blog.url}}</link>
+        <link>{{@site.url}}</link>
         <image>
-            <url>{{@blog.url}}/favicon.png</url>
-            <title>{{@blog.title}}</title>
-            <link>{{@blog.url}}</link>
+            <url>{{@site.url}}/favicon.png</url>
+            <title>{{@site.title}}</title>
+            <link>{{@site.url}}</link>
         </image>
         <lastBuildDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</lastBuildDate>
-        <atom:link href="{{@blog.url}}" rel="self" type="application/rss+xml" />
+        <atom:link href="{{@site.url}}" rel="self" type="application/rss+xml" />
         <ttl>60</ttl>
 
         {{#get "posts" limit="10"}}
@@ -32,7 +32,7 @@
                 <![CDATA[ {{primary_tag}} ]]>
             </category>
             <dc:creator>
-                <![CDATA[ {{author.name}} ]]>
+                <![CDATA[ {{primary_author.name}} ]]>
             </dc:creator>
             <pubDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</pubDate>
             <media:content url="{{feature_image}}" medium="image" />
