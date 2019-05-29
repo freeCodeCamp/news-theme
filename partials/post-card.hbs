@@ -53,6 +53,9 @@
 
         <footer class="post-card-meta">
 
+            {{#has author="freeCodeCamp.org"}}
+            <time class="meta-item-single">{{date published_at timeago="true"}}</time>
+            {{else}}
             <ul class="author-list">
                 {{#foreach authors}}
                 <li class="author-list-item">
@@ -76,6 +79,10 @@
             <a class="meta-item" href="{{url}}">{{name}}</a>
             {{/primary_author}}
             <time class="meta-item">{{date published_at timeago="true"}}</time>
+
+            {{/has}}
+
+
         </footer>
 
     </div>{{!--/.post-card-content--}}

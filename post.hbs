@@ -25,6 +25,19 @@ into the {body} of the default.hbs template --}}
                 <h1 class="post-full-title">{{title}}</h1>
             </header>
 
+            <div class="post-full-author-header">
+
+                {{!-- There are two options for how we display the byline/author-info.
+                If the post has more than one author, we load a specific template
+                from includes/byline-multiple.hbs, otherwise, we just use the
+                default byline. --}}
+
+                {{#has author="freeCodeCamp.org"}}
+                {{else}}
+                {{> "byline-single"}}
+                {{/has}}
+            </div>
+
             {{#if feature_image}}
             <figure class="post-full-image">
                 {{!-- This is a responsive image, it loads different sizes depending on device
@@ -59,20 +72,7 @@ into the {body} of the default.hbs template --}}
             </section>
             {{/if}}
 
-            <footer class="post-full-footer">
 
-                {{!-- There are two options for how we display the byline/author-info.
-                If the post has more than one author, we load a specific template
-                from includes/byline-multiple.hbs, otherwise, we just use the
-                default byline. --}}
-
-                {{#has author="count:>1"}}
-                {{> "byline-multiple"}}
-                {{else}}
-                {{> "byline-single"}}
-                {{/has}}
-
-            </footer>
 
             {{!--
             <section class="post-full-comments">
@@ -115,6 +115,16 @@ into the {body} of the default.hbs template --}}
             </article>
             {{/if}}
             {{/get}}
+            {{else}}
+            <div class="read-next-card">
+
+                {{!-- There are two options for how we display the byline/author-info.
+                If the post has more than one author, we load a specific template
+                from includes/byline-multiple.hbs, otherwise, we just use the
+                default byline. --}}
+
+            </div>
+
             {{/if}}
 
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}

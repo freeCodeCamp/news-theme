@@ -619,6 +619,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-transform: uppercase;
 }
 
+.meta-item-single {
+    flex-shrink: 0;
+    color: var(--gray75);
+    font-size: 1.2rem;
+    line-height: 33px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
 .post-meta-item-group {
     height: 29px;
     background: pink;
@@ -903,7 +913,7 @@ Usage (In Ghost editor):
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
-    border-left: #3eb0ef 3px solid;
+    border-left: var(--dark-blue) 3px solid;
 }
 
 .post-full-content blockquote p {
@@ -1291,7 +1301,6 @@ Usage (In Ghost editor):
 /* 7.2. Post Footer
 /* ---------------------------------------------------------- */
 
-.post-full-footer,
 .post-full-author-header {
     display: flex;
     justify-content: space-between;
@@ -1301,7 +1310,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-footer {
-    padding: 3vw 0 6vw 0;
+    padding: 0;
 }
 
 .post-full-author-header {
@@ -1373,7 +1382,6 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
     padding-top: 40px;
     border-top: var(--gray15) 1px solid;
 }
