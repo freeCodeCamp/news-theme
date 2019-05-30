@@ -33,7 +33,13 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 --}}
 
         {{> "site-nav"}}
-
+        <div class="under-header-content jumbotron">
+            <h1 class="site-title">Welcome to freeCodeCamp News.</h1>
+            <h2 class="site-description">
+                This is a free, open source, no-ads place to cross-post your blog articles. Read about it
+                <a href="https://www.freecodecamp.org/forum/t/279929">here</a>.
+            </h2>
+        </div>
         <div class="error-template">
             <main id="site-main" class="site-main outer">
                 <div class="inner">
@@ -60,68 +66,7 @@ It's a good idea to keep this template as minimal as possible in terms of both f
         </div>
 
         {{!-- The footer at the very bottom of the screen --}}
-        <footer class="site-footer">
-            <div class="footer-container">
-                <div class="footer-row">
-                    <div class="footer-desc-col">
-                        <p>freeCodeCamp is a donor-supported tax-exempt 501(c)(3)
-                            nonprofit organization (United States Federal Tax
-                            Identification Number: 82-0779546)
-                        </p>
-                        <p>
-                            Our mission: to help people learn to code for free. We
-                            accomplish this by creating thousands of videos, articles, and
-                            interactive coding lessons - all freely available to the
-                            public. We also have thousands of freeCodeCamp study groups
-                            around the world.
-                        </p>
-                        <p>
-                            Donations to freeCodeCamp go toward our education initiatives,
-                            and help pay for servers, services, and staff. You can&nbsp;<a
-                                href="https://freecodecamp.org/donate" class="inline" rel="noopener noreferrer"
-                                target="_blank">make a tax-deductible donation here</a>.
-                        </p>
-                    </div>
-                    <div class="footer-col-1">
-                        <div class="col-header">Our Nonprofit</div>
-                        <a href="https://freecodecamp.org/about">About</a><a
-                            href="https://freecodecamp.org/donate">Donate</a><a href="https://freecodecamp.org/shop"
-                            rel="noopener noreferrer" target="_blank">Shop</a><a
-                            href="https://sponsors.freecodecamp.org">Sponsors</a><a
-                            href="mailto:team@freecodecamp.org">Email Us</a>
-                    </div>
-                    <div class="footer-col-2">
-                        <div class="col-header">Our Community</div>
-                        <a href="https://freecodecamp.org/news" rel="noopener noreferrer" target="_blank">News</a><a
-                            href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer"
-                            target="_blank">Alumni Network</a><a href="https://study-group-directory.freecodecamp.org/"
-                            rel="noopener noreferrer" target="_blank">Study Groups</a><a
-                            href="https://freecodecamp.org/forum" rel="noopener noreferrer" target="_blank">Forum</a><a
-                            href="https://gitter.im/FreeCodeCamp/home" rel="noopener noreferrer"
-                            target="_blank">Gitter</a><a href="https://github.com/freeCodeCamp/"
-                            rel="noopener noreferrer" target="_blank">GitHub</a><a
-                            href="https://freecodecamp.org/support">Support</a><a
-                            href="https://freecodecamp.org/academic-honesty">Academic Honesty</a><a
-                            href="https://freecodecamp.org/code-of-conduct">Code of Conduct</a><a
-                            href="https://freecodecamp.org/privacy-policy">Privacy Policy</a><a
-                            href="https://freecodecamp.org/terms-of-service">Terms of Service</a>
-                    </div>
-                    <div class="footer-col-3">
-                        <div class="col-header">Our Learning Resources</div>
-                        <a href="https://learn.freecodecamp.org">Learn</a><a
-                            href="https://guide.freecodecamp.org">Guide</a><a
-                            href="https://www.youtube.com/freecodecamp" rel="noopener noreferrer"
-                            target="_blank">Youtube</a><a href="https://podcast.freecodecamp.org/"
-                            rel="noopener noreferrer" target="_blank">Podcast</a><a
-                            href="https://twitter.com/freecodecamp" rel="noopener noreferrer"
-                            target="_blank">Twitter</a><a href="https://medium.freecodecamp.org/"
-                            rel="noopener noreferrer" target="_blank">Medium</a><a
-                            href="https://instagram.com/freecodecamp" rel="noopener noreferrer"
-                            target="_blank">Instagram</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {{> "footer"}}
 
     </div>
 
