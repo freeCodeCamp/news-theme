@@ -16,13 +16,11 @@
 
     <div class="tags-row">
 
-        {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+        {{#get 'tags' limit='15' include='count.posts' order='count.posts desc'}}
         {{#foreach tags}}
-        <div class='tag'>
-            <a href='{{ url }}'>
-                <h3>#{{ name }} <small> | {{ count.posts }}</small></h3>
-            </a>
-        </div>
+        <a class='tag' href='{{ url }}'>
+            <h3>#{{ name }} <small> | {{ count.posts }}</small></h3>
+        </a>
         {{/foreach}}
         {{/get}}
     </div>

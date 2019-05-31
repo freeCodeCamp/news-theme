@@ -121,7 +121,6 @@ body {
     align-items: center;
     padding: 68px 10px 30px 10px;
     min-height: 200px;
-    max-height: 450px;
     text-align: center;
     color: white;
 }
@@ -2370,21 +2369,32 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     padding-top: 30px;
     text-transform: uppercase;
+    justify-content: center;
 }
 
 .tags-row a {
-    color: var(--gray15);
 }
 
 .tags-row h3 {
     margin: 0;
 }
 
-.tags-row .tag {
+.tags-row > .tag {
     display: block;
     margin: 0 5px;
     background: var(--gray75);
+    color: var(--gray15);
     padding: 3px 4px 4px 4px;
     letter-spacing: 0.5px;
     margin-bottom: 8px;
+}
+
+.tags-row > .tag:hover {
+    background: var(--gray15);
+    color: var(--gray75);
+    color: var(--gray75);
+}
+
+.tags-row a:hover {
+    text-decoration: none;
 }
