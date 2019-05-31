@@ -61,7 +61,7 @@ body {
 .site-main {
     z-index: 100;
     flex-grow: 1;
-    margin-top: var(--header-height);
+    /* margin-top: var(--header-height); */
 }
 
 /* Full width page blocks */
@@ -559,6 +559,19 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     border: #fff 2px solid;
 }
 
+.static-avatar-post {
+    display: block;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    border: #fff 2px solid;
+}
+
+.avatar-fixed {
+    width: 60px;
+    height: 60px;
+}
+
 .moving-avatar {
     display: block;
     overflow: hidden;
@@ -727,8 +740,8 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 auto;
     padding: 6vw 3vw 3vw;
     max-width: 1040px;
-    text-align: center;
 }
+
 @media (max-width: 500px) {
     .post-full-header {
         padding: 14vw 3vw 10vw;
@@ -737,12 +750,15 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-meta {
     display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--gray75);
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
+    flex-wrap: wrap;
+}
+
+.post-full-meta a {
+    padding-right: 15px;
 }
 
 .post-full-meta-date {
@@ -779,6 +795,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 @media (max-width: 800px) {
     .post-full-image img {
         height: auto;
+    }
+    .post-full-meta {
+        padding-bottom: 5vw;
     }
 }
 
@@ -1304,16 +1323,12 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    max-width: 840px;
+    margin: 0 3vw;
+    padding: 0 0 3vw 0;
 }
 
 .post-full-footer {
     padding: 0;
-}
-
-.post-full-author-header {
-    padding: 0 0 3vw 0;
 }
 
 /* 7.2.1 Single Author Byline
@@ -1331,7 +1346,7 @@ Usage (In Ghost editor):
 }
 
 .author-card-name {
-    margin: 8px 0 2px 0;
+    margin: 0px 0 2px 0;
     padding: 0;
     font-size: 2rem;
 }
@@ -1343,6 +1358,12 @@ Usage (In Ghost editor):
 
 .author-card-name a:hover {
     text-decoration: none;
+}
+
+.author-card-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .author-card-content p {
