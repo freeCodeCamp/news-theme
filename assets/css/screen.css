@@ -963,11 +963,10 @@ Usage (In Ghost editor):
     margin: 1.5em 0 3em;
     padding: 20px;
     max-width: 100%;
-    border: var(--gray85) 1px solid;
-    color: var(--gray10);
+    color: var(--gray85);
     font-size: 1.4rem;
     line-height: 1.5em;
-    background: var(--gray85);
+    background: var(--gray05);
 }
 
 .post-full-content pre code {
@@ -1552,6 +1551,16 @@ Usage (In Ghost editor):
     color: var(--gray85);
     background: var(--gray85) center center;
     background-size: cover;
+}
+
+.read-next-dvider {
+    display: block;
+    overflow: hidden;
+    margin: 0 20px 40px;
+    height: 20px;
+    color: var(--gray85);
+    background: var(--gray05) center center;
+    width: 100%;
 }
 
 .read-next-card:before {
@@ -2418,4 +2427,15 @@ Usage (In Ghost editor):
 
 .tags-row a:hover {
     text-decoration: none;
+}
+
+.tags-title {
+    text-transform: uppercase;
+}
+
+/* 14. custom embeds
+/* ---------------------------------------------------------- */
+
+.gist {
+    width: 100%;
 }

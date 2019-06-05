@@ -17,12 +17,14 @@ into the {body} of the default.hbs template --}}
                 <section class="post-full-meta">
                     <time class="post-full-meta-date"
                         datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                    {{#if tags}}
                     <span class="date-divider">/</span>
                     {{#foreach tags limit="3"}}
                     <a href="{{url}}">
-                        {{name}}
+                        #{{name}}
                     </a>
                     {{/foreach}}
+                    {{/if}}
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
             </header>
@@ -118,15 +120,8 @@ into the {body} of the default.hbs template --}}
             {{/if}}
             {{/get}}
             {{else}}
-            <div class="read-next-card">
-
-                {{!-- There are two options for how we display the byline/author-info.
-                If the post has more than one author, we load a specific template
-                from includes/byline-multiple.hbs, otherwise, we just use the
-                default byline. --}}
-
+            <div class="read-next-dvider">
             </div>
-
             {{/if}}
 
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
