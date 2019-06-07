@@ -61,7 +61,7 @@ body {
 .site-main {
     z-index: 100;
     flex-grow: 1;
-    /* margin-top: var(--header-height); */
+    margin-top: var(--header-height);
 }
 
 /* Full width page blocks */
@@ -121,6 +121,7 @@ body {
     align-items: center;
     padding: 68px 10px 30px 10px;
     min-height: 200px;
+    max-height: 450px;
     text-align: center;
     color: white;
 }
@@ -455,6 +456,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-tags a {
+    display: block;
     margin-bottom: 1.3rem;
     color: var(--gray75);
     font-size: 1.2rem;
@@ -462,7 +464,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    padding-right: 15px;
 }
 
 .post-card-title {
@@ -557,19 +558,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     width: 34px;
     height: 34px;
     border: #fff 2px solid;
-}
-
-.static-avatar-post {
-    display: block;
-    overflow: hidden;
-    width: 60px;
-    height: 60px;
-    border: #fff 2px solid;
-}
-
-.avatar-fixed {
-    width: 60px;
-    height: 60px;
 }
 
 .moving-avatar {
@@ -740,8 +728,8 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 auto;
     padding: 6vw 3vw 3vw;
     max-width: 1040px;
+    text-align: center;
 }
-
 @media (max-width: 500px) {
     .post-full-header {
         padding: 14vw 3vw 10vw;
@@ -750,15 +738,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-meta {
     display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--gray75);
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
-    flex-wrap: wrap;
-}
-
-.post-full-meta a {
-    padding-right: 15px;
 }
 
 .post-full-meta-date {
@@ -795,9 +780,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 @media (max-width: 800px) {
     .post-full-image img {
         height: auto;
-    }
-    .post-full-meta {
-        padding-bottom: 5vw;
     }
 }
 
@@ -1322,12 +1304,16 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 3vw;
-    padding: 0 0 3vw 0;
+    margin: 0 auto;
+    max-width: 840px;
 }
 
 .post-full-footer {
     padding: 0;
+}
+
+.post-full-author-header {
+    padding: 0 0 3vw 0;
 }
 
 /* 7.2.1 Single Author Byline
@@ -1345,7 +1331,7 @@ Usage (In Ghost editor):
 }
 
 .author-card-name {
-    margin: 0px 0 2px 0;
+    margin: 8px 0 2px 0;
     padding: 0;
     font-size: 2rem;
 }
@@ -1357,12 +1343,6 @@ Usage (In Ghost editor):
 
 .author-card-name a:hover {
     text-decoration: none;
-}
-
-.author-card-content {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
 }
 
 .author-card-content p {
@@ -2349,15 +2329,13 @@ Usage (In Ghost editor):
 }
 
 @media (min-width: 768px) {
-    .footer-container,
-    .tags-row {
+    .footer-container {
         width: 750px;
     }
 }
 
 @media (min-width: 992px) {
-    .footer-container,
-    .tags-row {
+    .footer-container {
         width: 970px;
     }
     .footer-desc-col {
@@ -2369,8 +2347,7 @@ Usage (In Ghost editor):
 }
 
 @media (min-width: 1200px) {
-    .footer-container,
-    .tags-row {
+    .footer-container {
         width: 1170px;
     }
 }
@@ -2378,6 +2355,12 @@ Usage (In Ghost editor):
 /* 12. jumbotron
 /* ---------------------------------------------------------- */
 .jumbotron {
+    /* background: var(--gray05);
+    color: var(--gray85);
+    display: flex;
+    flex-direction: column;
+    padding: 20px; */
+    /* background: var(--gray75); */
     background: var(--gray90);
 }
 
@@ -2386,55 +2369,13 @@ Usage (In Ghost editor):
     text-decoration: underline;
 }
 
+.jumbotron h1 {
+}
+
 .jumbotron h2 {
     margin: 0;
     font-size: 18px;
 }
-/* 13. tags
-/* ---------------------------------------------------------- */
-
-.tags-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-top: 30px;
-    text-transform: uppercase;
-    justify-content: center;
-}
-
-.tags-row a {
-}
-
-.tags-row h3 {
-    margin: 0;
-}
-
-.tags-row > .tag {
-    display: block;
-    margin: 0 5px;
-    background: var(--gray75);
-    color: var(--gray15);
-    padding: 3px 4px 4px 4px;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-}
-
-.tags-row > .tag:hover {
-    background: var(--gray15);
-    color: var(--gray75);
-    color: var(--gray75);
-}
-
-.tags-row a:hover {
-    text-decoration: none;
-}
-
-.tags-title {
-    text-transform: uppercase;
-}
-
-/* 14. custom embeds
-/* ---------------------------------------------------------- */
 
 .gist {
     width: 100%;

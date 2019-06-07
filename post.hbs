@@ -17,14 +17,9 @@ into the {body} of the default.hbs template --}}
                 <section class="post-full-meta">
                     <time class="post-full-meta-date"
                         datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-                    {{#if tags}}
-                    <span class="date-divider">/</span>
-                    {{#foreach tags limit="3"}}
-                    <a href="{{url}}">
-                        #{{name}}
-                    </a>
-                    {{/foreach}}
-                    {{/if}}
+                    {{#primary_tag}}
+                    <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
+                    {{/primary_tag}}
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
             </header>
