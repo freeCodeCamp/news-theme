@@ -9,7 +9,7 @@
     },
     "license": "MIT",
     "scripts": {
-        "develop": "dev",
+        "develop": "npm run dev",
         "dev": "gulp",
         "zip": "gulp zip",
         "test": "gscan ."
