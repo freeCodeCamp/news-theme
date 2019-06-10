@@ -126,6 +126,10 @@ body {
     color: white;
 }
 
+.under-header-content .tags-title {
+    text-transform: uppercase;
+}
+
 .site-title {
     z-index: 10;
     margin: 0;
@@ -2360,21 +2364,12 @@ Usage (In Ghost editor):
 /* 12. jumbotron
 /* ---------------------------------------------------------- */
 .jumbotron {
-    /* background: var(--gray05);
-    color: var(--gray85);
-    display: flex;
-    flex-direction: column;
-    padding: 20px; */
-    /* background: var(--gray75); */
     background: var(--gray90);
 }
 
 .jumbotron a {
     color: white;
     text-decoration: underline;
-}
-
-.jumbotron h1 {
 }
 
 .jumbotron h2 {
@@ -2385,3 +2380,5 @@ Usage (In Ghost editor):
 .gist {
     width: 100%;
 }
+
+/* 13. tags-------------------------------------- */
