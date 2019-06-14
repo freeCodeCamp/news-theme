@@ -39,20 +39,7 @@ into the {body} of the default.hbs template --}}
                 {{/has}}
             </div>
 
-            <a class="floating-header-share-tw"
-                href="https://twitter.com/share?text={{encode title}}{{#primary_author}}{{#if twitter}}%20by%20{{twitter}}{{/if}}{{/primary_author}}&amp;url={{url absolute="true"}}"
-                onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-                {{> "icons/twitter"}}
-            </a>
-
-            {{#primary_author}}
-            {{#if twitter}}
-            <a class="floating-header-share-tw" href="https://twitter.com/share?text=Hey%20{{twitter}}&amp;"
-                onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-                {{> "icons/twitter"}}
-            </a>
-            {{/if}}
-            {{/primary_author}}
+            {{> "social-row"}}
 
             {{#if feature_image}}
             <figure class="post-full-image">
@@ -121,9 +108,14 @@ into the {body} of the default.hbs template --}}
     </div>
 </main>
 
+
+
+
+
 {{!-- Links to Previous/Next posts --}}
 <aside class="read-next outer">
     <div class="inner">
+        {{> "social-row"}}
         <div class="read-next-feed">
             {{#if primary_tag}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}

@@ -2400,3 +2400,36 @@ Usage (In Ghost editor):
     font-size: 1.5em;
     color: #032ead;
 }
+/* 13. social-row-------------------------------------- */
+
+.social-row {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+    margin: 10px 0 10px 0;
+}
+
+.social-row button {
+    flex: 1;
+    min-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid #00aced;
+    background: white;
+    outline: none;
+}
+
+.social-row button:hover {
+    background: #00aced;
+}
+
+.social-row div {
+    width: 30px;
+    background: white;
+    min-height: 40px;
+}
+
+.social-row button svg {
+    height: 20px;
+}

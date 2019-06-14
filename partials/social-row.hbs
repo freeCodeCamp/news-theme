@@ -1,0 +1,19 @@
+{{!-- Everything inside the #author tags pulls data from the post --}}
+
+<div class="social-row">
+
+    <button
+        onclick="window.location.href = 'https://twitter.com/share?text={{encode title}}{{#primary_author}}{{#if twitter}}%20by%20{{twitter}}{{/if}}{{/primary_author}}&amp;url={{url absolute="true"}}';">
+        {{> "icons/twitter"}} tweet this to your followers</button>
+
+    {{#primary_author}}
+    {{#if twitter}}
+
+    <div></div>
+
+    <button onclick="window.location.href = 'https://twitter.com/intent/tweet?text={{twitter}}';">
+        {{> "icons/twitter"}} tweet something to the author</button>
+
+    {{/if}}
+    {{/primary_author}}
+</div>
