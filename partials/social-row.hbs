@@ -2,6 +2,13 @@
 
 <div class="social-row">
 
+    <a href="mailto:?subject=checkout this artilce &amp;body=Check out this site http://www.website.com."
+        title="Share by Email">
+        {{> "icons/email"}}
+    </a>
+
+    <div></div>
+
     <button
         onclick="window.location.href = 'https://twitter.com/share?text={{encode title}}{{#primary_author}}{{#if twitter}}%20by%20{{twitter}}{{/if}}{{/primary_author}}&amp;url={{url absolute="true"}}';">
         {{> "icons/twitter"}} tweet this to your followers</button>

@@ -1526,7 +1526,6 @@ Usage (In Ghost editor):
     display: flex;
     flex-wrap: wrap;
     margin: 0 -20px;
-    padding: 40px 0 0 0;
 }
 
 .read-next-card {
@@ -1535,7 +1534,7 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 20px 40px;
+    margin: 0 20px 50px;
     padding: 25px;
     color: var(--gray85);
     background: var(--gray85) center center;
@@ -1545,7 +1544,7 @@ Usage (In Ghost editor):
 .read-next-dvider {
     display: block;
     overflow: hidden;
-    margin: 0 20px 40px;
+    margin: 0 20px 50px;
     height: 20px;
     color: var(--gray85);
     background: var(--gray05) center center;
@@ -2407,7 +2406,7 @@ Usage (In Ghost editor):
     flex-direction: row;
     align-content: space-between;
     justify-content: space-between;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 50px 0;
 }
 
 .social-row button {
@@ -2425,7 +2424,7 @@ Usage (In Ghost editor):
 }
 
 .social-row div {
-    width: 30px;
+    width: 50px;
     background: white;
     min-height: 40px;
 }

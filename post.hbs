@@ -74,9 +74,7 @@ into the {body} of the default.hbs template --}}
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
-
-
-
+            {{> "social-row"}}
             {{!--
             <section class="post-full-comments">
                 If you want to embed comments, this is a good place to do it!
@@ -115,7 +113,6 @@ into the {body} of the default.hbs template --}}
 {{!-- Links to Previous/Next posts --}}
 <aside class="read-next outer">
     <div class="inner">
-        {{> "social-row"}}
         <div class="read-next-feed">
             {{#if primary_tag}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
