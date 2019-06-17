@@ -2381,4 +2381,15 @@ Usage (In Ghost editor):
     width: 100%;
 }
 
-/* 13. tags-------------------------------------- */
+/* 13. discourse integration-------------------------------------- */
+
+#discourse-comments {
+    border: 1px solid #eeeef0;
+    padding: 5vw 7vw;
+}
+
+#discourse-comments footer {
+    /* font-size: 1.3195em; */
+    margin-top: 0.5em;
+    font-size: 1rem;
+}
