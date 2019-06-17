@@ -2406,7 +2406,7 @@ Usage (In Ghost editor):
     flex-direction: row;
     align-content: space-between;
     justify-content: space-between;
-    margin: 10px 0 50px 0;
+    margin: 10px 0 10px 0;
 }
 
 .social-row button {
@@ -2424,7 +2424,7 @@ Usage (In Ghost editor):
 }
 
 .social-row div {
-    width: 50px;
+    width: 10px;
     background: white;
     min-height: 40px;
 }
