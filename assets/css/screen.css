@@ -2417,6 +2417,9 @@ Usage (In Ghost editor):
     border: 2px solid #00aced;
     background: white;
     outline: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .social-row button:hover {
