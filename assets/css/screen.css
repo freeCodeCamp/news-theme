@@ -2393,3 +2393,10 @@ Usage (In Ghost editor):
     margin-top: 0.5em;
     font-size: 1rem;
 }
+
+#trigger-load-comments {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5em;
+    color: #032ead;
+}
