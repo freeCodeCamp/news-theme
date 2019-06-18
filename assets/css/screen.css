@@ -1541,16 +1541,6 @@ Usage (In Ghost editor):
     background-size: cover;
 }
 
-.read-next-dvider {
-    display: block;
-    overflow: hidden;
-    margin: 0 20px 50px;
-    height: 20px;
-    color: var(--gray85);
-    background: var(--gray05) center center;
-    width: 100%;
-}
-
 .read-next-card:before {
     content: "";
     position: absolute;
@@ -1592,22 +1582,6 @@ Usage (In Ghost editor):
 
 .read-next-card-header-title a:hover {
     text-decoration: underline;
-}
-
-.read-next-divider {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: 80px;
-}
-
-.read-next-divider svg {
-    width: 40px;
-    fill: transparent;
-    stroke: #fff;
-
-    stroke-width: 0.5px;
-    stroke-opacity: 0.65;
 }
 
 .read-next-card-content {
@@ -2384,13 +2358,13 @@ Usage (In Ghost editor):
 
 #discourse-comments {
     border: 1px solid #eeeef0;
-    padding: 5vw 7vw;
+    padding: 70px 100px;
 }
 
-#discourse-comments footer {
-    /* font-size: 1.3195em; */
-    margin-top: 0.5em;
-    font-size: 1rem;
+@media (max-width: 1170px) {
+    #discourse-comments {
+        padding: 5vw 7vw;
+    }
 }
 
 #trigger-load-comments {
@@ -2406,7 +2380,7 @@ Usage (In Ghost editor):
     flex-direction: row;
     align-content: space-between;
     justify-content: space-between;
-    margin: 10px 0 10px 0;
+    padding-bottom: 2vw;
 }
 
 .social-row button {
@@ -2414,16 +2388,34 @@ Usage (In Ghost editor):
     min-height: 40px;
     text-align: center;
     vertical-align: middle;
-    border: 2px solid #00aced;
-    background: white;
     outline: none;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
-.social-row button:hover {
+.social-row .twitter {
+    border: 2px solid #00aced;
+}
+
+.social-row .twitter:hover {
     background: #00aced;
+}
+
+.social-row .email {
+    border: 2px solid #d7493c;
+}
+
+.social-row .email:hover {
+    background: #d7493c;
+}
+
+.social-row .facebook {
+    border: 2px solid #3b5998;
+}
+
+.social-row .facebook:hover {
+    background: #3b5998;
 }
 
 .social-row div {
@@ -2434,4 +2426,10 @@ Usage (In Ghost editor):
 
 .social-row button svg {
     height: 20px;
+}
+
+@media (max-width: 750px) {
+    .social-row span {
+        display: none;
+    }
 }

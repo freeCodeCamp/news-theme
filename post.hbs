@@ -74,6 +74,7 @@ into the {body} of the default.hbs template --}}
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
+
             {{> "social-row"}}
             {{!--
             <section class="post-full-comments">
@@ -139,14 +140,8 @@ into the {body} of the default.hbs template --}}
                         →</a>
                 </footer>
             </article>
-            {{else}}
-            <div class="read-next-dvider">
-            </div>
             {{/if}}
             {{/get}}
-            {{else}}
-            <div class="read-next-dvider">
-            </div>
             {{/if}}
 
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
