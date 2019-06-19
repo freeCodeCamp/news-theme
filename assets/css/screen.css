@@ -2381,6 +2381,7 @@ Usage (In Ghost editor):
     align-content: space-between;
     justify-content: space-between;
     padding-bottom: 2vw;
+    padding-top: 2vw;
 }
 
 .social-row button {
