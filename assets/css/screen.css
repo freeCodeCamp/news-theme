@@ -2188,6 +2188,8 @@ Usage (In Ghost editor):
 }
 
 .social-row button {
+    background: white;
+    color: black;
     flex: 1;
     min-height: 40px;
     text-align: center;
@@ -2215,11 +2217,11 @@ Usage (In Ghost editor):
 }
 
 .social-row .facebook {
-    border: 2px solid #3b5998;
+    border: 2px solid #1977f2;
 }
 
 .social-row .facebook:hover {
-    background: #3b5998;
+    background: #1977f2;
 }
 
 .social-row div {
@@ -2230,9 +2232,15 @@ Usage (In Ghost editor):
 
 .social-row button svg {
     height: 20px;
+    margin: 0 5px;
 }
 
-@media (max-width: 750px) {
+.social-row button:hover {
+    color: white;
+    fill: white;
+}
+
+@media (max-width: 850px) {
     .social-row span {
         display: none;
     }
