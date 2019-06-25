@@ -12,22 +12,15 @@
     var feedElement = document.querySelector(".post-feed");
     if (!feedElement) return;
 
-    var buffer = 300;
-
-    var ticking = false;
     var loading = false;
-
-    var lastScrollY = window.scrollY;
-    var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = document.documentElement.scrollHeight;
 
     function onPageLoad() {
         if (this.status === 404) {
-            window.removeEventListener("scroll", onScroll);
-            window.removeEventListener("resize", onResize);
+            document
+                .getElementById("readMoreBtn")
+                .removeEventListener("click", onUpdate);
             return;
         }
-
         // append contents
         var postElements = this.response.querySelectorAll(".post-card");
         postElements.forEach(function(item) {
@@ -39,25 +32,18 @@
         if (resNextElement) {
             nextElement.href = resNextElement.href;
         } else {
-            window.removeEventListener("scroll", onScroll);
-            window.removeEventListener("resize", onResize);
+            document
+                .getElementById("readMoreBtn")
+                .removeEventListener("click", onUpdate);
         }
 
         // sync status
-        lastDocumentHeight = document.documentElement.scrollHeight;
-        ticking = false;
         loading = false;
     }
 
     function onUpdate() {
         // return if already loading
         if (loading) return;
-
-        // return if not scroll to the bottom
-        if (lastScrollY + lastWindowHeight <= lastDocumentHeight - buffer) {
-            ticking = false;
-            return;
-        }
 
         loading = true;
 
@@ -70,24 +56,7 @@
         xhr.send(null);
     }
 
-    function requestTick() {
-        ticking || window.requestAnimationFrame(onUpdate);
-        ticking = true;
-    }
-
-    function onScroll() {
-        lastScrollY = window.scrollY;
-        requestTick();
-    }
-
-    function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = document.documentElement.scrollHeight;
-        requestTick();
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize);
-
-    requestTick();
+    document
+        .getElementById("readMoreBtn")
+        .addEventListener("click", onUpdate, { passive: true });
 })(window, document);
