@@ -459,7 +459,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-tags a {
-    display: block;
     margin-bottom: 1.3rem;
     color: var(--gray75);
     font-size: 1.2rem;
@@ -467,6 +466,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    padding-right: 15px;
 }
 
 .post-card-title {
@@ -2274,4 +2274,39 @@ Usage (In Ghost editor):
 #readMoreBtn:hover {
     background: #0a0a23;
     color: #eeeef0;
+}
+/* 15. tags
+/* ---------------------------------------------------------- */
+
+.tags-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+.tags-row h3 {
+    margin: 0;
+}
+
+.tags-row > .tag {
+    display: block;
+    margin: 0 5px;
+    background: var(--gray75);
+    color: var(--gray15);
+    padding: 3px 4px 4px 4px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.tags-row > .tag:hover {
+    background: var(--gray15);
+    color: var(--gray75);
+    color: var(--gray75);
+}
+
+.tags-row a:hover {
+    text-decoration: none;
 }

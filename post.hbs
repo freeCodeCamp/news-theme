@@ -18,9 +18,12 @@ into the {body} of the default.hbs template --}}
                     <time class="post-full-meta-date"
                         datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
                     {{#if tags}}
-                    {{#primary_tag}}
-                    <span class="date-divider">/</span> <a href="{{url}}">#{{name}}</a>
-                    {{/primary_tag}}
+                    <span class="date-divider">/</span>
+                    {{#foreach tags limit="3"}}
+                    <a href="{{url}}">
+                        #{{name}}
+                    </a>
+                    {{/foreach}}
                     {{/if}}
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
@@ -82,7 +85,7 @@ into the {body} of the default.hbs template --}}
             </section> --}}
 
             <script type="text/javascript">
-                function loadDiscourseComments () {
+                function loadDiscourseComments() {
                     document.getElementById('discourse-comments').innerHTML = '';
                     DiscourseEmbed = {
                         discourseUrl: 'https://www.freecodecamp.org/forum/',
@@ -92,8 +95,8 @@ into the {body} of the default.hbs template --}}
                     d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
                 }
-                if(window && window.addEventListener) {
-                    window.addEventListener('load', function() {
+                if (window && window.addEventListener) {
+                    window.addEventListener('load', function () {
                         document.getElementById('trigger-load-comments').onclick = loadDiscourseComments;
                     });
                 }
