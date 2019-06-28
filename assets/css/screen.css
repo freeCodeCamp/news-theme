@@ -252,6 +252,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 5px 15px;
     color: #fff;
     opacity: 1;
+    white-space: nowrap;
 }
 
 .nav li:hover {
