@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{!-- Base Meta --}}
-    <title>Developer News | 4xx/5xx - Unknown Error</title>
+    <title>文章 | 4xx/5xx - 未知错误</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -35,10 +35,9 @@ You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in 
 
         {{> "site-nav"}}
         <div class="under-header-content jumbotron">
-            <h1 class="site-title">Welcome to Developer News.</h1>
+            <h1 class="site-title">欢迎来到 freeCodeCamp 社区</h1>
             <h2 class="site-description">
-                This is a free, open source, no-ads place to cross-post your blog articles. Read about it
-                <a href="https://www.freecodecamp.org/forum/t/279929">here</a>.
+                非营利组织 freeCodeCamp 以“帮助人们免费学习编程为使命”，通过开源协作创建了大量优质编程教程，已帮助全球数百万人学习编程，成为开发者。在这里分享你的文章吧！阅读<a href="https://chinese.freecodecamp.org/forum/t/freecodecamp/374">详情</a>。
             </h2>
         </div>
         <div class="error-template">
@@ -48,12 +47,12 @@ You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in 
                     <section class="error-message">
                         <h1 class="error-code">{{code}}</h1>
                         <p class="error-description">{{message}}</p>
-                        <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
+                        <a class="error-link" href="{{@site.url}}">返回上一页 →</a>
                     </section>
 
                     {{#if errorDetails}}
                     <section class="error-stack">
-                        <h3>Theme errors</h3>
+                        <h3>主题错误</h3>
                         <ul class="error-stack-list">
                             {{#foreach errorDetails}}
                             <li>

@@ -3,16 +3,16 @@
 <div class="social-row">
     <button class="twitter"
         onclick="window.open('https://twitter.com/share?text={{encode title}}{{#primary_author}}{{#if twitter}}%20by%20{{twitter}}{{/if}}{{/primary_author}}&amp;url={{url absolute="true"}}', 'share-twitter', 'width=550,height=235');return false;">
-        {{> "icons/twitter"}} <span>&nbsp;Tweet this to your followers</span></button>
+        {{> "icons/twitter"}} <span>&nbsp;分享到 Twitter</span></button>
     <div></div>
     <button class="email"
         onclick="window.location.href = 'mailto:?subject=Checkout this artilce from FreeCodeCamp &amp;body={{title}} {{url absolute="true"}}';">
-        {{> "icons/email"}} <span>Email this to a friend</span></button>
+        {{> "icons/email"}} <span>发送邮件给好友</span></button>
 
     {{#primary_author}}
     <div></div>
     <button class="facebook"
         onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}', 'share-facebook','width=580,height=296');return false;">
-        {{> "icons/facebook"}} <span>Share this with your friends</span></button>
+        {{> "icons/facebook"}} <span>分享到 Facebook</span></button>
     {{/primary_author}}
 </div>
