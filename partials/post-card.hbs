@@ -20,15 +20,13 @@
         <div class="post-card-content-link">
 
             <header class="post-card-header">
-                {{#if tags}}
+                {{#if primary_tag}}
                 <span class="post-card-tags">
-                    {{#foreach tags limit="3"}}
-
+                    {{#primary_tag}}
                     <a href="{{url}}">
                         #{{name}}
                     </a>
-
-                    {{/foreach}}
+                    {{/primary_tag}}
                 </span>
                 {{/if}}
                 <h2 class="post-card-title">

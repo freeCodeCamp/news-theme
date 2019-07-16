@@ -6,12 +6,6 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner">
         <div class="post-feed">
-            {{!-- <div class="post-card jumbotron">
-                <h1>Welcome to Developer News.</h1>
-                <h2>This is a free, open source, no-ads place to cross-post your blog articles. Read about it
-                    <a href="https://www.freecodecamp.org/forum/t/279929">here</a>.</h2>
-            </div> --}}
-
             {{#foreach posts}}
             {{> "post-card"}}
             {{/foreach}}
