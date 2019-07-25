@@ -169,7 +169,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    overflow-y: hidden;
+    /* overflow-y: auto; */
     height: 40px;
     font-size: 18px;
     font-family: Lato, sans-serif;
@@ -187,16 +187,18 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    margin-right: 10px;
     padding-bottom: 80px;
     letter-spacing: 0.4px;
     white-space: nowrap;
-
+    margin-left: 0;
+    margin-right: auto;
     -ms-overflow-scrolling: touch;
 }
 
 .site-nav-left {
-    display: none;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
 }
 
 /* Site Nav Hack Explanation (above):
@@ -356,20 +358,20 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     fill: #fff;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
     .site-header {
         padding-right: 0;
         padding-left: 0;
     }
     .site-nav-middle {
-        margin-right: 0;
+        margin-left: 0px;
     }
     .nav {
         display: none;
         position: absolute;
         background-color: var(--gray90);
-        top: var(--header-height);
-        left: 15px;
+        top: calc(var(--header-height) * 2);
+        left: 20px;
     }
 
     .toggle-button-nav {
@@ -379,7 +381,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
         display: flex;
     }
     .expand-nav {
-        min-height: calc(40px + var(--header-height));
+        min-height: calc(3 * var(--header-height));
     }
     .reverse-toggle-color {
         background-color: white;
@@ -387,7 +389,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
 }
 
-@media (min-width: 750px) {
+@media (min-width: 1000px) {
     .site-nav-middle {
         flex: 1 0 30%;
         margin-right: 0px;
@@ -450,7 +452,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-content-link {
     position: relative;
     display: block;
-    padding: 25px 0px 0px 0px;
+    padding: 5px 0px 0px 0px;
     color: var(--gray90);
 }
 

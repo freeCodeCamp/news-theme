@@ -1,5 +1,7 @@
 <nav class="site-nav nav-padding">
-    <div class="site-nav-left"></div>
+    <div class="site-nav-left">
+        {{> "algolia-search"}}
+    </div>
     <div class="site-nav-middle">
         {{#if @site.logo}}
         <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
@@ -24,12 +26,9 @@
     $(document).ready(function () {
         $(".toggle-button-nav").click(function () {
             $(".nav").toggleClass("show-main-nav-items");
-        });
-        $(".toggle-button-nav").click(function () {
-            $(".toggle-button-nav").toggleClass("reverse-toggle-color");
-        });
-        $(".toggle-button-nav").click(function () {
             $(".site-nav").toggleClass("expand-nav");
+            $(".toggle-button-nav").toggleClass("reverse-toggle-color");
+            $(".site-nav-left").toggleClass("display-search");
         });
     });
 </script>

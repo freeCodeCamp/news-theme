@@ -1,0 +1,153 @@
+@import "global.css";
+
+.site-nav-left form {
+    display: flex;
+    align-items: flex-start;
+    margin: 5px 0 0 0px;
+    /* move this to mobile */
+    padding-left: 16px;
+}
+
+#search-input {
+    width: 25vw;
+    height: 7px;
+    color: var(--gray00);
+    padding: 10px;
+    margin: auto;
+    background: var(--gray75);
+    border: none;
+}
+
+#search-input::placeholder {
+    color: var(--gray15);
+}
+
+.algolia-autocomplete {
+    width: 100%;
+}
+
+.algolia-autocomplete .aa-input,
+.algolia-autocomplete .aa-hint {
+    width: 100%;
+}
+
+.algolia-autocomplete .aa-hint {
+    color: #999;
+}
+
+.algolia-autocomplete .aa-dropdown-menu {
+    width: 100%;
+    color: var(--gray00);
+    background: var(--gray75);
+    border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+
+    border: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: var(--dark-blue);
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* remove default styling for hits */
+.aa-dataset-1 a {
+    text-decoration: none;
+}
+.aa-dataset-1 a:visited {
+    text-decoration: none;
+}
+.aa-dataset-1 a:hover {
+    text-decoration: none;
+}
+.aa-dataset-1 a:focus {
+    text-decoration: none;
+}
+.aa-dataset-1 a:hover,
+a:active {
+    text-decoration: none;
+}
+
+/* style search bar hits */
+.algolia-result {
+    padding: 10px;
+    color: var(--gray00);
+}
+
+.aa-dropdown-menu {
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.algolia-footer {
+    font-weight: bold;
+}
+
+.algolia-footer:hover {
+    color: var(--gray00);
+    background-color: var(--dark-blue);
+}
+
+/* Button row */
+.read-more-row {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  padding-bottom: 2vw;
+  padding-top: 2vw;
+}
+
+#readMoreBtn {
+  width: 50%;
+  min-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 2px solid #0a0a23;
+  background: #eeeef0;
+  color: #0a0a23;
+}
+
+#readMoreBtn:hover {
+  background: #0a0a23;
+  color: #eeeef0;
+}
+
+/* show default colors if disabled */
+.disabled:hover {
+    background: #eeeef0;
+    color: #0a0a23;
+}
+
+@media (max-width: 1000px) {
+    .site-nav-left form {
+        display: none;
+    }
+
+    #search-input {
+        display: none;
+    }
+    .display-search form {
+        display: flex;
+        position: absolute;
+        top: var(--header-height);
+        left: 5px;
+    }
+    .display-search form #search-input {
+        display: inline-block;
+        width: 80vw;
+    }
+}
