@@ -1,102 +1,108 @@
 @import "global.css";
 
 .site-nav-left form {
-    display: flex;
-    align-items: flex-start;
-    margin: 5px 0 0 0px;
-    /* move this to mobile */
-    padding-left: 16px;
+  display: flex;
+  align-items: flex-start;
+  margin: 5px 0 0 0px;
+  padding-left: 16px;
 }
 
 #search-input {
-    width: 25vw;
-    height: 7px;
-    color: var(--gray00);
-    padding: 10px;
-    margin: auto;
-    background: var(--gray75);
-    border: none;
+  width: 30vw;
+  height: 7px;
+  color: var(--gray00);
+  padding: 10px;
+  margin: auto;
+  background: var(--gray75);
+  border: none;
 }
 
 #search-input::placeholder {
-    color: var(--gray15);
+  color: var(--gray15);
 }
 
 .algolia-autocomplete {
-    width: 100%;
+  width: 100%;
 }
 
 .algolia-autocomplete .aa-input,
 .algolia-autocomplete .aa-hint {
-    width: 100%;
+  width: 100%;
 }
 
 .algolia-autocomplete .aa-hint {
-    color: #999;
+  color: #999;
 }
 
 .algolia-autocomplete .aa-dropdown-menu {
-    width: 100%;
-    color: var(--gray00);
-    background: var(--gray75);
-    border-top: none;
+  width: 100%;
+  color: var(--gray00);
+  background: var(--gray75);
+  border-top: none;
+  font-weight: 300;
 }
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-
-    border: none;
+  cursor: pointer;
+  padding: 3px 3px;
+  border: none;
 }
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: var(--dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
+  font-weight: bold;
+  font-style: normal;
 }
 
-/* remove default styling for hits */
+/* Remove default styling for hits */
 .aa-dataset-1 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .aa-dataset-1 a:visited {
-    text-decoration: none;
+  text-decoration: none;
 }
 .aa-dataset-1 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 .aa-dataset-1 a:focus {
-    text-decoration: none;
+  text-decoration: none;
 }
 .aa-dataset-1 a:hover,
 a:active {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-/* style search bar hits */
+/* Style search bar hits */
 .algolia-result {
-    padding: 10px;
-    color: var(--gray00);
+  padding: 5px;
+  color: var(--gray00);
 }
 
 .aa-dropdown-menu {
-    max-height: 70vh;
-    overflow: auto;
+  max-height: 85vh;
+  overflow: auto;
+}
+
+.aa-dataset-1 hr {
+  background-color: var(--gray00);
+  height: 2px;
+  margin: 0;
 }
 
 .algolia-footer {
-    font-weight: bold;
+  font-weight: bold;
+  padding: 8px;
 }
 
 .algolia-footer:hover {
-    color: var(--gray00);
-    background-color: var(--dark-blue);
+  color: var(--gray00);
+  background-color: var(--dark-blue);
 }
 
-/* Button row */
+/* Button row on search results page */
 .read-more-row {
   display: flex;
   width: 100%;
@@ -126,28 +132,40 @@ a:active {
   color: #eeeef0;
 }
 
-/* show default colors if disabled */
+/* Show default colors if disabled */
 .disabled:hover {
-    background: #eeeef0;
-    color: #0a0a23;
+  background: #eeeef0;
+  color: #0a0a23;
+}
+
+/* Show only the first 5 hits on mobile */
+span.aa-suggestions .aa-suggestion:nth-child(n+6) {
+  display: none;
+}
+
+@media (min-width: 767px) and (min-height: 768px) {
+  /* Show hits 6-8 on desktop and some tablets */
+  span.aa-suggestions .aa-suggestion:nth-child(n+6) {
+    display: block;
+  }
 }
 
 @media (max-width: 1000px) {
-    .site-nav-left form {
-        display: none;
-    }
+  .site-nav-left form {
+    display: none;
+  }
 
-    #search-input {
-        display: none;
-    }
-    .display-search form {
-        display: flex;
-        position: absolute;
-        top: var(--header-height);
-        left: 5px;
-    }
-    .display-search form #search-input {
-        display: inline-block;
-        width: 80vw;
-    }
+  #search-input {
+    display: none;
+  }
+  .display-search form {
+    display: flex;
+    position: absolute;
+    top: var(--header-height);
+    left: 5px;
+  }
+  .display-search form #search-input {
+    display: inline-block;
+    width: 80vw;
+  }
 }

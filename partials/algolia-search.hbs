@@ -3,7 +3,7 @@
 </form>
 
 <script>
-  const client = algoliasearch('CFFN61U0SH', 'ec3afbefdb556803e63a67f269655aa8');
+  const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
   const index = client.initIndex('news');
   autocomplete('#search-input', { hint: false }, [
     {
@@ -29,6 +29,7 @@
         footer: (query, result) => {
           if (!query.isEmpty) {
             return `
+              <hr/>
               <a href="https://freecodecamp.org/news/search?query=${result.query}">
                 <div class="algolia-result algolia-footer">
                   <span>See all results for ${result.query}</span>
@@ -53,11 +54,16 @@
   // If no hits in the Autocomplete dropdown are highlighted,
   // treat input like normal search bar
   const input = document.getElementById("search-input");
+  let searchQuery;
   let hitSelected;
 
-  input.addEventListener("keydown", (event) => {
-    const searchQuery = input.value;
-    if (event.key === "Enter" && !hitSelected) {
+  // Get the value of the search bar after each key event
+  input.addEventListener('input', e => {
+    searchQuery = input.value;
+  });
+
+  input.addEventListener('keydown', e => {
+    if (event.key === "Enter" && !hitSelected && searchQuery) {
       window.location.assign(`https://freecodecamp.org/news/search?query=${searchQuery}`);
     }
   });

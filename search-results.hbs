@@ -41,18 +41,18 @@
 
   function renderSearchResults(arr) {
     arr.forEach((hit, i) => {
-      const featureImage = hit.feature_image || "#";
+      const featureImage = hit.featureImage || "#";
       const url = hit.url || "#";
       const title = hit.title || "#";
       const authorName = hit.author.name;
-      const authorImage = hit.author.profile_image;
+      const authorImage = hit.author.profileImage;
       const authorUrl = hit.author.url;
       const primaryTagCodeBlock = hit.tags.length === 0 ? "" : `
         <a href="${hit.tags[0].url}">
           #${hit.tags[0].name}
         </a>
       `;
-      const publishedAt = hit.published_at;
+      const publishedAt = hit.publishedAt;
       const displayAuthorAndTime = () => {
         return authorName === 'freeCodeCamp.org' ? `<time>${formatDate(publishedAt)}</time>` : `
           <ul class="author-list">
