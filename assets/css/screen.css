@@ -2038,6 +2038,7 @@ Usage (In Ghost editor):
     position: relative;
     color: var(--gray85);
     background: var(--gray05);
+    line-height: 1.6;
 }
 
 .footer-container {
@@ -2047,7 +2048,7 @@ Usage (In Ghost editor):
     padding-right: 15px;
     padding-top: 40px;
     padding-bottom: 40px;
-    font-size: 16.5px;
+    font-size: 15px;
     overflow-x: hidden;
 }
 
@@ -2071,21 +2072,23 @@ Usage (In Ghost editor):
 
 .footer-col-1,
 .footer-col-2,
-.footer-col-3 {
+.footer-col-3,
+.footer-col-4 {
     display: flex;
     flex-direction: column;
-    flex: 0 0 50%;
+    flex: 0 0 100%;
     padding-left: 15px;
     padding-right: 15px;
     font-size: 15px;
+    margin: 0 0 1.45rem;
 }
 
-.footer-col-3 {
+/* .footer-col-3 {
     margin-top: -120px;
-}
+} */
 
 .footer-desc-col {
-    flex: 1 0 100%;
+    flex: 1 0 90%;
     display: flex;
     flex-direction: column;
     padding-left: 15px;
@@ -2097,44 +2100,62 @@ Usage (In Ghost editor):
 }
 
 @media (min-width: 500px) {
-    .row {
+    /*     .row {
         flex-direction: row;
         height: auto;
+    } */
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+        flex: 1 0 45%;
+        height: auto;
+        font-size: 16.5;
+    }
+}
+
+@media (min-width: 800px) {
+    .footer-container {
+        width: 750px;
     }
     .footer-col-1,
     .footer-col-2,
-    .footer-col-3 {
+    .footer-col-3,
+    .footer-col-4 {
         flex: 1 0 100px;
         height: auto;
         font-size: 16.5;
     }
-
-    .footer-col-3 {
-        margin-top: 0px;
+    .footer-col-4 {
+        flex: 1 0 165px;
     }
 }
 
-@media (min-width: 768px) {
-    .footer-container {
-        width: 750px;
-    }
-}
-
-@media (min-width: 992px) {
+@media (min-width: 1020px) {
     .footer-container {
         width: 970px;
     }
     .footer-desc-col {
-        flex: 3 0 25%;
+        flex: 1 0 20%;
     }
+    .footer-col-2,
     .footer-col-3 {
-        flex: 2 0 100px;
+        flex: 1 0 110px;
+    }
+    .footer-col-4 {
+        flex: 4 0 110px;
     }
 }
 
 @media (min-width: 1200px) {
     .footer-container {
         width: 1170px;
+    }
+    .footer-desc-col {
+        flex: 1 0 33%;
+    }
+    .footer-col-4 {
+        flex: 4 0 100px;
     }
 }
 
