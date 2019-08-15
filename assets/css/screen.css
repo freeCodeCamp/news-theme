@@ -2127,17 +2127,6 @@ Usage (In Ghost editor):
     .footer-container {
         width: 850px;
     }
-    /* .footer-desc-col {
-        flex: 1 0 20%;
-    }
-    .footer-col-1,
-    .footer-col-2,
-    .footer-col-3 {
-        flex: 1 0 120px;
-    }
-    .footer-col-4 {
-        flex: 4 0 110px;
-    } */
 }
 
 @media (min-width: 1200px) {
