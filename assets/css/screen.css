@@ -2083,10 +2083,6 @@ Usage (In Ghost editor):
     margin: 0 0 1.45rem;
 }
 
-/* .footer-col-3 {
-    margin-top: -120px;
-} */
-
 .footer-desc-col {
     flex: 1 0 90%;
     display: flex;
@@ -2100,10 +2096,6 @@ Usage (In Ghost editor):
 }
 
 @media (min-width: 500px) {
-    /*     .row {
-        flex-direction: row;
-        height: auto;
-    } */
     .footer-col-1,
     .footer-col-2,
     .footer-col-3,
@@ -2127,24 +2119,25 @@ Usage (In Ghost editor):
         font-size: 16.5;
     }
     .footer-col-4 {
-        flex: 1 0 165px;
+        flex: 1 0 180px;
     }
 }
 
 @media (min-width: 1020px) {
     .footer-container {
-        width: 970px;
+        width: 850px;
     }
-    .footer-desc-col {
+    /* .footer-desc-col {
         flex: 1 0 20%;
     }
+    .footer-col-1,
     .footer-col-2,
     .footer-col-3 {
-        flex: 1 0 110px;
+        flex: 1 0 120px;
     }
     .footer-col-4 {
         flex: 4 0 110px;
-    }
+    } */
 }
 
 @media (min-width: 1200px) {
@@ -2152,7 +2145,12 @@ Usage (In Ghost editor):
         width: 1170px;
     }
     .footer-desc-col {
-        flex: 1 0 33%;
+        flex: 1 0 31%;
+    }
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3 {
+        flex: 1 0 120px;
     }
     .footer-col-4 {
         flex: 4 0 100px;
