@@ -35,15 +35,8 @@ into the {body} of the default.hbs template --}}
                 </div>
             </section>
 
-            {{^has tag="#Disable Comments"}}
-                {{> "social-row"}}
-                <script src="{{asset "built/comments.js"}}"></script>
-                <div id='discourse-comments'>
-                    <button id='trigger-load-comments'>Show comments</button>
-                </div>
-            {{/has}}
-
         </article>
+
     </div>
 </main>
 

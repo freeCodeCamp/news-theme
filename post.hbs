@@ -80,7 +80,43 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             {{> "social-row"}}
-            <script src="{{asset "built/comments.js"}}"></script>
+            {{!--
+            <section class="post-full-comments">
+                If you want to embed comments, this is a good place to do it!
+            </section> --}}
+
+            <script type="text/javascript">
+                function loadDiscourseComments() {
+                    var xhr = new XMLHttpRequest();
+                    var file = "https://www.freecodecamp.org/forum/srv/status";
+                    var randomNum = Math.round(Math.random() * 10000);
+                    xhr.open('HEAD', file + "?rand=" + randomNum, true);
+                    xhr.send();
+                    xhr.addEventListener("readystatechange", processRequest, false);
+                    function processRequest(e) {
+                        if (xhr.readyState == 4) {
+                            if (xhr.status >= 200 && xhr.status < 304) {
+                                document.getElementById('discourse-comments').innerHTML = '';
+                                DiscourseEmbed = {
+                                    discourseUrl: 'https://www.freecodecamp.org/forum/',
+                                    discourseEmbedUrl: '{{url absolute="true"}}'
+                                };
+                                var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+                                d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+                            } else {
+                                document.getElementById('discourse-comments').innerHTML = '<div style="text-align: center;">Sorry, we could not load the comments. Please try again after sometime.</div>';
+                            }
+                        }
+                    }
+                }
+                if (window && window.addEventListener) {
+                    window.addEventListener('load', function () {
+                        document.getElementById('trigger-load-comments').onclick = loadDiscourseComments;
+                    });
+                }
+            </script>
+
             <div id='discourse-comments'>
                 <button id='trigger-load-comments'>Show comments</button>
             </div>
