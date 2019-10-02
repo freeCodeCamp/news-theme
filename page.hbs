@@ -33,11 +33,11 @@ into the {body} of the default.hbs template --}}
                 <div class="post-content">
                     {{content}}
                 </div>
+                <hr />
+                {{> "social-row"}}
+                {{> "donation-row"}}
             </section>
-
-            {{> "social-row"}}
-            {{> "comments"}}
-
+            
         </article>
     </div>
 </main>

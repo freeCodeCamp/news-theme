@@ -187,7 +187,6 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 80px;
     letter-spacing: 0.4px;
     white-space: nowrap;
     margin-left: 0;
@@ -970,6 +969,7 @@ Usage (In Ghost editor):
 
 .post-full-content hr {
     margin: 4vw 0;
+    border-top: 1px solid var(--gray15);
 }
 
 .post-full-content hr:after {
@@ -1321,6 +1321,7 @@ Usage (In Ghost editor):
 
 .author-card {
     display: flex;
+    padding-bottom: 20px;
 }
 
 .author-card .author-profile-image,
@@ -2166,91 +2167,8 @@ Usage (In Ghost editor):
     color: #032ead;
     background: white;
 }
-/* 13. social-row-------------------------------------- */
 
-.social-row {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    justify-content: space-between;
-    padding-bottom: 2vw;
-    padding-top: 2vw;
-}
-
-.social-row button {
-    flex: 1;
-    min-height: 40px;
-    text-align: center;
-    vertical-align: middle;
-    outline: none;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-.social-row .twitter {
-    border: 2px solid #00aced;
-    background: #00aced;
-    color: white;
-    fill: white;
-}
-
-.social-row .twitter:hover {
-    background: white;
-    color: #00aced;
-    fill: #00aced;
-}
-
-.social-row .email {
-    border: 2px solid #d7493c;
-    background: #d7493c;
-    color: white;
-    fill: white;
-}
-
-.social-row .email:hover {
-    background: white;
-    color: #d7493c;
-    fill: #d7493c;
-}
-
-.social-row .facebook {
-    border: 2px solid #1977f2;
-    background: #1977f2;
-    color: white;
-    fill: white;
-}
-
-.social-row .facebook:hover {
-    border: 2px solid #1977f2;
-    background: white;
-    color: #1977f2;
-    fill: #1977f2;
-}
-
-.social-row div {
-    width: 10px;
-    background: white;
-    min-height: 40px;
-}
-
-.social-row button svg {
-    height: 20px;
-    margin: 0 5px;
-}
-
-.social-row button:hover {
-    color: white;
-    fill: white;
-}
-
-@media (max-width: 850px) {
-    .social-row span {
-        display: none;
-    }
-}
-
-/* 14. buttons-row-------------------------------------- */
+/* 13. buttons-row-------------------------------------- */
 .read-more-row {
     display: flex;
     flex-direction: row;
@@ -2278,7 +2196,7 @@ Usage (In Ghost editor):
     background: #0a0a23;
     color: #eeeef0;
 }
-/* 15. tags
+/* 14. tags
 /* ---------------------------------------------------------- */
 
 .tags-row {

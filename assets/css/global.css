@@ -423,6 +423,7 @@ blockquote cite a {
 a {
     color: var(--dark-blue);
     text-decoration: none;
+    cursor: pointer;
 }
 
 a:hover {

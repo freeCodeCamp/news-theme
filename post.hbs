@@ -42,8 +42,6 @@ into the {body} of the default.hbs template --}}
                 {{/has}}
             </div>
 
-            {{> "social-row"}}
-
             {{#if feature_image}}
             <figure class="post-full-image">
                 {{!-- This is a responsive image, it loads different sizes depending on device
@@ -68,6 +66,9 @@ into the {body} of the default.hbs template --}}
                     {{content}}
                 </div>
                 {{/has}}
+                <hr />
+                {{> "social-row"}}
+                {{> "donation-row"}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
@@ -79,8 +80,6 @@ into the {body} of the default.hbs template --}}
             </section>
             {{/if}}
 
-            {{> "social-row"}}
-            {{> "comments"}}
 
         </article>
     </div>
