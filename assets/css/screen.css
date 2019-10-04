@@ -907,7 +907,7 @@ Usage (In Ghost editor):
 }
 
 /* Override third party iframe styles */
-.post-full-content iframe {
+.post-full-content iframe :not(.runkit-element) {
     margin: 0 auto !important;
 }
 
@@ -1191,6 +1191,13 @@ Usage (In Ghost editor):
 
 .gist {
     width: 100%;
+}
+
+/* Runkit embeds */
+
+pre.runkit-element {
+  padding: 25px;
+  overflow-x: hidden;
 }
 
 /* 7.1. Subscribe Form
