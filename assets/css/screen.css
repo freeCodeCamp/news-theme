@@ -253,6 +253,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 5px 15px;
     color: #fff;
     opacity: 1;
+    font-family: "Roboto Mono", monospace;
 }
 
 .nav li:hover {
@@ -1196,8 +1197,8 @@ Usage (In Ghost editor):
 /* Runkit embeds */
 
 pre.runkit-element {
-  padding: 25px;
-  overflow-x: hidden;
+    padding: 25px;
+    overflow-x: hidden;
 }
 
 /* 7.1. Subscribe Form
