@@ -45,10 +45,10 @@ cd content/theme/
 git clone https://github.com/freeCodeCamp/news-theme.git
 ```
 
-The theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+The theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/). After that, from the theme's root directory:
 
 ```bash
-npm run install
+npm install
 npm run develop
 ```
 
