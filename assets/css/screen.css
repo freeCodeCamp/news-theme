@@ -281,7 +281,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     cursor: pointer;
     margin-right: 5px;
     margin-top: 4px;
-    height: auto;
+    height: 31px;
 }
 
 .social-links {
@@ -358,7 +358,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     fill: #fff;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 999px) {
     .site-header {
         padding-right: 0;
         padding-left: 0;
@@ -371,7 +371,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
         position: absolute;
         background-color: var(--gray90);
         top: calc(var(--header-height) * 2);
-        left: 20px;
+        right: 20px;
     }
 
     .toggle-button-nav {
@@ -391,12 +391,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 @media (min-width: 1000px) {
     .site-nav-middle {
-        flex: 1 0 30%;
+        flex: 1 0 20%;
         margin-right: 0px;
     }
     .site-nav-left {
         display: flex;
-        flex: 1 0 30%;
+        flex: 1 0 35%;
         margin-left: 0px;
     }
     .site-nav-logo {
@@ -404,7 +404,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
         margin-right: auto;
     }
     .site-nav-right {
-        flex: 1 0 30%;
+        flex: 1 0 35%;
         margin-left: auto;
     }
     .main-nav-group {
@@ -2063,20 +2063,24 @@ pre.runkit-element {
 
 .footer-container p {
     margin: 0 0 1.45rem;
+    line-height: 30px;
 }
 
 .footer-container a {
     color: var(--gray85);
+    text-decoration: none;
 }
 
 .footer-container .col-header {
-    padding-bottom: 5px;
+    padding-bottom: 30px;
     font-weight: 700;
+    font-size: 16px;
 }
 .footer-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0 0 3rem;
 }
 
 .footer-col-1,
@@ -2098,20 +2102,35 @@ pre.runkit-element {
     flex-direction: column;
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 30px;
 }
 
 .footer-desc-col a {
     text-decoration: underline;
 }
 
+p.footer-donation {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.footer-container .col-spacer {
+    margin-top: -3rem;
+}
+
 @media (min-width: 500px) {
     .footer-col-1,
     .footer-col-2,
-    .footer-col-3,
-    .footer-col-4 {
-        flex: 1 0 45%;
+    .footer-col-3 {
+        flex: 1 0 50%;
         height: auto;
         font-size: 16.5;
+    }
+    .footer-col-3 {
+        margin-left: 50%;
+    }
+    .footer-container .col-spacer {
+        margin-top: -1.45rem;
     }
 }
 
@@ -2121,14 +2140,16 @@ pre.runkit-element {
     }
     .footer-col-1,
     .footer-col-2,
-    .footer-col-3,
-    .footer-col-4 {
-        flex: 1 0 100px;
+    .footer-col-3 {
+        flex: 1 0 25%;
         height: auto;
         font-size: 16.5;
     }
-    .footer-col-4 {
-        flex: 1 0 180px;
+    .footer-col-3 {
+        margin-left: 0px;
+    }
+    .footer-container .col-spacer {
+        margin-top: 54px;
     }
 }
 
@@ -2143,15 +2164,19 @@ pre.runkit-element {
         width: 1170px;
     }
     .footer-desc-col {
-        flex: 1 0 31%;
+        flex: 1 0 35%;
     }
     .footer-col-1,
     .footer-col-2,
     .footer-col-3 {
-        flex: 1 0 120px;
+        flex: 1 0 10%;
     }
-    .footer-col-4 {
-        flex: 4 0 100px;
+    .trending-guides {
+        flex: 1 0 15%;
+    }
+
+    p.footer-donation {
+        margin-top: 18px;
     }
 }
 
