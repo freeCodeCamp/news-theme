@@ -14,7 +14,7 @@
     background: var(--gray75);
     border: none;
     margin: 6px 0 0 0px;
-    padding: 0px 10px 0px 10px;
+    padding: 0 10px 0 30px;
     font-size: 18px;
     height: 26px;
     border-radius: 0px;
@@ -23,6 +23,44 @@
 
 #search-input::placeholder {
     color: var(--gray15);
+}
+
+.ais-SearchBox-submit {
+    position: absolute;
+    left: 0.5rem;
+    top: 25.5%;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    font-size: inherit;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.ais-SearchBox-submit:hover, .ais-SearchBox-submit:active {
+    cursor: pointer;
+}
+
+.ais-SearchBox-submit:focus {
+    outline: 0;
+}
+
+.ais-SearchBox-submitIcon {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    fill: var(--gray15);
 }
 
 .algolia-autocomplete {
@@ -142,18 +180,6 @@ a:active {
     color: #0a0a23;
 }
 
-/* Show only the first 5 hits on mobile */
-span.aa-suggestions .aa-suggestion:nth-child(n + 6) {
-    display: none;
-}
-
-@media (min-width: 767px) and (min-height: 768px) {
-    /* Show hits 6-8 on desktop and some tablets */
-    span.aa-suggestions .aa-suggestion:nth-child(n + 6) {
-        display: block;
-    }
-}
-
 .display-search form {
     display: flex;
     position: absolute;
@@ -177,5 +203,9 @@ span.aa-suggestions .aa-suggestion:nth-child(n + 6) {
         top: 0;
         padding: 0px;
         left: 15px;
+    }
+    .ais-SearchBox-submit {
+        left: 3rem;
+        top: 20%;
     }
 }

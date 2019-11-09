@@ -1,13 +1,23 @@
-<form onsubmit="event.preventDefault();">
-  <input type="search" placeholder="Search 5,000+ tutorials" id="search-input" />
+<form onsubmit="submitSearch()">
+  <div role="search" class="searchbox__wrapper">
+    <input type="search" placeholder="Search 5,000+ tutorials" id="search-input" />
+    <button type="submit" title="Submit your search query." class="ais-SearchBox-submit">
+      <svg class="ais-SearchBox-submitIcon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 40 40">
+        <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z" />
+      </svg>
+    </button>
+  </div>
 </form>
 
 <script>
   const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
   const index = client.initIndex('news');
-  autocomplete('#search-input', { hint: false }, [
+  const screenWidth = window.screen.width;
+  const screenHeight = window.screen.height;
+  const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
+  autocomplete('#search-input', { hint: false, debug: true }, [
     {
-      source: autocomplete.sources.hits(index, { hitsPerPage: 8 }),
+      source: autocomplete.sources.hits(index, { hitsPerPage: hitsToRender }),
       debounce: 250,
       templates: {
         suggestion: (suggestion, result) => {
@@ -30,7 +40,7 @@
           if (!query.isEmpty) {
             return `
               <hr/>
-              <a href="https://freecodecamp.org/news/search?query=${result.query}">
+              <a id="algolia-footer-selector" href="https://freecodecamp.org/news/search?query=${result.query}">
                 <div class="algolia-result algolia-footer">
                   <span>See all results for ${result.query}</span>
                 </div>
@@ -41,8 +51,8 @@
       }
     }
   ]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
-    // Set to true if hit is selected by mouse or enter key
-    hitSelected = true;
+    // Set to hit URL if hit is selected by mouse click or enter key
+    hitSelected = suggestion.url;
     // Do nothing on click, as the browser will already do it
     if (context.selectionMethod === 'click') {
       return;
@@ -53,9 +63,8 @@
 
   // If no hits in the Autocomplete dropdown are highlighted,
   // treat input like normal search bar
-  const input = document.getElementById("search-input");
-  let searchQuery;
-  let hitSelected;
+  const input = document.getElementById('search-input');
+  let searchQuery, hitSelected;
 
   // Get the value of the search bar after each key event
   input.addEventListener('input', e => {
@@ -63,8 +72,23 @@
   });
 
   input.addEventListener('keydown', e => {
-    if (event.key === "Enter" && !hitSelected && searchQuery) {
+    if (event.key === 'Enter' && !hitSelected && searchQuery) {
       window.location.assign(`https://freecodecamp.org/news/search?query=${searchQuery}`);
     }
   });
+
+  function submitSearch() {
+    event.preventDefault();
+    // Search for highlighted hit when search button
+    // is pressed to prevent redirecting to a previously
+    // highlighted one
+    hitSelected = document.getElementsByClassName('aa-cursor')[0];
+
+    if (hitSelected && searchQuery) {
+      const articleUrl = hitSelected.querySelector('a').href;
+      window.location.assign(articleUrl);
+    } else if (!hitSelected && searchQuery) {
+      window.location.assign(`https://freecodecamp.org/news/search?query=${searchQuery}`);
+    }
+  }
 </script>
