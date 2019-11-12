@@ -12,14 +12,17 @@
         "develop": "npm run dev",
         "dev": "gulp",
         "zip": "gulp zip",
-        "test": "gscan ."
+        "test": "gscan .",
+        "start-ghost": "cd ../../.. && ghost start"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/freeCodeCamp/news-theme.git"
     },
     "bugs": "https://github.com/freeCodeCamp/news-theme/issues",
-    "contributors": "https://github.com/freeCodeCamp/news-theme/graphs/contributors",
+    "contributors": [
+        "https://github.com/freeCodeCamp/news-theme/graphs/contributors"
+    ],
     "author": {
         "email": "team@freecodecamp.org",
         "name": "freeCodeCamp.org",

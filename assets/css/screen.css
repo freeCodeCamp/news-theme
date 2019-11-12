@@ -226,8 +226,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo img {
     display: block;
     width: auto;
-    height: 25px;
-    margin-top: 7px;
+    height: 24px;
+    margin: 7px 0px;
 }
 
 .nav {
@@ -2072,7 +2072,7 @@ pre.runkit-element {
 }
 
 .footer-container .col-header {
-    padding-bottom: 30px;
+    padding-bottom: 15px;
     font-weight: 700;
     font-size: 16px;
 }
@@ -2080,7 +2080,7 @@ pre.runkit-element {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 0 3rem;
+    margin: 0px;
 }
 
 .footer-col-1,
@@ -2093,7 +2093,14 @@ pre.runkit-element {
     padding-left: 15px;
     padding-right: 15px;
     font-size: 15px;
-    margin: 0 0 1.45rem;
+    margin: 0 0 3rem;
+}
+
+.footer-col-1 a,
+.footer-col-2 a,
+.footer-col-3 a,
+.footer-col-4 a {
+    padding: 5px 0px;
 }
 
 .footer-desc-col {
@@ -2115,7 +2122,7 @@ p.footer-donation {
 }
 
 .footer-container .col-spacer {
-    margin-top: -1.45rem;
+    margin-top: -3rem;
 }
 
 @media (min-width: 500px) {
@@ -2129,9 +2136,9 @@ p.footer-donation {
     .footer-col-3 {
         margin-left: 50%;
     }
-    .footer-container .col-spacer {
+    /* .footer-container .col-spacer {
         margin-top: -1.45rem;
-    }
+    } */
 }
 
 @media (min-width: 800px) {
@@ -2149,7 +2156,7 @@ p.footer-donation {
         margin-left: 0px;
     }
     .footer-container .col-spacer {
-        margin-top: 54px;
+        margin-top: 40px;
     }
 }
 
