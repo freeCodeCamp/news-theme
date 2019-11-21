@@ -2271,3 +2271,66 @@ p.footer-donation {
 .tags-row a:hover {
     text-decoration: none;
 }
+
+/* 14. donation-row and social-row
+/* ---------------------------------------------------------- */
+
+.social-row {
+    margin: 2em 0 0 0;
+}
+
+.donation-row h4 {
+    margin: 0 0 1.5em 0;
+}
+
+a.donation-cta {
+    display: flex;
+    align-items: flex-start;
+    justify-items: center;
+    text-decoration: none;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+}
+
+.donation-button {
+    width: content;
+    min-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: 2px solid #0a0a23;
+    background: yellow;
+    color: #0a0a23;
+    text-decoration: none;
+    padding: 0 20px;
+    font-weight: 700;
+    margin: 0px 0px 10px 0px;
+}
+
+img.payments {
+    width: auto;
+    margin: auto 0;
+    height: 30px;
+}
+
+.donation-button:hover {
+    background: #0a0a23;
+    color: #eeeef0;
+}
+
+.yellow-highlight {
+    background-color: yellow;
+    font-weight: 700;
+}
+
+@media (min-width: 700px) {
+    a.donation-cta {
+        flex-direction: row;
+    }
+    .donation-button {
+        margin: 0px 10px 0px 0px;
+    }
+}
