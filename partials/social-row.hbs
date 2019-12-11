@@ -1,12 +1,17 @@
 {{!-- Everything inside the #author tags pulls data from the post --}}
 <p class="social-row">
-    If this article was helpful,
 
-    <a
-        onclick="window.open(`https://twitter.com/share?text={{encode title}}{{#primary_author}}{{#if twitter}}%20by%20{{twitter}}{{/if}}{{/primary_author}}&amp;url={{url absolute="true"}}`, 'share-twitter', 'width=550,height=235');return false;">
-        tweet it</a>
-    or
-    <a
-        onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}`, 'share-facebook','width=580,height=296');return false;">
-        share it</a>.
+    {{#primary_author}}
+    {{#if twitter}}
+    If you read this far, tweet to the author to show them you care.
+    <a class='cta-button'
+        onclick="window.open(`https://twitter.com/share?text=Thank%20you%20{{twitter}}%20for%20writing%20this%20helpful%20article%3B%20{{encode ../title}}&amp;url={{../url}}`, 'share-twitter', 'width=550,height=235');return false;">Tweet
+        a thanks</a>
+    {{else}}
+    If this article was helpful,
+    <a class='cta-button' onclick="window.open(`https://twitter.com/share?text={{encode title}}&amp;url={{../url}}`, 'share-twitter'
+                , 'width=550,height=235' );return false;">
+        tweet it.</a>
+    {{/if}}
+    {{/primary_author}}
 </p>
