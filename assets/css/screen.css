@@ -2294,19 +2294,14 @@ p.footer-donation {
 
 a.cta-button {
     width: content;
-    min-height: 40px;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     outline: none;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid var(--gray90);
+    border: 3px solid var(--gray90);
     background: var(--gray10);
     color: var(--gray90);
     text-decoration: none;
     padding: 0 20px;
-    margin: 0px 0px 10px 0px;
 }
 
 .cta-button:hover {
