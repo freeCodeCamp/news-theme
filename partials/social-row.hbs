@@ -5,12 +5,11 @@
     {{#if twitter}}
     If you read this far, tweet to the author to show them you care.
     <a class='cta-button'
-        onclick="window.open(`https://twitter.com/share?text=Thank%20you%20{{twitter}}%20for%20writing%20this%20helpful%20article%3B%20{{encode ../title}}&amp;url={{../url}}`, 'share-twitter', 'width=550,height=235');return false;">Tweet
+        onclick="window.open(`https://twitter.com/intent/tweet?text=Thank%20you%20{{twitter}}%20for%20writing%20this%20helpful%20article%2e%0A%0A{{encode ../title}}%0A%0A{{encode ../url}}`, 'share-twitter', 'width=550, height=235'); return false;">Tweet
         a thanks</a>
     {{else}}
     If this article was helpful,
-    <a class='cta-button' onclick="window.open(`https://twitter.com/share?text={{encode title}}&amp;url={{../url}}`, 'share-twitter'
-                , 'width=550,height=235' );return false;">
+    <a class='cta-button' onclick="window.open(`https://twitter.com/intent/tweet?text={{encode ../title}}%0A%0A{{encode ../url}}`, 'share-twitter', 'width=550,height=235' ); return false;">
         tweet it.</a>
     {{/if}}
     {{/primary_author}}
