@@ -6,11 +6,6 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner">
         <div class="post-feed">
-            {{!-- <div class="post-card jumbotron">
-                <h1>欢迎来到 freeCodeCamp 社区</h1>
-                <h2>非营利组织 freeCodeCamp 以“帮助人们免费学习编程为使命”，通过开源协作创建了大量优质编程教程，已帮助全球数百万人学习编程，成为开发者。在这里分享你的文章吧！阅读<a href="https://chinese.freecodecamp.org/forum/t/freecodecamp/374">详情</a>。</h2>
-            </div> --}}
-
             {{#foreach posts}}
             {{> "post-card"}}
             {{/foreach}}

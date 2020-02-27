@@ -11,6 +11,10 @@
     <title>{{meta_title}}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{#is "home"}}
+    <meta name="keywords"
+        content="freeCodeCamp,freeCodeCamp中文,编程,前端,程序员,文章,正则表达式,Python,JavaScript,AWS,json,HTML,CSS,Bootstrap,React,Vue,Webpack">
+    {{/is}}
 
     <link rel="stylesheet" type="text/css" href="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism.min.css" />
     <link rel="stylesheet" type="text/css"
@@ -32,12 +36,6 @@
         {{> "site-nav"}}
 
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-        <div class="under-header-content jumbotron">
-            <h1 class="site-title">文章</h1>
-            <h2 class="site-description">
-                非营利组织 freeCodeCamp 以“帮助人们免费学习编程为使命”，通过开源协作创建了大量优质编程教程，已帮助全球数百万人学习编程，成为开发者。在这里分享你的文章吧！阅读<a href="https://chinese.freecodecamp.org/forum/t/freecodecamp/374">详情</a>。
-            </h2>
-        </div>
         {{{body}}}
 
         {{!-- The footer at the very bottom of the screen --}}
