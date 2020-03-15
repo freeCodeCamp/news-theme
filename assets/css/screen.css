@@ -1766,133 +1766,135 @@ pre.runkit-element {
 }
 
 .kg-bookmark-card {
-  background: var(--gray00);
-  width: 100%;
+    background: var(--gray00);
+    width: 100%;
 }
 
 .kg-card + .kg-bookmark-card {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .kg-bookmark-card {
-  background: var(--gray00);
-  width: 100%;
+    background: var(--gray00);
+    width: 100%;
 }
 
 .kg-card + .kg-bookmark-card {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .post-full-content .kg-bookmark-container {
-  display: flex;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: var(--gray90);
-  text-decoration: none;
-  min-height: 148px;
-  box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
-  border-radius: 3px;
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: var(--gray90);
+    text-decoration: none;
+    min-height: 148px;
+    box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.15),
+        0 0 1px rgba(0, 0, 0, 0.09);
+    border-radius: 3px;
 }
 
 .kg-bookmark-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  align-items: flex-start;
-  justify-content: start;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    justify-content: start;
+    padding: 20px;
 }
 
 .kg-bookmark-title {
-  font-size: 1.6rem;
-  line-height: 1.5em;
-  font-weight: 600;
-  color: var(--gray90);
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    font-weight: 600;
+    color: var(--gray90);
 }
 
 .post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .kg-bookmark-description {
-  display: -webkit-box;
-  font-size: 1.5rem;
-  line-height: 1.5em;
-  color: var(--gray75);
-  font-weight: 400;
-  margin-top: 12px;
-  max-height: 48px;
-  overflow-y: hidden;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+    display: -webkit-box;
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    color: var(--gray75);
+    font-weight: 400;
+    margin-top: 12px;
+    max-height: 48px;
+    overflow-y: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .kg-bookmark-thumbnail {
-  position: relative;
-  min-width: 33%;
-  max-height: 100%;
+    position: relative;
+    min-width: 33%;
+    max-height: 100%;
 }
 
 .kg-bookmark-thumbnail img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0 3px 3px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 3px 3px 0;
 }
 
 .kg-bookmark-metadata {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--gray75);
-  margin-top: 14px;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--gray75);
+    margin-top: 14px;
+    flex-wrap: wrap;
 }
 
 .post-full-content .kg-bookmark-icon {
-  width: 22px;
-  height: 22px;
-  margin-right: 8px;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
 }
 
 .kg-bookmark-author {
-  line-height: 1.5em;
+    line-height: 1.5em;
 }
 
 .kg-bookmark-author:after {
-  content: "•";
-  margin: 0 6px;
+    content: "•";
+    margin: 0 6px;
 }
 
 .kg-bookmark-publisher {
-  overflow: hidden;
-  line-height: 1.5em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 240px;
+    overflow: hidden;
+    line-height: 1.5em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 240px;
 }
 
 @media (max-width: 500px) {
-  .post-full-content .kg-bookmark-container {
-      flex-direction: column;
-  }
+    .post-full-content .kg-bookmark-container {
+        flex-direction: column;
+    }
 
-  .kg-bookmark-thumbnail {
-      order: 1;
-      width: 100%;
-      min-height: 160px;
-  }
+    .kg-bookmark-thumbnail {
+        order: 1;
+        width: 100%;
+        min-height: 160px;
+    }
 
-  .kg-bookmark-thumbnail img {
-      border-radius: 3px 3px 0 0;
-  }
+    .kg-bookmark-thumbnail img {
+        border-radius: 3px 3px 0 0;
+    }
 
-  .kg-bookmark-content {
-      order: 2
-  }
+    .kg-bookmark-content {
+        order: 2;
+    }
 }
 
 /* 8. Author Template
@@ -2446,4 +2448,21 @@ a.cta-button {
     .donation-button {
         margin: 0px 10px 0px 0px;
     }
+}
+
+/* 15. under-header-content donation 
+/* ---------------------------------------------------------- */
+
+.under-header-content.jumbotron {
+    min-height: auto;
+    padding: 40px 10px 30px;
+}
+
+.under-header-content.jumbotron a {
+    color: white;
+    text-decoration: underline;
+}
+
+.under-header-content.jumbotron a:hover {
+    text-decoration: none;
 }
