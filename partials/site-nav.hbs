@@ -17,7 +17,7 @@
         </div>
     </div>
     <button class="site-nav-right toggle-button-nav">
-        Menu
+        Donate
     </button>
 </nav>
 
@@ -25,10 +25,7 @@
 <script>
     $(document).ready(function () {
         $(".toggle-button-nav").click(function () {
-            $(".nav").toggleClass("show-main-nav-items");
-            $(".site-nav").toggleClass("expand-nav");
-            $(".toggle-button-nav").toggleClass("reverse-toggle-color");
-            $(".site-nav-left").toggleClass("display-search");
+            window.location.href = "https://www.freecodecamp.org/donate/";
         });
     });
 </script>

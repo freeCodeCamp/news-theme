@@ -70,12 +70,6 @@ body {
     padding: 0 4vw;
 }
 
-/* padding ported from master */
-.nav-padding {
-    position: relative;
-    padding: 0 15px;
-}
-
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
@@ -157,6 +151,14 @@ body {
     }
     .site-description {
         font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 375px) {
+    /* padding ported from master */
+    .nav-padding {
+        position: relative;
+        padding: 0 15px;
     }
 }
 
@@ -276,7 +278,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 2px 14px 3px;
     border: 1px solid #fff;
     outline: none;
-    background-color: var(--gray90);
+    background-color: #d0021c;
     cursor: pointer;
     margin-right: 5px;
     margin-top: 4px;
@@ -2456,6 +2458,7 @@ a.cta-button {
 .under-header-content.jumbotron {
     min-height: auto;
     padding: 40px 10px 30px;
+    margin-bottom: -60px;
 }
 
 .under-header-content.jumbotron a {
