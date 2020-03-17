@@ -1,9 +1,7 @@
 <script>
     (function () {
         var stripe = Stripe('pk_live_E6Z6xPM8pEsJziHW905zpAvF');
-        var checkoutLink = document.getElementById('checkout-link-sku_GvCnSmqAJ5bJKH');
         var checkoutButton = document.getElementById('checkout-button-sku_GvCnSmqAJ5bJKH');
-        checkoutLink.addEventListener('click', donate);
         checkoutButton.addEventListener('click', donate);
 
         function donate() {
