@@ -16,17 +16,11 @@
             {{/if}}
         </div>
     </div>
-    <button class="site-nav-right toggle-button-nav">
+    <button class="site-nav-right toggle-button-nav" id="checkout-button-sku_GvCnSmqAJ5bJKH">
         Donate
     </button>
 </nav>
 
 {{#contentFor "scripts"}}
-<script>
-    $(document).ready(function () {
-        $(".toggle-button-nav").click(function () {
-            window.location.href = "https://www.freecodecamp.org/donate/";
-        });
-    });
-</script>
+    {{> "stripe-donation"}}
 {{/contentFor}}
