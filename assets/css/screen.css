@@ -283,6 +283,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin-right: 5px;
     margin-top: 4px;
     height: 31px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.toggle-button-nav:hover {
+    text-decoration: none;
 }
 
 .social-links {
