@@ -61,7 +61,7 @@ body {
 .site-main {
     z-index: 100;
     flex-grow: 1;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 /* Full width page blocks */
@@ -113,7 +113,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 80px 10px 30px 10px;
+    padding: 40px 10px 30px 10px;
     min-height: 200px;
     text-align: center;
     color: white;
@@ -274,20 +274,20 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .toggle-button-nav {
-    display: none;
-    padding: 2px 14px 3px;
+    padding: 2px 14px;
     border: 1px solid #fff;
     outline: none;
     background-color: #d0021c;
     cursor: pointer;
     margin-right: 5px;
-    margin-top: 4px;
-    height: 31px;
+    margin-left: auto;
+    height: 30px;
     text-decoration: none;
     color: #fff;
 }
 
 .toggle-button-nav:hover {
+    background-color: #8a0011;
     text-decoration: none;
 }
 
@@ -380,20 +380,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
         top: calc(var(--header-height) * 2);
         right: 20px;
     }
-
-    .toggle-button-nav {
-        display: flex;
-    }
-    .show-main-nav-items {
-        display: flex;
-    }
-    .expand-nav {
-        min-height: calc(3 * var(--header-height));
-    }
-    .reverse-toggle-color {
-        background-color: white;
-        color: var(--theme-color);
-    }
 }
 
 @media (min-width: 1000px) {
@@ -412,9 +398,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
     .site-nav-right {
         flex: 1 0 35%;
-        margin-left: auto;
-    }
-    .main-nav-group {
         margin-left: auto;
     }
 }
@@ -2464,7 +2447,6 @@ a.cta-button {
 .under-header-content.jumbotron {
     min-height: auto;
     padding: 40px 10px 30px;
-    margin-bottom: -60px;
 }
 
 .under-header-content.jumbotron a {
