@@ -2160,25 +2160,6 @@ Usage (In Ghost editor):
 
 /* 13. discourse integration-------------------------------------- */
 
-#discourse-comments {
-    border: 1px solid #eeeef0;
-    padding: 70px 100px;
-}
-
-@media (max-width: 1170px) {
-    #discourse-comments {
-        padding: 5vw 7vw;
-    }
-}
-
-#trigger-load-comments {
-    text-align: center;
-    width: 100%;
-    font-size: 1.5em;
-    color: #032ead;
-    background: white;
-}
-
 /* 14. buttons-row-------------------------------------- */
 .read-more-row {
     display: flex;
