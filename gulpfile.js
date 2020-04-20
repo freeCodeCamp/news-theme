@@ -5,7 +5,7 @@ var gutil = require('gulp-util');
 var livereload = require('gulp-livereload');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
-var zip = require('gulp-zip');
+var gulpZip = require('gulp-zip');
 var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
 
@@ -22,17 +22,12 @@ var swallowError = function swallowError(error) {
   this.emit('end');
 };
 
-var nodemonServerInit = function () {
+const initLivereload = function (cb) {
   livereload.listen(1234);
+  cb();
 };
 
-gulp.task('build', ['css', 'js'], function () {
-  return nodemonServerInit();
-});
-
-gulp.task('generate', ['css', 'js']);
-
-gulp.task('css', function () {
+const css = () => {
   var processors = [
     easyimport,
     customProperties,
@@ -49,9 +44,9 @@ gulp.task('css', function () {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/built/'))
     .pipe(livereload());
-});
+};
 
-gulp.task('js', function () {
+const js = () => {
   var jsFilter = filter(['**/*.js'], { restore: true });
 
   return gulp
@@ -64,23 +59,26 @@ gulp.task('js', function () {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/built/'))
     .pipe(livereload());
-});
+};
 
-gulp.task('watch', function () {
-  gulp.watch('assets/css/**', ['css']);
-});
+const watch = (cb) => {
+  gulp.watch('assets/css/**', css);
+  cb();
+};
 
-gulp.task('zip', ['css', 'js'], function () {
+const zip = gulp.series(gulp.parallel(css, js), function zipToDest() {
   var targetDir = 'dist/';
   var themeName = require('./package.json').name;
   var filename = themeName + '.zip';
 
   return gulp
     .src(['**', '!node_modules', '!node_modules/**', '!dist', '!dist/**'])
-    .pipe(zip(filename))
+    .pipe(gulpZip(filename))
     .pipe(gulp.dest(targetDir));
 });
 
-gulp.task('default', ['build'], function () {
-  gulp.start('watch');
-});
+const build = gulp.series(gulp.parallel(css, js), initLivereload);
+
+exports.zip = zip;
+
+exports.default = gulp.series(build, watch);
