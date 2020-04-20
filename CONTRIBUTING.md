@@ -1,4 +1,8 @@
-## First time using a Ghost theme?
+# How to work on freeCodeCamp.org's developer news theme.
+
+The developer news site is powered by Ghost. We use a custom theme for the look and feel of the site. The source code of the theme is available here: <https://github.com/freeCodeCamp/news-theme>.
+
+## Ghost theme
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
 
