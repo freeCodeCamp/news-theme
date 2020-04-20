@@ -474,7 +474,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .post-card-excerpt {
@@ -1792,7 +1792,7 @@ pre.runkit-element {
     flex-direction: column;
     flex-grow: 1;
     align-items: flex-start;
-    justify-content: start;
+    justify-content: flex-start;
     padding: 20px;
 }
 
@@ -2442,7 +2442,7 @@ a.cta-button {
     }
 }
 
-/* 15. under-header-content donation 
+/* 15. under-header-content donation
 /* ---------------------------------------------------------- */
 
 .under-header-content.jumbotron {

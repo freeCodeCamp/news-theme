@@ -1,10 +1,21 @@
-dist: xenial
 language: node_js
+
 node_js:
-      - 10
+  - 'lts/*'
 
-cache: yarn
+cache:
+  directories:
+    - '$HOME/.npm'
 
-# Don't run builds for renovate PRs
-if: NOT head_branch =~ ^renovate
+env:
+  global:
+    - NO_UPDATE_NOTIFIER=1
+    - NODE_NO_WARNINGS=1
 
+before_install:
+  - npm config set loglevel warn
+
+install: npm ci
+
+script:
+  - npm run test:ci

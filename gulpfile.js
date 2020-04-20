@@ -32,7 +32,7 @@ const css = () => {
     easyimport,
     customProperties,
     colorFunction(),
-    autoprefixer({ browsers: ['last 2 versions'] }),
+    autoprefixer(),
     cssnano()
   ];
 

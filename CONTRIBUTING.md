@@ -56,7 +56,7 @@ One really neat trick is that you can also create custom one-off templates just 
 4. Install dependencies and develop the theme
 
    ```sh
-   npm install
+   npm ci
    npm run develop
    ```
 
