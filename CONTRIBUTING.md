@@ -1,82 +1,98 @@
-# How to work on freeCodeCamp.org's developer news theme.
+# How to work on freeCodeCamp.org's developer news theme
 
-The developer news site is powered by Ghost. We use a custom theme for the look and feel of the site. The source code of the theme is available here: <https://github.com/freeCodeCamp/news-theme>.
+The developer news also known as [`/news`](https://www.freecodecamp.org/news) site is powered by [Ghost](https://ghost.org/). We use a custom theme for the look and feel of the site. The source code of the theme is available here: <https://github.com/freeCodeCamp/news-theme>.
 
-## Ghost theme
+## The Theme
 
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
+Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes. The theme used on `/news` is based off of the default [casper theme](https://github.com/TryGhost/Casper).
 
-We've documented our default theme pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
+The default theme pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, Ghost also has a full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
 
 **The main files are:**
 
--   `default.hbs` - The main template file
--   `index.hbs` - Used for the home page
--   `post.hbs` - Used for individual posts
--   `page.hbs` - Used for individual pages
--   `tag.hbs` - Used for tag archives
--   `author.hbs` - Used for author archives
+- `default.hbs` - The main template file
+- `index.hbs` - Used for the home page
+- `post.hbs` - Used for individual posts
+- `page.hbs` - Used for individual pages
+- `tag.hbs` - Used for tag archives
+- `author.hbs` - Used for author archives
 
 One really neat trick is that you can also create custom one-off templates just by adding the slug of a page to a template file. For example:
 
--   `page-about.hbs` - Custom template for the `/about/` page
--   `tag-news.hbs` - Custom template for `/tag/news/` archive
--   `author-ali.hbs` - Custom template for `/author/ali/` archive
+- `page-about.hbs` - Custom template for the `/about/` page
+- `tag-news.hbs` - Custom template for `/tag/news/` archive
+- `author-ali.hbs` - Custom template for `/author/ali/` archive
 
 ## Development
 
-Get Ghost installed locally.
+1. Get Ghost installed locally.
 
-```bash
-npm install -g ghost-cli@latest
-mkdir ghost-local-site
-cd ghost-local-site
-```
+   ```sh
+   npm install -g ghost-cli@latest
+   mkdir ghost-local-site
+   cd ghost-local-site
+   ```
 
-Currently freeCodeCamp uses Ghost version `2.9.0`
+   ```sh
+   ghost install local
+   ghost start
+   ```
 
-```bash
-ghost install <version> local
-ghost start
-```
+   > Note: Currently freeCodeCamp uses Ghost version `2.9.0`, so make sure you are using a version higher than that.
 
-Be sure to run `ghost` commands from the `ghost-local-site` directory.
+   Be sure to run `ghost` commands from the `ghost-local-site` directory. Follow additional instructions on [Ghost's official documentation](https://docs.ghost.org) if are not familiar with its interface.
 
-Follow additional instructions on [Ghost's official documentation](https://docs.ghost.org) if are not familiar with its interface.
+2. Fork and clone the repository in your theme directory:
 
-Now you can clone this project in your theme directory:
+   ```sh
+   cd content/themes/
+   git clone https://github.com/YOUR_USERNAME/news-theme.git
+   ```
 
-```bash
-cd content/theme/
-git clone https://github.com/freeCodeCamp/news-theme.git
-```
+3. Make sure you have all the pre-requisites.
 
-The theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/). Make sure that your Node version is compatible with `ghost`. After that, from the theme's root directory:
+   The theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node.js](https://nodejs.org/). Make sure that your Node.js version is compatible with `ghost`.
 
-```bash
-npm install
-npm run develop
-```
+4. Install dependencies and develop the theme
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+   ```sh
+   npm install
+   npm run develop
+   ```
 
-To access the development site, enter `http://localhost:2368/ghost/` into your address bar. You will also need to create a Ghost account and set up a theme. The name is not important.
+5. Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
 
-Once you've done this, go to `http://localhost:2368/ghost/#/settings/design` and scroll to the bottom. You should see `INSTALLED THEMES casper(default)` and `freecodecamp-news-theme`. Click on activate and you should now see the freeCodeCamp theme in your Ghost website.
+6. Access the development site.
 
-The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+   a. Enter `http://localhost:2368/ghost/` into your address bar. Continue with the setup prompted on the page (if running ghost for the first time).
 
-```bash
-npm run zip
-```
+   b. _(One-time only, during setup)_ Restart Ghost, on a separate terminal once to ensure the theme is available.
 
-## PostCSS Features Used
+   ```sh
+   cd ghost-local-site
+   ghost restart
+   ```
 
--   Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
--   Variables - Simple pure CSS variables
--   [Color Function](https://github.com/postcss/postcss-color-function)
+   c. _(One-time only, during setup)_ Once you've done this, go to `http://localhost:2368/ghost/#/settings/design` and scroll to the bottom. Make sure you click activate on the `freecodecamp-news-theme`.
 
-## SVG Icons
+7. Zip the final code and make a pull-request
+
+   The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which we can then upload to the production site.
+
+   When you make a PR, please make sure you have run the below script prior to commiting the code and sending a PR.
+
+   ```sh
+   npm run zip
+   ```
+## Other Reference and resources
+
+### PostCSS Features Used
+
+- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
+- Variables - Simple pure CSS variables
+- [Color Function](https://github.com/postcss/postcss-color-function)
+
+### SVG Icons
 
 The theme uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
 
