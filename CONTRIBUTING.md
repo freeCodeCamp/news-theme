@@ -24,7 +24,7 @@ One really neat trick is that you can also create custom one-off templates just 
 Get Ghost installed locally.
 
 ```bash
-npm install -g ghost
+npm install -g ghost-cli@latest
 mkdir ghost-local-site
 cd ghost-local-site
 ```
@@ -36,6 +36,8 @@ ghost install <version> local
 ghost start
 ```
 
+Be sure to run `ghost` commands from the `ghost-local-site` directory.
+
 Follow additional instructions on [Ghost's official documentation](https://docs.ghost.org) if are not familiar with its interface.
 
 Now you can clone this project in your theme directory:
@@ -45,7 +47,7 @@ cd content/theme/
 git clone https://github.com/freeCodeCamp/news-theme.git
 ```
 
-The theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/). After that, from the theme's root directory:
+The theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/). Make sure that your Node version is compatible with `ghost`. After that, from the theme's root directory:
 
 ```bash
 npm install
@@ -53,6 +55,10 @@ npm run develop
 ```
 
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+
+To access the development site, enter `http://localhost:2368/ghost/` into your address bar. You will also need to create a Ghost account and set up a theme. The name is not important.
+
+Once you've done this, go to `http://localhost:2368/ghost/#/settings/design` and scroll to the bottom. You should see `INSTALLED THEMES casper(default)` and `freecodecamp-news-theme`. Click on activate and you should now see the freeCodeCamp theme in your Ghost website.
 
 The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 
