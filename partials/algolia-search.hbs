@@ -17,8 +17,7 @@
   const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
   autocomplete('#search-input', { 
       hint: false,
-      keyboardShortcuts: ['s', 191],
-      debug: true
+      keyboardShortcuts: ['s', 191]
     }, [
     {
       source: autocomplete.sources.hits(index, { hitsPerPage: hitsToRender }),
