@@ -17,7 +17,8 @@
   const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
   autocomplete('#search-input', { 
       hint: false,
-      keyboardShortcuts: ['s', 191]
+      keyboardShortcuts: ['s', 191],
+      debug: true
     }, [
     {
       source: autocomplete.sources.hits(index, { hitsPerPage: hitsToRender }),
@@ -36,20 +37,25 @@
         empty: (options) => {
           hits = false;
           return `
-            <div class="algolia-result">
-              No tutorials found
+            <div class="aa-suggestion footer-suggestion no-hits-footer">
+              <div class="algolia-result">
+                <span>
+                  No tutorials found
+                </span>
+              </div>
             </div>
           `;
         },
         footer: (query, result) => {
           if (!query.isEmpty) {
             return `
-              <hr/>
-              <a id="algolia-footer-selector" href="https://www.freecodecamp.org/news/search?query=${result.query}">
-                <div class="algolia-result algolia-footer">
-                  <span>See all results for ${result.query}</span>
-                </div>
-              </a>
+              <div class="aa-suggestion footer-suggestion">
+                <a id="algolia-footer-selector" href="https://www.freecodecamp.org/news/search?query=${result.query}">
+                  <div class="algolia-result algolia-footer">
+                    <span>See all results for ${result.query}</span>
+                  </div>
+                </a>
+              </div>
             `;
           }
         }
