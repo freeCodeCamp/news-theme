@@ -274,21 +274,33 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .toggle-button-nav {
-  padding: 2px 14px;
-  border: 1px solid #fff;
+  padding: 0px 14px;
   outline: none;
-  background-color: #d0021c;
   cursor: pointer;
   margin-right: 5px;
   margin-left: auto;
   height: 30px;
   line-height: 24px; /* centers the text for all browser font sizes */
   text-decoration: none;
-  color: #fff;
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid #feac32;
+  color: var(--theme-color);
 }
 
-.toggle-button-nav:hover {
-  background-color: #8a0011;
+.toggle-button-nav:hover,
+.toggle-button-nav:focus,
+.toggle-button-nav:active:hover {
+  background-color: #fecc4c;
+  border-width: 3px;
+  border-color: #f1a02a;
+  background-image: none;
+  color: var(--theme-color);
+  text-decoration: none;
+}
+.toggle-button-nav:active {
+  background-image: none;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
