@@ -1707,10 +1707,11 @@ pre.runkit-element {
 }
 
 .post-full-content figcaption {
-  margin: 1em 0 0;
+  margin: 1em auto 0;
   font-size: 80%;
-  line-height: 1.6em;
+  line-height: 1.5em;
   text-align: center;
+  max-width: 1040px;
 }
 
 .kg-width-full figcaption {
@@ -1767,6 +1768,15 @@ pre.runkit-element {
 .kg-image-card.kg-width-wide + .kg-gallery-card,
 .kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
   margin: -2.25em 0 3em;
+}
+
+/* Standardize width for all code blocks on mobile and desktop */
+.kg-code-card {
+  width: 100%;
+}
+
+.kg-code-card pre {
+  margin: 0;
 }
 
 .kg-bookmark-card {
