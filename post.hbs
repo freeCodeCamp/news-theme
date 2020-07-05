@@ -38,7 +38,7 @@ into the {body} of the default.hbs template --}}
 
                 {{#has author="freeCodeCamp.org"}}
                 {{else}}
-                {{> "byline-single"}}
+                {{> "byline-single-no-bio"}}
                 {{/has}}
             </div>
 
@@ -67,6 +67,19 @@ into the {body} of the default.hbs template --}}
                 </div>
                 {{/has}}
                 <hr />
+                <div class="post-full-author-header">
+
+                    {{!-- There are two options for how we display the byline/author-info.
+                If the post has more than one author, we load a specific template
+                from includes/byline-multiple.hbs, otherwise, we just use the
+                default byline. --}}
+
+                    {{#has author="freeCodeCamp.org"}}
+                    {{else}}
+                    {{> "byline-single"}}
+                    {{/has}}
+                </div>
+                <hr />
                 {{> "social-row"}}
                 {{> "learn-cta-row"}}
             </section>
@@ -79,6 +92,8 @@ into the {body} of the default.hbs template --}}
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
+
+
 
 
         </article>
