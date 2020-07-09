@@ -38,7 +38,7 @@ into the {body} of the default.hbs template --}}
 
                 {{#has author="freeCodeCamp.org"}}
                 {{else}}
-                {{> "byline-single"}}
+                {{> "byline-single-no-bio"}}
                 {{/has}}
             </div>
 
@@ -67,6 +67,15 @@ into the {body} of the default.hbs template --}}
                 </div>
                 {{/has}}
                 <hr />
+
+                {{#has author="freeCodeCamp.org"}}
+                {{else}}
+                <div class="post-full-author-header">
+                    {{> "byline-single"}}
+                </div>
+                <hr />
+                {{/has}}
+
                 {{> "social-row"}}
                 {{> "learn-cta-row"}}
             </section>
@@ -79,6 +88,8 @@ into the {body} of the default.hbs template --}}
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
+
+
 
 
         </article>
