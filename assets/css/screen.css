@@ -1717,7 +1717,7 @@ pre.runkit-element {
 }
 
 .post-full-content figure img {
-  margin: 0;
+  margin: 0 auto;
 }
 
 .post-full-content figcaption {
