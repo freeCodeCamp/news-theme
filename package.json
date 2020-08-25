@@ -9,17 +9,21 @@
     },
     "license": "MIT",
     "scripts": {
-        "develop": "npm run dev",
-        "dev": "gulp",
+        "develop": "gulp",
+        "dev": "npm run develop",
         "zip": "gulp zip",
-        "test": "gscan ."
+        "test": "gscan .",
+        "test:ci": "gscan --fatal --verbose .",
+        "start-ghost": "cd ../../.. && ghost start"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/freeCodeCamp/news-theme.git"
     },
     "bugs": "https://github.com/freeCodeCamp/news-theme/issues",
-    "contributors": "https://github.com/freeCodeCamp/news-theme/graphs/contributors",
+    "contributors": [
+        "https://github.com/freeCodeCamp/news-theme/graphs/contributors"
+    ],
     "author": {
         "email": "team@freecodecamp.org",
         "name": "freeCodeCamp.org",
@@ -29,22 +33,34 @@
         "ghost-theme"
     ],
     "devDependencies": {
-        "autoprefixer": "6.3.6",
-        "cssnano": "3.7.1",
-        "gscan": "^2.6.0",
-        "gulp": "3.9.1",
-        "gulp-filter": "5.1.0",
-        "gulp-livereload": "3.8.1",
-        "gulp-postcss": "6.1.1",
-        "gulp-sourcemaps": "1.6.0",
-        "gulp-uglify": "3.0.1",
-        "gulp-util": "3.0.7",
-        "gulp-watch": "4.3.8",
-        "gulp-zip": "4.0.0",
-        "postcss-color-function": "2.0.1",
-        "postcss-custom-properties": "5.0.1",
-        "postcss-easy-import": "1.0.1"
+        "@freecodecamp/eslint-config": "^2.0.2",
+        "autoprefixer": "^9.7.6",
+        "babel-eslint": "^10.1.0",
+        "cssnano": "^4.1.10",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-prefer-object-spread": "^1.2.1",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-react": "^7.19.0",
+        "gscan": "^3.5.2",
+        "gulp": "^4.0.2",
+        "gulp-filter": "^6.0.0",
+        "gulp-livereload": "^4.0.2",
+        "gulp-postcss": "^8.0.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2",
+        "gulp-util": "^3.0.8",
+        "gulp-watch": "^5.0.1",
+        "gulp-zip": "^5.0.1",
+        "postcss-color-function": "^4.1.0",
+        "postcss-custom-properties": "^9.1.1",
+        "postcss-easy-import": "^3.0.0",
+        "prettier": "^2.0.4"
     },
+    "browserslist": [
+        "defaults"
+    ],
     "config": {
         "posts_per_page": 25,
         "image_sizes": {
