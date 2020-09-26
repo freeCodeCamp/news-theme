@@ -16,7 +16,7 @@
         <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
         {{/if}}
         <div class="author-stats">
-            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <span
+            {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}} <span
                 class="bull">&bull;</span>
         </div>
         {{#if website}}
@@ -50,7 +50,7 @@
             {{/foreach}}
         </div>
         <div class="read-more-row">
-            <button id="readMoreBtn">Load More Articles</button>
+            <button id="readMoreBtn">{{t "Load More Articles"}}</button>
         </div>
     </div>
 </main>

@@ -10,7 +10,7 @@
         {{#if description}}
         {{description}}
         {{else}}
-        A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+        {{plural ../pagination.total empty=(t "A collection of posts") singular=(t "A collection of 1 post") plural=(t "A collection of % posts")}}
         {{/if}}
     </h2>
     <div class="tags-row">
@@ -38,7 +38,7 @@
             {{/foreach}}
         </div>
         <div class="read-more-row">
-            <button id="readMoreBtn">Load More Articles</button>
+            <button id="readMoreBtn">{{t "Load More Articles"}}</button>
         </div>
     </div>
 </main>
