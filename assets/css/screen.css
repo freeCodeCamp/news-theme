@@ -11,18 +11,21 @@ production stylesheet in assets/built/screen.css
 5.  Site Navigation
 6.  Post Feed
 7.  Single Post
-  7.1. Subscribe Form
-  7.2. Post Footer
-     7.2.1 Single Author Byline
-     7.2.2 Multiple Author Byline
+  7.1. Post Footer
+     7.1.1 Single Author Byline
+     7.1.2 Multiple Author Byline
   7.3. Comments
   7.4. Related Posts
   7.5. Floating Header
   7.6. Koenig Styles
 8.  Author Template
 9.  Error Template
-10. Subscribe Overlay
-11. Site Footer
+10. Site Footer
+11. Discourse integration
+12. buttons-row
+13. Tags
+14. learn-cta-row and social-row
+15. under-header-content donation
 
 */
 
@@ -347,21 +350,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-link-rss svg {
   height: 1.9rem;
-}
-
-.subscribe-button {
-  display: block;
-  padding: 4px 10px;
-  border: #fff 1px solid;
-  color: #fff;
-  font-size: 1.2rem;
-  line-height: 1em;
-  opacity: 0.8;
-}
-
-.subscribe-button:hover {
-  text-decoration: none;
-  opacity: 1;
 }
 
 .rss-button {
@@ -1209,117 +1197,7 @@ pre.runkit-element {
   overflow-x: hidden;
 }
 
-/* 7.1. Subscribe Form
-/* ---------------------------------------------------------- */
-
-.subscribe-form {
-  margin: 1.5em 0;
-  padding: 6.5vw 7vw 7vw;
-  border: var(--gray10) 1px solid;
-  text-align: center;
-  background: var(--gray10);
-}
-
-.subscribe-form-title {
-  margin: 0 0 3px 0;
-  padding: 0;
-  color: var(--gray85);
-  font-size: 3.5rem;
-  line-height: 1;
-  font-weight: 700;
-}
-
-.subscribe-form p {
-  margin-bottom: 1em;
-  color: var(--gray75);
-  font-size: 2.2rem;
-  line-height: 1.55em;
-  letter-spacing: 0.2px;
-}
-
-.subscribe-form form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 420px;
-}
-
-.subscribe-form .form-group {
-  flex-grow: 1;
-}
-
-.subscribe-email {
-  display: block;
-  padding: 10px;
-  width: 100%;
-  border: var(--gray15) 1px solid;
-  color: var(--gray75);
-  font-size: 1.8rem;
-  line-height: 1em;
-  font-weight: normal;
-  user-select: text;
-  transition: border-color 0.15s linear;
-
-  -webkit-appearance: none;
-}
-
-.subscribe-email:focus {
-  outline: 0;
-  border-color: var(--gray15);
-}
-
-.subscribe-form button {
-  display: inline-block;
-  margin: 0 0 0 10px;
-  padding: 0 20px;
-  height: 41px;
-  outline: none;
-  color: #fff;
-  font-size: 1.5rem;
-  line-height: 37px;
-  font-weight: 400;
-  text-align: center;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
-  background: linear-gradient(
-    color(var(--dark-blue) whiteness(+7%)),
-    color(var(--dark-blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--dark-blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--dark-blue) lightness(-4%) saturation(-10%))
-  );
-  box-shadow: 0 0 0 1px inset rgba(0, 0, 0, 0.14);
-
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.subscribe-form button:active,
-.subscribe-form button:focus {
-  background: color(var(--dark-blue) lightness(-9%) saturation(-10%));
-}
-
-@media (max-width: 650px) {
-  .subscribe-form-title {
-    font-size: 2.4rem;
-  }
-  .subscribe-form p {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .subscribe-form form {
-    flex-direction: column;
-  }
-  .subscribe-form .form-group {
-    width: 100%;
-  }
-  .subscribe-form button {
-    margin: 10px 0 0 0;
-    width: 100%;
-  }
-}
-
-/* 7.2. Post Footer
+/* 7.1. Post Footer
 /* ---------------------------------------------------------- */
 
 .post-full-author-header {
@@ -1332,7 +1210,7 @@ pre.runkit-element {
   padding: 0;
 }
 
-/* 7.2.1 Single Author Byline
+/* 7.1.1 Single Author Byline
 /* ---------------------------------------------------------- */
 
 .author-card {
@@ -1409,7 +1287,7 @@ pre.runkit-element {
   text-decoration: none;
 }
 
-/* 7.2.2 Multiple Author Byline
+/* 7.1.2 Multiple Author Byline
 /* ---------------------------------------------------------- */
 
 .post-full-authors {
@@ -2042,166 +1920,7 @@ pre.runkit-element {
   padding-top: 0;
 }
 
-/* 10. Subscribe Overlay
-/* ---------------------------------------------------------- */
-
-.subscribe-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 25, 40, 0.97);
-  opacity: 0;
-  transition: opacity 200ms ease-in;
-  pointer-events: none;
-
-  backdrop-filter: blur(3px);
-}
-
-.subscribe-overlay:target {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.subscribe-overlay-content {
-  position: relative;
-  z-index: 9999;
-  margin: 0 0 5vw 0;
-  padding: 4vw;
-  color: #fff;
-  text-align: center;
-}
-
-.subscribe-overlay-logo {
-  position: fixed;
-  top: 23px;
-  left: 30px;
-  height: 30px;
-}
-
-.subscribe-overlay-title {
-  display: inline-block;
-  margin: 0 0 10px 0;
-  font-size: 6rem;
-  line-height: 1.15em;
-}
-
-.subscribe-overlay-description {
-  margin: 0 auto 50px;
-  max-width: 650px;
-  font-family: 'Lato', sans-serif;
-  font-size: 3rem;
-  line-height: 1.3em;
-  font-weight: 300;
-  opacity: 0.8;
-}
-
-.subscribe-overlay form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 500px;
-}
-
-.subscribe-overlay .form-group {
-  flex-grow: 1;
-}
-
-.subscribe-overlay .subscribe-email {
-  display: block;
-  padding: 14px 20px;
-  width: 100%;
-  border: none;
-  color: var(--gray75);
-  font-size: 2rem;
-  line-height: 1em;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  user-select: text;
-  transition: border-color 0.15s linear;
-
-  -webkit-appearance: none;
-}
-
-.subscribe-email:focus {
-  outline: 0;
-  border-color: var(--gray15);
-}
-
-.subscribe-overlay button {
-  display: inline-block;
-  margin: 0 0 0 15px;
-  padding: 0 25px;
-  height: 52px;
-  outline: none;
-  color: #fff;
-  font-size: 1.7rem;
-  line-height: 37px;
-  font-weight: 400;
-  text-align: center;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
-  background: linear-gradient(
-    color(var(--dark-blue) whiteness(+7%)),
-    color(var(--dark-blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--dark-blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--dark-blue) lightness(-4%) saturation(-10%))
-  );
-  box-shadow: 0 0 0 1px inset rgba(0, 0, 0, 0.14);
-
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.subscribe-overlay button:active,
-.subscribe-overlay button:focus {
-  background: color(var(--dark-blue) lightness(-9%) saturation(-10%));
-}
-
-.subscribe-overlay-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
-}
-
-.subscribe-overlay-close:before {
-  content: '';
-  position: absolute;
-  top: 40px;
-  right: 25px;
-  display: block;
-  width: 30px;
-  height: 2px;
-  background: #fff;
-  opacity: 0.8;
-  transform: rotate(45deg);
-}
-
-.subscribe-overlay-close:after {
-  content: '';
-  position: absolute;
-  top: 40px;
-  right: 25px;
-  display: block;
-  width: 30px;
-  height: 2px;
-  background: #fff;
-  opacity: 0.8;
-  transform: rotate(-45deg);
-}
-
-.subscribe-overlay-close:hover {
-  cursor: default;
-}
-
-/* 11. Site Footer
+/* 10. Site Footer
 /* ---------------------------------------------------------- */
 
 .site-footer {
@@ -2406,7 +2125,8 @@ p.footer-donation {
   }
 }
 
-/* 12. discourse integration-------------------------------------- */
+/* 11. Discourse integration
+/* ---------------------------------------------------------- */
 
 #discourse-comments {
   border: 1px solid #eeeef0;
@@ -2427,7 +2147,9 @@ p.footer-donation {
   background: white;
 }
 
-/* 13. buttons-row-------------------------------------- */
+/* 12. buttons-row
+/* ---------------------------------------------------------- */
+
 .read-more-row {
   display: flex;
   flex-direction: row;
@@ -2455,7 +2177,8 @@ p.footer-donation {
   background: #0a0a23;
   color: #eeeef0;
 }
-/* 14. tags
+
+/* 13. Tags
 /* ---------------------------------------------------------- */
 
 .tags-row {
