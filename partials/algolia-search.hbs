@@ -64,14 +64,17 @@
     // Clicked off dropdown or pressed Esc key
     hits = false;
   }).on('autocomplete:selected', (event, suggestion, dataset, context) => {
-    // Set to hit URL if hit is selected by mouse click or enter key
-    hitSelected = suggestion.url;
+    // If article is selected, set to URL of the article. 
+    // If footer is selected, set to search results path
+    hitSelected = suggestion ? suggestion.url : `https://www.freecodecamp.org/news/search?query=${searchQuery}`;
+
     // Do nothing on click, as the browser will already do it
     if (context.selectionMethod === 'click') {
       return;
     }
-    // Change the page, for example, on other events
-    window.location.assign(suggestion.url);
+
+    // Go to selected article or footer path
+    window.location.assign(hitSelected);
   });
 
   /* 
