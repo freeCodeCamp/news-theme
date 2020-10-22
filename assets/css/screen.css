@@ -246,25 +246,22 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .nav li {
-  display: block;
   margin: 0;
   padding: 0;
 }
 
+a.nav-forum,
 .nav li a {
-  display: block;
   margin: 0;
-  padding: 5px 15px;
+  padding: 7px 15px;
   color: #fff;
   opacity: 1;
   font-family: 'Roboto Mono', monospace;
 }
 
-.nav li:hover {
-  background: white;
-}
-
+a.nav-forum:hover,
 .nav li a:hover {
+  background: white;
   color: var(--theme-color);
   text-decoration: none;
 }
@@ -274,6 +271,21 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   display: flex;
   align-items: center;
   height: 38px;
+}
+
+.nav-group {
+  margin-left: auto;
+}
+
+a.nav-forum {
+  display: none;
+  margin-right: 19px;
+}
+
+@media (min-width: 500px) {
+  a.nav-forum {
+    display: inline;
+  }
 }
 
 .toggle-button-nav {
