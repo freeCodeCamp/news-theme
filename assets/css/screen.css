@@ -64,7 +64,7 @@ body {
 .site-main {
   z-index: 100;
   flex-grow: 1;
-  margin-top: 40px;
+  margin-top: calc(var(--header-height) * 3 + 5px);
 }
 
 /* Full width page blocks */
@@ -2276,16 +2276,34 @@ a.cta-button {
 /* 15. under-header-content donation
 /* ---------------------------------------------------------- */
 
-.under-header-content.jumbotron {
-  min-height: auto;
-  padding: 40px 10px 30px;
+a.donation-banner {
+  position: fixed;
+  top: var(--header-height);
+  background-color: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 16px;
+  width: 100vw;
+  z-index: 999;
+  color: var(--gray00);
+  text-decoration: none;
 }
 
-.under-header-content.jumbotron a {
-  color: white;
+a.donation-banner * {
+  margin: 0px;
+}
+
+a.donation-banner span {
   text-decoration: underline;
 }
 
-.under-header-content.jumbotron a:hover {
+a.donation-banner:hover {
+  text-decoration: none;
+}
+
+a.donation-banner:hover span {
   text-decoration: none;
 }
