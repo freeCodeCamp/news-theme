@@ -2284,8 +2284,8 @@ a.donation-banner {
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
+  padding: 8px;
   width: 100vw;
   z-index: 999;
   color: var(--gray00);
@@ -2306,4 +2306,11 @@ a.donation-banner:hover {
 
 a.donation-banner:hover span {
   text-decoration: none;
+}
+
+@media (min-width: 500px) {
+  a.donation-banner {
+    padding: 10px;
+    font-size: 16px;
+  }
 }
