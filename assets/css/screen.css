@@ -67,6 +67,10 @@ body {
   margin-top: calc(var(--header-height) * 3 + 5px);
 }
 
+.under-header-content + .site-main {
+  margin-top: 0;
+}
+
 /* Full width page blocks */
 .outer {
   position: relative;
@@ -117,6 +121,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 40px 10px 30px 10px;
+  margin-top: calc(var(--header-height) * 2);
   min-height: 200px;
   text-align: center;
   color: white;
