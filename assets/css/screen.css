@@ -2292,6 +2292,7 @@ a.donation-banner {
   font-size: 14px;
   padding: 8px;
   width: 100vw;
+  font-weight: 700;
   z-index: 999;
   color: var(--gray00);
   text-decoration: none;
@@ -2316,6 +2317,6 @@ a.donation-banner:hover span {
 @media (min-width: 500px) {
   a.donation-banner {
     padding: 10px;
-    font-size: 16px;
+    font-size: 17px;
   }
 }
