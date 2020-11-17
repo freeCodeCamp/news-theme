@@ -1,38 +1,62 @@
 {{^has tag="#disable-comments"}}
+{{!-- Remove this #has block after testing! --}}
+{{#has tag="#test-comments"}}
   <script>
-    function loadDiscourseComments() {
-    var xhr = new XMLHttpRequest();
-    var file = "https://www.freecodecamp.org/forum/srv/status";
-    var randomNum = Math.round(Math.random() * 10000);
-    xhr.open('HEAD', file + "?rand=" + randomNum, true);
-    xhr.send();
-    xhr.addEventListener("readystatechange", processRequest, false);
-    function processRequest(e) {
-        if (xhr.readyState == 4) {
+    // Conditionally show comments section based on publication language setting
+    const showCommentsList = ['zh-cn'];
+
+    if (showCommentsList.includes(`{{@site.lang}}`)) {
+      const discourseEmbedMap = {
+        'zh-cn': {
+          file: 'https://chinese.freecodecamp.org/forum/srv/status',
+          discourseUrl: 'https://chinese.freecodecamp.org/forum/',
+        },
+      };
+      const discourseEmbedInfo = discourseEmbedMap['{{@site.lang}}'];
+      const { file, discourseUrl } = discourseEmbedInfo;
+
+      function loadDiscourseComments() {
+        var xhr = new XMLHttpRequest();
+        var randomNum = Math.round(Math.random() * 10000);
+        xhr.open('HEAD', file + '?rand=' + randomNum, true);
+        xhr.send();
+        xhr.addEventListener('readystatechange', processRequest, false);
+        function processRequest(e) {
+          if (xhr.readyState == 4) {
             if (xhr.status >= 200 && xhr.status < 304) {
-                document.getElementById('discourse-comments').innerHTML = '';
-                DiscourseEmbed = {
-                    discourseUrl: 'https://www.freecodecamp.org/forum/',
-                    discourseEmbedUrl: '{{url absolute="true"}}'
-                };
-                var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-                d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+              document.getElementById('discourse-comments').innerHTML = '';
+              DiscourseEmbed = {
+                discourseUrl,
+                discourseEmbedUrl: '{{url absolute="true"}}'
+              };
+              var d = document.createElement('script');
+              d.type = 'text/javascript';
+              d.async = true;
+              d.src = discourseUrl + 'javascripts/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
             } else {
-                document.getElementById('discourse-comments').innerHTML = '<div style="text-align: center;">Sorry, we could not load the comments. Please try again after some time.</div>';
+              document.getElementById('discourse-comments').innerHTML =
+                '<div style="text-align: center;">{{t "Sorry, we could not load the comments. Please try again after some time."}}</div>';
             }
+          }
         }
       }
-    }
 
-    if (window && window.addEventListener) {
-      window.addEventListener('load', function () {
+      if (window && window.addEventListener) {
+        // Create comments section
+        const commentsDivHtml = `
+          <div id='discourse-comments'>
+            <button id='trigger-load-comments'>{{t "Show comments"}}</button>
+          </div>
+        `;
+        const fullContentSection = document.getElementsByClassName('post-full-content')[0];
+        fullContentSection.insertAdjacentHTML('beforeend', commentsDivHtml);
+
+        window.addEventListener('load', function () {
           document.getElementById('trigger-load-comments').onclick = loadDiscourseComments;
-      });
+        });
+      }
     }
   </script>
-
-  <div id='discourse-comments'>
-    <button id='trigger-load-comments'>Show comments</button>
-  </div>
+{{/has}}
 {{/has}}

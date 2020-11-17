@@ -14,9 +14,9 @@
 {{#contentFor "scripts"}}
 <script>
     // Conditionally remove social-row based on the publication language setting
-    const hideList = ['zh-cn'];
+    const hideSocialRowList = ['zh-cn'];
     const socialRow = document.getElementsByClassName('social-row')[0];
 
-    if (hideList.includes(`{{@site.lang}}`)) socialRow.style.display = 'none';
+    if (hideSocialRowList.includes(`{{@site.lang}}`)) socialRow.remove();
 </script>
 {{/contentFor}}
