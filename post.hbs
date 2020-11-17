@@ -15,8 +15,7 @@ into the {body} of the default.hbs template --}}
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date"
-                        datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                    <time class="post-full-meta-date" datetime="{{date format="LL"}}">{{date format="LL"}}</time>
                     {{#if primary_tag}}
                     <span class="date-divider">/</span>
                     {{#primary_tag}}

@@ -31,6 +31,18 @@
     <script src="https://embed.runkit.com"></script>
     --}}
 
+    {{!-- Day.js and plugins for search results page date localization --}}
+    <script src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/dayjs.min.js"></script>
+    <script src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/localizedFormat.min.js"></script>
+    <script src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/relativeTime.min.js"></script>
+
+    {{!-- Day.js locales --}}
+    <script src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/locale/zh-cn.min.js"></script>
+
+    {{#is "home"}}
+        {{{t "keyword-meta"}}}
+    {{/is}}
+
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
@@ -64,7 +76,6 @@
             container.style.flex = ratio + ' 1 0%';
         })
     </script>
-
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"

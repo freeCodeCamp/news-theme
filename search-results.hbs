@@ -1,215 +1,191 @@
-<!DOCTYPE html>
-<html lang="{{@site.lang}}">
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-<head>
-
-  {{!-- Document Settings --}}
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-  {{!-- Base Meta --}}
-  <title>Search Results</title>
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  {{!-- Styles'n'Scripts --}}
-  <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Roboto+Mono:400,700" rel="stylesheet">
-
-  {{!-- Styles'n'Scripts --}}
-  <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-  <link rel="stylesheet" type="text/css" href="{{asset "css/algolia-search.css"}}" />
-
-  {{!-- Algolia search assets --}}
-  <script src="https://cdn.freecodecamp.org/news-assets/algolia/algoliasearch-3-33-0/algoliasearch.min.js"></script>
-  <script src="https://cdn.freecodecamp.org/news-assets/algolia/autocomplete-0-36-0/autocomplete.min.js"></script>
-
-  {{!-- Add/update missing meta properties for Twitter and Facebook cards --}}
-  <meta name="twitter:title" content="Search Results" />
-  <meta name="twitter:description" content="Learn to code at home. Build projects. Earn certifications. 
-    Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including 
-    Google, Apple, Amazon, and Microsoft." />
-  <meta name="twitter:url" content="https://www.freecodecamp.org/news/search/" />
-  <meta name="twitter:image" content="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@tryghost" />
-
-  <meta property="og:title" content="Search Results" />
-  <meta property="og:description" content="Learn to code at home. Build projects. Earn certifications. 
-    Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including 
-    Google, Apple, Amazon, and Microsoft." />
-  <meta property="og:url" content="https://www.freecodecamp.org/news/search/" />
-  <meta property="og:image" content="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png" />
-  <meta property="og:site_name" content="freeCodeCamp News" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image:width" content="1920" />
-  <meta property="og:image:height" content="1080" />
-</head>
-
-<body class="{{body_class}}">
-
-  <div class="site-wrapper">
-
-    {{> "site-nav"}}
-    {{>"banner"}}
-
-    <main id="site-main" class="site-main outer">
-      <div class="inner">
-        <div class="post-feed">
-        </div>
-      </div>
-    </main>
-
-    {{!-- The footer at the very bottom of the screen --}}
-    {{> "footer"}}
-
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer">
+  <div class="inner">
+    <div class="post-feed">
+    </div>
   </div>
+</main>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const queryStr = urlParams.get('query');
-    const postFeed = document.querySelector('.post-feed');
-    let currPage = 0;
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const queryStr = urlParams.get('query');
+  const postFeed = document.querySelector('.post-feed');
+  let currPage = 0;
 
-    function formatDate(dateStr) {
-      const date = new Date(dateStr);
-      const monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      const month = monthArr[date.getMonth()];
-      const day = date.getDate();
-      const year = date.getFullYear();
+  function getHits(pageNo) {
+    return index.search({
+      query: queryStr,
+      hitsPerPage: 15,
+      page: pageNo
+    }).then(({ hits } = {}) => {
+      return hits;
+    }).catch(err => {
+      console.log(err);
+      console.log(err.debugData);
+    });
+  }
 
-      return `${month} ${day}, ${year}`;
-    };
-
-    function getHits(pageNo) {
-      return index.search({
-        query: queryStr,
-        hitsPerPage: 15,
-        page: pageNo
-      }).then(({ hits } = {}) => {
-        return hits;
-      }).catch(err => {
-        console.log(err);
-        console.log(err.debugData);
-      });
-    }
-
-    function renderSearchResults(arr) {
-      arr.forEach((hit, i) => {
-        const featureImage = hit.featureImage || "#";
-        const url = hit.url || "#";
-        const title = hit.title || "#";
-        const authorName = hit.author.name;
-        const authorImage = hit.author.profileImage;
-        const authorUrl = hit.author.url;
-        const primaryTagCodeBlock = hit.tags.length === 0 ? "" : `
-            <a href="${hit.tags[0].url}">
-              #${hit.tags[0].name}
-            </a>
+  async function renderSearchResults(arr) {
+    arr.forEach((hit, i) => {
+      const featureImage = hit.featureImage || "#";
+      const url = hit.url || "#";
+      const title = hit.title || "#";
+      const authorName = hit.author.name;
+      const authorImage = hit.author.profileImage;
+      const authorUrl = hit.author.url;
+      const primaryTagCodeBlock = hit.tags.length === 0 ? "" : `
+          <a href="${hit.tags[0].url}">
+            #${hit.tags[0].name}
+          </a>
+        `;
+      const publishedAt = hit.publishedAt;
+      const dateStylingClassName = authorName === 'freeCodeCamp.org' ? 'meta-item-single' : 'meta-item';
+      const timeEl = `<time class="post-full-meta-date ${dateStylingClassName}" datetime="${publishedAt}"></time>`;
+      const displayAuthorAndTime = () => {
+        return authorName === 'freeCodeCamp.org' ? timeEl : `
+            <ul class="author-list">
+              <li class="author-list-item">
+                <div class="author-name-tooltip">
+                  ${authorName}
+                </div>
+                <a href="${authorUrl}" class="static-avatar">
+                  <img class="author-profile-image" src="${authorImage}" alt="${authorName}">
+                </a>
+              </li>
+            </ul>
+            <a class="meta-item" href="${authorUrl}">${authorName}</a>
+            ${timeEl}
           `;
-        const publishedAt = hit.publishedAt;
-        const displayAuthorAndTime = () => {
-          return authorName === 'freeCodeCamp.org' ? `<time>${formatDate(publishedAt)}</time>` : `
-              <ul class="author-list">
-                <li class="author-list-item">
-                  <div class="author-name-tooltip">
-                    ${authorName}
-                  </div>
-                  <a href="${authorUrl}" class="static-avatar">
-                    <img class="author-profile-image" src="${authorImage}" alt="${authorName}">
-                  </a>
-                </li>
-              </ul>
-              <a class="meta-item" href="${authorUrl}">${authorName}</a>
-              <time class="meta-item">${formatDate(publishedAt)}</time>
-            `;
-        }
-
-        const articleItem = document.createElement('article');
-        articleItem.className = "post-card post tag-javascript tag-news featured post-card-large";
-        const codeBlock = `
-            <a class="post-card-image-link" href="${url}">
-              <img class="post-card-image" srcset="${featureImage} 300w,
-                ${featureImage} 600w,
-                ${featureImage} 1000w,
-                ${featureImage} 2000w" sizes="(max-width: 1000px) 400px, 700px" src="${featureImage}" alt="${title}"
-              >
-            </a>
-            <div class="post-card-content">
-              <div class="post-card-content-link">
-                <header class="post-card-header">
-                  <span class="post-card-tags">
-                    ${primaryTagCodeBlock}
-                  </span>
-                  <h2 class="post-card-title">
-                    <a href="${url}">
-                      ${title}
-                    </a>
-                  </h2>
-                </header>
-              </div>
-              <footer class="post-card-meta">
-                ${displayAuthorAndTime()}
-              </footer>
-            </div>
-          `;
-
-        articleItem.innerHTML = codeBlock;
-        postFeed.appendChild(articleItem);
-      });
-    }
-
-    function renderLoadMoreBtn() {
-      const inner = document.querySelector('.inner');
-
-      const readMoreRow = document.createElement('div');
-      readMoreRow.className = 'read-more-row';
-
-      const loadMoreBtn = document.createElement('button');
-      loadMoreBtn.innerHTML = 'Load More Articles';
-      loadMoreBtn.id = 'readMoreBtn';
-
-      loadMoreBtn.addEventListener('click', (event) => {
-        // Iterate currPage and load next set of hits
-        populatePage(++currPage);
-      });
-
-      // Append row and button to page
-      readMoreRow.appendChild(loadMoreBtn);
-      inner.appendChild(readMoreRow);
-    }
-
-    function removeLoadMoreBtn() {
-      const readMoreRow = document.querySelector('.read-more-row');
-
-      readMoreRow.remove();
-    }
-
-    async function populatePage(pageNo) {
-      const hitsArr = await getHits(pageNo);
-
-      renderSearchResults(hitsArr);
-
-      // Only render "Load More Articles" button
-      // if there are more than 15 hits, meaning
-      // that there are up to 15 more hits in the
-      // next API call
-      if (hitsArr.length === 15) {
-        // Check for existing button and render if none exists
-        document.querySelector('#readMoreBtn') ? '' : renderLoadMoreBtn();
-      } else {
-        // Remove readMoreRow if a button exists and there are less than 15 hits
-        document.querySelector('#readMoreBtn') ? removeLoadMoreBtn() : '';
       }
+
+      const articleItem = document.createElement('article');
+      articleItem.className = "post-card post tag-javascript tag-news featured post-card-large";
+      const codeBlock = `
+          <a class="post-card-image-link" href="${url}">
+            <img class="post-card-image" srcset="${featureImage} 300w,
+              ${featureImage} 600w,
+              ${featureImage} 1000w,
+              ${featureImage} 2000w" sizes="(max-width: 1000px) 400px, 700px" src="${featureImage}" alt="${title}"
+            >
+          </a>
+          <div class="post-card-content">
+            <div class="post-card-content-link">
+              <header class="post-card-header">
+                <span class="post-card-tags">
+                  ${primaryTagCodeBlock}
+                </span>
+                <h2 class="post-card-title">
+                  <a href="${url}">
+                    ${title}
+                  </a>
+                </h2>
+              </header>
+            </div>
+            <footer class="post-card-meta">
+              ${displayAuthorAndTime()}
+            </footer>
+          </div>
+        `;
+
+      articleItem.innerHTML = codeBlock;
+      postFeed.appendChild(articleItem);
+    });
+  }
+
+  function renderLoadMoreBtn() {
+    const inner = document.querySelector('.inner');
+
+    const readMoreRow = document.createElement('div');
+    readMoreRow.className = 'read-more-row';
+
+    const loadMoreBtn = document.createElement('button');
+    loadMoreBtn.innerHTML = "{{t 'Load More Articles'}}";
+    loadMoreBtn.id = 'readMoreBtn';
+
+    loadMoreBtn.addEventListener('click', (event) => {
+      // Iterate currPage and load next set of hits
+      populatePage(++currPage);
+    });
+
+    // Append row and button to page
+    readMoreRow.appendChild(loadMoreBtn);
+    inner.appendChild(readMoreRow);
+  }
+
+  function removeLoadMoreBtn() {
+    const readMoreRow = document.querySelector('.read-more-row');
+
+    readMoreRow.remove();
+  }
+
+  async function populatePage(pageNo) {
+    const hitsArr = await getHits(pageNo);
+
+    await renderSearchResults(hitsArr);
+
+    // Only render "Load More Articles" button
+    // if there are more than 15 hits, meaning
+    // that there are up to 15 more hits in the
+    // next API call
+    if (hitsArr.length === 15) {
+      // Check for existing button and render if none exists
+      document.querySelector('#readMoreBtn') ? '' : renderLoadMoreBtn();
+    } else {
+      // Remove readMoreRow if a button exists and there are less than 15 hits
+      document.querySelector('#readMoreBtn') ? removeLoadMoreBtn() : '';
+    }
+  }
+
+  // Render for search page 0
+  populatePage(currPage);
+</script>
+
+{{!-- Day.js date localization for search results --}}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const readMoreBtn = document.getElementById('readMoreBtn');
+    const postDates = [...document.getElementsByClassName('post-full-meta-date')];
+    // Load dayjs plugins and set locale
+    dayjs.extend(dayjs_plugin_localizedFormat);
+    dayjs.extend(dayjs_plugin_relativeTime);
+    dayjs.locale(`{{@site.lang}}`);
+
+    const localizeDates = datesList => {
+    datesList.forEach(date => {
+        const dateStr = date.getAttribute('datetime');
+        const dateObj = dayjs(dateStr);
+
+        // Display either time since published or month, day, and year
+        date.innerHTML = dateObj.format('LL');
+    });
     }
 
-    // Render for search page 0
-    populatePage(currPage);
-  </script>
+    // Localize dates on initial page load
+    localizeDates(postDates);
 
-  {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
-  {{ghost_foot}}
-
-</body>
-
-</html>
+    // Localize dates when loading more articles to the page
+    const postFeed = document.getElementsByClassName('post-feed')[0];
+    const config = {
+    childList: true,
+    attributes: true,
+    subtree: true,
+    characterData: true
+    }
+    const observer = new MutationObserver(mutations => {
+    // Capture new article nodes that are appended to the page
+    // and localize their dates
+    const newNodes = mutations.map(mutation => [...mutation.addedNodes]).flat();
+    const newPostDates = newNodes.map(node => [...node.querySelectorAll('.post-full-meta-date')]).flat(1);
+    
+    observer.disconnect();
+    localizeDates(newPostDates);
+    observer.observe(postFeed, config);
+    });
+    
+    // Only observe mutations on front page and search results page
+    if (postFeed) observer.observe(postFeed, config);
+  });
+</script>

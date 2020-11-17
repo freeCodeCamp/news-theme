@@ -2,15 +2,21 @@
 <p class="social-row">
 
     {{#primary_author}}
-    {{#if twitter}}
-    If you read this far, tweet to the author to show them you care.
-    <a class='cta-button'
-        onclick="window.open(`https://twitter.com/intent/tweet?text=Thank%20you%20{{twitter}}%20for%20writing%20this%20helpful%20article%2e%0A%0A{{encode ../title}}%0A%0A{{encode ../url}}`, 'share-twitter', 'width=550, height=235'); return false;">Tweet
-        a thanks</a>
-    {{else}}
-    If this article was helpful,
-    <a class='cta-button' onclick="window.open(`https://twitter.com/intent/tweet?text={{encode ../title}}%0A%0A{{encode ../url}}`, 'share-twitter', 'width=550,height=235' ); return false;">
-        tweet it.</a>
-    {{/if}}
+        {{#if twitter}}
+            {{{t "If you read this far, tweet to the author to show them you care. <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text=Thank%20you%20{twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A{title}%0A%0A{url}`, `share-twitter`, `width=550, height=235`); return false;'>Tweet a thanks</a>" title=(encode ../title) url=(encode ../url) twitter=twitter}}}
+        {{else}}
+            {{{t "If this article was helpful, <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text={title}%0A%0A{url}`, `share-twitter`, `width=550, height=235` ); return false;'>tweet it.</a>" title=(encode ../title) url=(encode ../url)}}}
+        {{/if}}
     {{/primary_author}}
 </p>
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+    // Conditionally remove social-row based on the publication language setting
+    const hideList = ['zh-cn'];
+    const socialRow = document.getElementsByClassName('social-row')[0];
+
+    if (hideList.includes(`{{@site.lang}}`)) socialRow.style.display = 'none';
+</script>
+{{/contentFor}}

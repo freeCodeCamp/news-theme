@@ -21,9 +21,9 @@
                 <div class="bio">
                     {{#if bio}}
                         <p>{{bio}}</p>
-                        <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                        <p>{{t "<a href='{{url}}'>More posts</a> by {{name}}"}}.</p>
                     {{else}}
-                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                        <p>{{t "Read <a href='{{url}}'>more posts</a> by this author"}}.</p>
                     {{/if}}
                 </div>
             </div>
