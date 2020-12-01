@@ -6,13 +6,22 @@
     const showCommentsList = ['zh-cn'];
 
     if (showCommentsList.includes(`{{@site.lang}}`)) {
+      const hostname = window.location.hostname;
       const discourseEmbedMap = {
-        'zh-cn': {
+        'www.freecodecamp.org': {
+          file: 'https://forum.freecodecamp.org/srv/status',
+          discourseUrl: 'https://forum.freecodecamp.org/'
+        },
+        'chinese.freecodecamp.org': {
           file: 'https://chinese.freecodecamp.org/forum/srv/status',
           discourseUrl: 'https://chinese.freecodecamp.org/forum/',
         },
+        'dev': {
+          file: 'https://forum.freecodecamp.dev/srv/status',
+          discourseUrl: 'https://forum.freecodecamp.dev/'
+        },
       };
-      const discourseEmbedInfo = discourseEmbedMap['{{@site.lang}}'];
+      const discourseEmbedInfo = discourseEmbedMap[hostname] ? discourseEmbedMap[hostname] : discourseEmbedMap['dev'];
       const { file, discourseUrl } = discourseEmbedInfo;
 
       function loadDiscourseComments() {
