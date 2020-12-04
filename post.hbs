@@ -55,7 +55,7 @@ into the {body} of the default.hbs template --}}
             </figure>
             {{/if}}
 
-            <section class=" post-full-content">
+            <section class="post-full-content">
                 {{#has author="freeCodeCamp.org"}}
                 <div class="post-content medium-migrated-article">
                     {{content}}
@@ -77,6 +77,7 @@ into the {body} of the default.hbs template --}}
 
                 {{> "social-row"}}
                 {{> "learn-cta-row"}}
+                {{> "comments"}}
             </section>
 
         </article>

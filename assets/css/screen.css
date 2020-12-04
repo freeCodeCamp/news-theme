@@ -2157,11 +2157,21 @@ p.footer-donation {
 }
 
 #trigger-load-comments {
-  text-align: center;
   width: 100%;
-  font-size: 1.5em;
-  color: #032ead;
-  background: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  border: 3px solid var(--gray90);
+  background: var(--gray10);
+  color: var(--gray90);
+  text-decoration: none;
+  padding: 5 16px;
+}
+
+#trigger-load-comments:hover {
+  background: var(--gray90);
+  color: var(--gray10);
 }
 
 /* 12. buttons-row
