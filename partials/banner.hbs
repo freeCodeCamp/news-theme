@@ -1,5 +1,86 @@
 <a class="donation-banner" id="donation-banner-link" href={{t "donation-banner-url"}}>
     <p>
-        {{{t "Learn to code — <span>free 3,000-hour curriculum</span>"}}}
+        {{{t "Help our nonprofit pay for servers. <span>Donate Now</span>."}}}
     </p>
 </a>
+<script>
+    // Conditionally load stripe
+    const loadStripeList = ['en'];
+    console.log(loadStripeList.includes(`{{@site.lang}}`));
+    console.log(`{{@site.lang}}`);
+
+    if (loadStripeList.includes(`{{@site.lang}}`)) {
+
+        // Set keys based on environement
+        const stripePublicKey = location.hostname === "localhost" || location.hostname === "127.0.0.1" ?
+            "pk_test_xM2wpbgtyotYqFCK6Ss6noxP008nxRyaE9" : "pk_live_E6Z6xPM8pEsJziHW905zpAvF";
+        const donatePageUrl = 'https://www.freecodecamp.org/donate/';
+        const successUrl = 'https://www.freecodecamp.org/news/thank-you-for-donating/';
+        let stripe;
+
+        document.getElementById("donation-banner-link").addEventListener("click", onClick, false);
+
+        function onClick(e) {
+            e.preventDefault();
+            if (window.Stripe) {
+                console.log("loaded");
+                handleStripeCheckoutRedirect();
+            } else if (document.querySelector('#stripe-js')) {
+                console.log("attached");
+                document
+                    .querySelector('#stripe-js')
+                    .addEventListener('load', handleStripeLoadandRedirect);
+            } else {
+                console.log('not loaded');
+                stripeScriptLoader(loadStripeAndRedirect);
+            }
+        }
+
+        const stripeScriptLoader = onload => {
+            let s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.id = 'stripe-js';
+            s.key = 'stripe-js';
+            s.async = true;
+            s.src = 'https://js.stripe.com/v3/';
+            s.onload = onload;
+            document.getElementsByTagName('head')[0].appendChild(s);
+        };
+
+        const loadAndInitializeStripe = () => stripeScriptLoader(() => {
+            console.log('loading...');
+            handleStripeLoad();
+        });
+
+        const handleStripeLoad = () => {
+            stripe = window.Stripe(stripePublicKey);
+        }
+
+        loadAndInitializeStripe();
+
+        const handleStripeLoadandRedirect = () => {
+            handleStripeLoad();
+            handleStripeCheckoutRedirect();
+        }
+
+        const loadStripeAndRedirect = () => {
+            loadAndInitializeStripe();
+            handleStripeCheckoutRedirect();
+        }
+        const handleStripeCheckoutRedirect = async () => {
+            const item = [{
+                plan: `monthly-donation-500`,
+                quantity: 1
+            }];
+            const { error } = await stripe.redirectToCheckout({
+                items: item,
+                successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
+                cancelUrl: donatePageUrl
+            });
+            if (error) {
+                location.href = donatePageUrl;
+            }
+        }
+    }
+
+</script>
