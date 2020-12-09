@@ -21,7 +21,6 @@
         function onClick(e) {
             e.preventDefault();
             if (window.Stripe) {
-                console.log("loaded");
                 handleStripeCheckoutRedirect();
             } else if (document.querySelector('#stripe-js')) {
                 console.log("attached");
