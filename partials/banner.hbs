@@ -27,7 +27,6 @@
                     .querySelector('#stripe-js')
                     .addEventListener('load', handleStripeLoadandRedirect);
             } else {
-                console.log('not loaded');
                 stripeScriptLoader(loadStripeAndRedirect);
             }
         }
