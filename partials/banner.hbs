@@ -23,7 +23,6 @@
             if (window.Stripe) {
                 handleStripeCheckoutRedirect();
             } else if (document.querySelector('#stripe-js')) {
-                console.log("attached");
                 document
                     .querySelector('#stripe-js')
                     .addEventListener('load', handleStripeLoadandRedirect);
