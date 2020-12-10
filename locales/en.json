@@ -2,6 +2,7 @@
   "keyword-meta": "<meta name='keywords' content='freeCodeCamp, programming, front-end, programmer, article, regular expressions, Python, JavaScript, AWS, JSON, HTML, CSS, Bootstrap, React, Vue, Webpack'>",
   "algolia-index-name": "news",
   "forum-url": "https://forum.freecodecamp.org/",
+  "nav-link-2": "<a class='nav-item' href='https://www.freecodecamp.org/learn'>Curriculum</a>",
   "donation-banner-url": "https://www.freecodecamp.org/donate/",
   "footer-desc-1": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)",
   "footer-desc-2": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.",

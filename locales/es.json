@@ -17,7 +17,7 @@
   "See all results for": "Ver todos los resultados para",
   "forum-url": "https://forum.freecodecamp.org/c/espanol/522",
   "Forum": "Foro",
-  "Donate": "Donar",
+  "nav-link-2": "<a class='toggle-button-nav' href='https://www.freecodecamp.org/donate/'>Donar</a>",
   "donation-banner-url": "https://chat.freecodecamp.org/home",
   "Help our nonprofit pay for servers. <span>Donate Now</span>.": "<span>Charlar con otros desarrolladores en español</span>",
   "If this article was helpful, <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text={title}%0A%0A{url}`, `share-twitter`, `width=550, height=235` ); return false;'>tweet it.</a>": "Si este artículo te fue útil, <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text={title}%0A%0A{url}`, `share-twitter`, `width=550, height=235` ); return false;'>haz un tweet</a>",

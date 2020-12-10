@@ -17,7 +17,7 @@
   "See all results for": "查看所有相关文章",
   "forum-url": "https://chinese.freecodecamp.org/forum/",
   "Forum": "论坛",
-  "Donate": "捐款",
+  "nav-link-2": "<a class='toggle-button-nav' href='https://www.freecodecamp.org/donate/'>捐款</a>",
   "donation-banner-url": "https://chat.freecodecamp.org/home",
   "Help our nonprofit pay for servers. <span>Donate Now</span>.": "<span>加入中文开发者社区聊天室</span>",
   "If this article was helpful, <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text={title}%0A%0A{url}`, `share-twitter`, `width=550, height=235` ); return false;'>tweet it.</a>": "If this article was helpful, <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text={title}%0A%0A{url}`, `share-twitter`, `width=550, height=235` ); return false;'>tweet it.</a>",
