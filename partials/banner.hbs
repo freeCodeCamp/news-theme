@@ -16,9 +16,7 @@
         const successUrl = 'https://www.freecodecamp.org/news/thank-you-for-donating/';
         let stripe;
 
-        document.getElementById("donation-banner-link").addEventListener("click", onClick);
-
-        function onClick(e) {
+        const onClick = (e) => {
             e.preventDefault();
             if (window.Stripe) {
                 handleStripeCheckoutRedirect();
@@ -50,8 +48,6 @@
             stripe = window.Stripe(stripePublicKey);
         }
 
-        loadAndInitializeStripe();
-
         const handleStripeLoadAndRedirect = () => {
             handleStripeLoad();
             handleStripeCheckoutRedirect();
@@ -75,6 +71,10 @@
                 location.href = donatePageUrl;
             }
         }
+
+        document.getElementById("donation-banner-link").addEventListener("click", onClick);
+        loadAndInitializeStripe();
+
     }
 
 </script>
