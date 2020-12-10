@@ -25,7 +25,7 @@
             } else if (document.querySelector('#stripe-js')) {
                 document
                     .querySelector('#stripe-js')
-                    .addEventListener('load', handleStripeLoadandRedirect);
+                    .addEventListener('load', handleStripeLoadAndRedirect);
             } else {
                 stripeScriptLoader(loadStripeAndRedirect);
             }
