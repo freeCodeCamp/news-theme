@@ -9,7 +9,7 @@
 
     if (loadStripeList.includes(`{{@site.lang}}`)) {
 
-        // Set keys based on environement
+        // Set keys based on environment
         const stripePublicKey = location.hostname === "localhost" || location.hostname === "127.0.0.1" ?
             "pk_test_xM2wpbgtyotYqFCK6Ss6noxP008nxRyaE9" : "pk_live_E6Z6xPM8pEsJziHW905zpAvF";
         const donatePageUrl = 'https://www.freecodecamp.org/donate/';
