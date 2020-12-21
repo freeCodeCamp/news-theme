@@ -255,7 +255,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   padding: 0;
 }
 
-a.nav-item,
+a.nav-forum,
 .nav li a {
   margin: 0;
   padding: 7px 15px;
@@ -264,7 +264,7 @@ a.nav-item,
   font-family: 'Roboto Mono', monospace;
 }
 
-a.nav-item:hover,
+a.nav-forum:hover,
 .nav li a:hover {
   background: white;
   color: var(--theme-color);
@@ -282,12 +282,13 @@ a.nav-item:hover,
   margin-left: auto;
 }
 
-a.nav-item {
+a.nav-forum {
   display: none;
+  margin-right: 19px;
 }
 
 @media (min-width: 500px) {
-  a.nav-item {
+  a.nav-forum {
     display: inline;
   }
 }
