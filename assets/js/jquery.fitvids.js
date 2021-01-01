@@ -39,6 +39,7 @@
         'iframe[src*="youtube.com"]',
         'iframe[src*="youtube-nocookie.com"]',
         'iframe[src*="kickstarter.com"][src*="video.html"]',
+        'iframe[src*="player.bilibili.com"]',
         'object',
         'embed'
       ];
