@@ -10,12 +10,13 @@
 </form>
 
 <script>
-  // Dynamically set keys and index based on site language
   const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
   const index = client.initIndex("{{t 'algolia-index-name'}}");
   const screenWidth = window.screen.width;
   const screenHeight = window.screen.height;
   const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
+  let searchQuery, hitSelected, hits;
+
   autocomplete('#search-input', { 
       hint: false,
       keyboardShortcuts: ['s', 191]
@@ -50,9 +51,9 @@
           if (!query.isEmpty) {
             return `
               <div class="aa-suggestion footer-suggestion">
-                <a id="algolia-footer-selector" href="{{@site.url}}/search?query=${result.query}">
+                <a id="algolia-footer-selector" href="{{@site.url}}/search?query=${searchQuery}">
                   <div class="algolia-result algolia-footer">
-                    <span>{{t "See all results for"}} ${result.query}</span>
+                    <span>{{t "See all results for"}} ${searchQuery}</span>
                   </div>
                 </a>
               </div>
@@ -84,25 +85,19 @@
   */
   const searchForm = document.getElementById('search-form');
   const input = document.getElementById('search-input');
-  let searchQuery, hitSelected, hits;
 
   input.addEventListener('keyup', e => {
     searchQuery = input.value;
   });
 
-  /*
-    Prevent form from being submitted when magnifying
-    glass is clicked or enter pressed with no query
-    or hits
-  */
+  // Prevent form from being submitted with magnifying
+  // glass or enter when there is no query or hits
   searchForm.addEventListener('submit', e => {
     e.preventDefault();
   });
 
-  /*
-    Search for highlighted hit or search query
-    when search button or enter is pressed
-  */
+  // Go to highlighted hit or search for current query
+  // when magnifying glass or enter is pressed
   function submitSearch() {
     hitSelected = document.getElementsByClassName('aa-cursor')[0];
 
