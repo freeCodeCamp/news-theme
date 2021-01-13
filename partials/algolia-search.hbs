@@ -15,7 +15,19 @@
   const screenWidth = window.screen.width;
   const screenHeight = window.screen.height;
   const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
+  const searchForm = document.getElementById('search-form');
+  const input = document.getElementById('search-input');
   let searchQuery, hitSelected, hits;
+
+  input.addEventListener('input', e => {
+    searchQuery = e.target.value;
+  });
+
+  // Prevent form from being submitted with magnifying
+  // glass or enter when there is no query or hits
+  searchForm.addEventListener('submit', e => {
+    e.preventDefault();
+  });
 
   autocomplete('#search-input', { 
       hint: false,
@@ -77,23 +89,6 @@
 
     // Go to selected article or footer path
     window.location.assign(hitSelected);
-  });
-
-  /* 
-    If no hits in the Autocomplete dropdown are highlighted,
-    treat input like normal search bar
-  */
-  const searchForm = document.getElementById('search-form');
-  const input = document.getElementById('search-input');
-
-  input.addEventListener('keyup', e => {
-    searchQuery = input.value;
-  });
-
-  // Prevent form from being submitted with magnifying
-  // glass or enter when there is no query or hits
-  searchForm.addEventListener('submit', e => {
-    e.preventDefault();
   });
 
   // Go to highlighted hit or search for current query
