@@ -31,7 +31,8 @@
 
   autocomplete('#search-input', { 
       hint: false,
-      keyboardShortcuts: ['s', 191]
+      keyboardShortcuts: ['s', 191],
+      openOnFocus: true
     }, [
     {
       source: autocomplete.sources.hits(index, { hitsPerPage: hitsToRender }),
