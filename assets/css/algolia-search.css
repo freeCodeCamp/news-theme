@@ -45,10 +45,6 @@
   user-select: none;
 }
 
-.ais-SearchBox-submit:focus {
-  outline: 0;
-}
-
 .ais-SearchBox-submitIcon {
   position: absolute;
   width: 14px;
@@ -87,11 +83,17 @@
   cursor: pointer;
 }
 
-.algolia-autocomplete .aa-dropdown-menu .aa-suggestions .aa-suggestion:first-of-type {
+.algolia-autocomplete
+  .aa-dropdown-menu
+  .aa-suggestions
+  .aa-suggestion:first-of-type {
   border-top: 0.75px solid var(--gray45);
 }
 
-.algolia-autocomplete .aa-dropdown-menu .aa-suggestions .aa-suggestion:last-of-type {
+.algolia-autocomplete
+  .aa-dropdown-menu
+  .aa-suggestions
+  .aa-suggestion:last-of-type {
   border-bottom: none;
 }
 
