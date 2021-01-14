@@ -45,6 +45,10 @@
   user-select: none;
 }
 
+.ais-SearchBox-submit:hover {
+  background-color: var(--gray90);
+}
+
 .ais-SearchBox-submitIcon {
   position: absolute;
   width: 14px;
