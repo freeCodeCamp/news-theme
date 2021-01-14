@@ -74,10 +74,7 @@
         }
       }
     }
-  ]).on('autocomplete:closed', () => {
-    // Clicked off dropdown or pressed Esc key
-    hits = false;
-  }).on('autocomplete:selected', (event, suggestion, dataset, context) => {
+  ]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
     // If article is selected, set to URL of the article. 
     // If footer is selected, set to search results path
     hitSelected = suggestion ? suggestion.url : `{{@site.url}}/search?query=${searchQuery}`;
