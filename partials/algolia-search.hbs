@@ -79,8 +79,8 @@
     // If footer is selected, set to search results path
     hitSelected = suggestion ? suggestion.url : `{{@site.url}}/search?query=${searchQuery}`;
 
-    // Do nothing on click, as the browser will already do it
-    if (context.selectionMethod === 'click') {
+    // Let browser handle click, and do not go to selection on tab key press
+    if (context.selectionMethod === 'click' || context.selectionMethod === 'tabKey') {
       return;
     }
 
