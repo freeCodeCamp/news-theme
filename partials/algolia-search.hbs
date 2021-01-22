@@ -90,7 +90,9 @@
     }
 
     // Go to selected article or footer path
-    window.location.assign(hitSelected);
+    if (hits) {
+      window.location.assign(hitSelected);
+    }
   });
 
   // Go to highlighted hit or search for current query
