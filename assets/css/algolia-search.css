@@ -23,6 +23,7 @@
 
 #search-input::placeholder {
   color: var(--gray15);
+  opacity: 0.8;
 }
 
 .ais-SearchBox-submit {
