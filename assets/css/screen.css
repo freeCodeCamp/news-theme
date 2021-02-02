@@ -796,7 +796,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
   position: relative;
   margin: 0 auto;
-  padding: 70px 100px 0;
+  padding: 70px 150px 0;
   min-height: 230px;
   font-family: 'Lato', sans-serif;
   font-size: 2.2rem;
@@ -804,14 +804,27 @@ make sure this only happens on large viewports / desktop-ish devices.
   background: #fff;
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 500px) {
+  .post-full-content {
+    padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .post-full-content {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 999px) {
   .post-full-content {
     padding: 5vw 7vw 0;
   }
 }
-@media (max-width: 800px) {
+
+@media (min-width: 1000px) and (max-width: 1170px) {
   .post-full-content {
-    font-size: 1.9rem;
+    padding: 5vw 9vw 0;
   }
 }
 
@@ -1121,9 +1134,6 @@ Usage (In Ghost editor):
   }
   .post-full-image {
     margin-bottom: 4vw;
-  }
-  .post-full-content {
-    padding: 0;
   }
   .post-full-content:before,
   .post-full-content:after {
