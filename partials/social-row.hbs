@@ -3,11 +3,9 @@
 
     {{#primary_author}}
     {{#if twitter}}
-    {{{t "If you read this far, tweet to the author to show them you care. <a id='tweet-btn' class='cta-button'>Tweet a
-        thanks</a>"}}}
+    {{{t "If you read this far, tweet to the author to show them you care."}}} <a id='tweet-btn' class='cta-button'>{{{t "Tweet a thanks"}}}</a>
     {{else}}
-    {{{t "If this article was helpful, <a id='tweet-btn' class='cta-button'>tweet
-        it.</a>"}}}
+    {{{t "If this article was helpful,"}}} <a id='tweet-btn' class='cta-button'>{{{t "tweet it."}}}</a>
     {{/if}}
     {{/primary_author}}
 </p>
@@ -23,12 +21,13 @@
     if (hideSocialRowList.includes(`{{@site.lang}}`)) socialRow.remove();
     else {
         const title = `{{encode title}}`.replace(/'/g, '%27');
-        const twitter = `{{primary_author.twitter}}`
+        const twitter = `{{primary_author.twitter}}`;
         const url = window.location;
+        const thanks = `{{t "Thank%20you%20{twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A" twitter="${twitter}"}}` + `${title}%0A%0A${url}`;
         const button = document.getElementById('tweet-btn');
         button.addEventListener('click', () => {
             if (twitter) {
-                window.open(`https://twitter.com/intent/tweet?text=Thank%20you%20${twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A${title}%0A%0A${url}`, `share-twitter`, `width=550, height=235`);
+                window.open(`https://twitter.com/intent/tweet?text=${thanks}`, `share-twitter`, `width=550, height=235`);
                 return false;
             }
             else {
