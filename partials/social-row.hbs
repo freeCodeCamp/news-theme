@@ -2,15 +2,16 @@
 <p class="social-row">
 
     {{#primary_author}}
-        {{#if twitter}}
-            {{{t "If you read this far, tweet to the author to show them you care. <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text=Thank%20you%20{twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A{title}%0A%0A{url}`, `share-twitter`, `width=550, height=235`); return false;'>Tweet a thanks</a>" title=(encode ../title) url=(encode ../url) twitter=twitter}}}
-        {{else}}
-            {{{t "If this article was helpful, <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text={title}%0A%0A{url}`, `share-twitter`, `width=550, height=235` ); return false;'>tweet it.</a>" title=(encode ../title) url=(encode ../url)}}}
-        {{/if}}
+    {{#if twitter}}
+    {{{t "If you read this far, tweet to the author to show them you care."}}} <a id='tweet-btn' class='cta-button'>{{{t "Tweet a thanks"}}}</a>
+    {{else}}
+    {{{t "If this article was helpful,"}}} <a id='tweet-btn' class='cta-button'>{{{t "tweet it."}}}</a>
+    {{/if}}
     {{/primary_author}}
 </p>
 
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs
+--}}
 {{#contentFor "scripts"}}
 <script>
     // Conditionally remove social-row based on the publication language setting
@@ -18,5 +19,23 @@
     const socialRow = document.getElementsByClassName('social-row')[0];
 
     if (hideSocialRowList.includes(`{{@site.lang}}`)) socialRow.remove();
+    else {
+        const title = `{{encode title}}`.replace(/'/g, '%27');
+        const twitter = `{{primary_author.twitter}}`;
+        const url = window.location;
+        const thanks = `{{t "Thank%20you%20{twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A" twitter="${twitter}"}}` + `${title}%0A%0A${url}`;
+        const button = document.getElementById('tweet-btn');
+        button.addEventListener('click', () => {
+            if (twitter) {
+                window.open(`https://twitter.com/intent/tweet?text=${thanks}`, `share-twitter`, `width=550, height=235`);
+                return false;
+            }
+            else {
+                window.open(`https://twitter.com/intent/tweet?text=${title}%0A%0A${url}`, `share-twitter`, `width=550, height=235`);
+                return false;
+            }
+        })
+        console.log(twitter)
+    }
 </script>
 {{/contentFor}}
