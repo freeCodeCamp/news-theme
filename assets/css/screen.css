@@ -851,7 +851,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content blockquote,
 .post-full-comments,
 .footnotes {
-  width: 100%;
+  min-width: 100%;
 }
 
 .post-full-content h2:target,
