@@ -1583,6 +1583,20 @@ pre.runkit-element {
   max-width: 920px;
 }
 
+.post-content .katex-display > .katex > .katex-html {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-content .katex .base {
+  display: inline;
+  margin: 0.5em 0;
+  white-space: unset;
+  word-break: break-word;
+}
+
 .medium-migrated-article > p:first-child {
   text-align: center;
 }
