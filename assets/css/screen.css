@@ -454,7 +454,7 @@ a.nav-forum {
   width: 100%;
   height: 200px;
   background: var(--gray15) no-repeat center center;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .post-card-content-link {
@@ -633,7 +633,7 @@ a.nav-forum {
   margin-left: 20px;
   color: var(--gray75);
   font-size: 1.2rem;
-  line-height: 33px;
+  line-height: 20px;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
