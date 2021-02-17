@@ -500,7 +500,7 @@ a.nav-forum {
 
 .post-card-meta {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding: 0 25px 25px 4px;
 }
 
@@ -620,13 +620,20 @@ a.nav-forum {
   }
 }
 
+.meta-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex: auto;
+  justify-content: space-between;
+}
+
 .meta-item,
 .reading-time {
   flex-shrink: 0;
   margin-left: 20px;
   color: var(--gray75);
   font-size: 1.2rem;
-  line-height: 33px;
+  line-height: 20px;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
