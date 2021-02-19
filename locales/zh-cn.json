@@ -17,8 +17,6 @@
   "Forum": "论坛",
   "Donate": "捐款",
   "donation-banner": "学习编程 — <span>3,000 小时免费课程</span>",
-  "If this article was helpful, <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text={title}%0A%0A{url}`, `share-twitter`, `width=550, height=235` ); return false;'>tweet it.</a>": "If this article was helpful, <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text={title}%0A%0A{url}`, `share-twitter`, `width=550, height=235` ); return false;'>tweet it.</a>",
-  "If you read this far, tweet to the author to show them you care. <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text=Thank%20you%20{twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A{title}%0A%0A{url}`, `share-twitter`, `width=550, height=235`); return false;'>Tweet a thanks</a>": "If you read this far, tweet to the author to show them you care. <a class='cta-button' onclick='window.open(`https://twitter.com/intent/tweet?text=Thank%20you%20{twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A{title}%0A%0A{url}`, `share-twitter`, `width=550, height=235`); return false;'>Tweet a thanks</a>",
   "learn-to-code-cta": "在 freeCodeCamp 免费学习编程。 freeCodeCamp 的开源课程已帮助 40,000 多人获得开发者工作。",
   "learn-to-code-cta-btn": "开始学习",
   "Load More Articles": "加载更多文章",
