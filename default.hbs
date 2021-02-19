@@ -22,13 +22,13 @@
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/algolia-search.css"}}" />
 
-    {{!-- i18n config, trending, etc. --}}
-    {{!-- <script type="text/javascript" src="assets/config/{{@site.lang}}/trending.js"></script> --}}
-    <script type="text/javascript" src="assets/config/{{@site.lang}}/footer.js"></script>
-
     {{!-- Algolia search assets --}}
     <script src="https://cdn.freecodecamp.org/news-assets/algolia/algoliasearch-3-33-0/algoliasearch.min.js"></script>
     <script src="https://cdn.freecodecamp.org/news-assets/algolia/autocomplete-0-36-0/autocomplete.min.js"></script>
+
+    {{!-- i18n links, trending links, and Algolia index --}}
+    <script type="text/javascript" src="/assets/config/{{@site.lang}}/footer.js"></script>
+    <script type="text/javascript" src="/assets/config/{{@site.lang}}/other.js"></script>
 
     {{!-- Runkit embeds - NOT WORKING? TODO --}}
     {{!--
