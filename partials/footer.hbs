@@ -66,17 +66,17 @@
             <div class="col-header">{{t "footer-our-nonprofit-header"}}</div>
             <div class="footer-divider"></div>
             <div class="our-nonprofit">
-                {{{t "footer-our-nonprofit-1"}}}
-                {{{t "footer-our-nonprofit-2"}}}
-                {{{t "footer-our-nonprofit-3"}}}
-                {{{t "footer-our-nonprofit-4"}}}
-                {{{t "footer-our-nonprofit-5"}}}
-                {{{t "footer-our-nonprofit-6"}}}
-                {{{t "footer-our-nonprofit-7"}}}
-                {{{t "footer-our-nonprofit-8"}}}
-                {{{t "footer-our-nonprofit-9"}}}
-                {{{t "footer-our-nonprofit-10"}}}
-                {{{t "footer-our-nonprofit-11"}}}
+                <a id="about" rel="noopener noreferrer" target="_blank">{{t "footer-about"}}</a>
+                <a id="alumni" rel="noopener noreferrer" target="_blank">{{t "footer-alumni"}}</a>
+                <a id="open-source" rel="noopener noreferrer" target="_blank">{{t "footer-open-source"}}</a>
+                <a id="shop" rel="noopener noreferrer" target="_blank">{{t "footer-shop"}}</a>
+                <a id="support" rel="noopener noreferrer" target="_blank">{{t "footer-support"}}</a>
+                <a id="sponsors" rel="noopener noreferrer" target="_blank">{{t "footer-sponsors"}}</a>
+                <a id="honesty" rel="noopener noreferrer" target="_blank">{{t "footer-honesty"}}</a>
+                <a id="coc" rel="noopener noreferrer" target="_blank">{{t "footer-coc"}}</a>
+                <a id="privacy" rel="noopener noreferrer" target="_blank">{{t "footer-privacy"}}</a>
+                <a id="tos" rel="noopener noreferrer" target="_blank">{{t "footer-tos"}}</a>
+                <a id="copyright" rel="noopener noreferrer" target="_blank">{{t "footer-copyright"}}</a>
             </div>
         </div>
     </div>
@@ -84,15 +84,23 @@
 
 {{#contentFor "scripts"}}
 <script>
-    Object.keys(trending).forEach(key => {
+    const { trending, ...otherUrls } = footer;
+
+    Object.keys(footer.trending).forEach(key => {
         const anchorId = key.replace(/link|title/, '');
-        const trendingAnchor = document.getElementById(anchorId);
+        const trendingAnchorEl = document.getElementById(anchorId);
 
         if (key.includes('link')) {
-            trendingAnchor.href = trending[key]
+            trendingAnchorEl.href = trending[key]
         } else if (key.includes('title')) {
-            trendingAnchor.textContent = trending[key];
+            trendingAnchorEl.textContent = trending[key];
         }
+    });
+
+    Object.keys(otherUrls).forEach(key => {
+        const footerAnchorEl = document.getElementById(key);
+
+        footerAnchorEl.href = otherUrls[key];
     });
 </script>
 {{/contentFor}}
