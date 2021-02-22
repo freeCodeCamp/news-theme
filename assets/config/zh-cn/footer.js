@@ -97,6 +97,5 @@ const footer = {
   coc: 'https://chinese.freecodecamp.org/news/code-of-conduct/',
   privacy: 'https://www.freecodecamp.org/news/privacy-policy/',
   tos: 'https://www.freecodecamp.org/news/terms-of-service/',
-  copyright: 'https://www.freecodecamp.org/news/copyright-policy/',
-  'footer-donation': 'https://chinese.freecodecamp.org/donate/'
+  copyright: 'https://www.freecodecamp.org/news/copyright-policy/'
 };

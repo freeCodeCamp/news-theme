@@ -105,6 +105,5 @@ const footer = {
   coc: 'https://www.freecodecamp.org/espanol/news/codigo-de-conducta/',
   privacy: 'https://www.freecodecamp.org/news/privacy-policy/',
   tos: 'https://www.freecodecamp.org/news/terms-of-service/',
-  copyright: 'https://www.freecodecamp.org/news/copyright-policy/',
-  'footer-donation': 'https://www.freecodecamp.org/espanol/donate/'
+  copyright: 'https://www.freecodecamp.org/news/copyright-policy/'
 };

@@ -85,6 +85,8 @@
 {{#contentFor "scripts"}}
 <script>
     const { trending, ...otherUrls } = footer;
+    const { 'donate-url': footerDonateUrl } = other;
+    const footerDonationAnchorEl = document.getElementById('footer-donation');
 
     Object.keys(footer.trending).forEach(key => {
         const anchorId = key.replace(/link|title/, '');
@@ -102,5 +104,7 @@
 
         footerAnchorEl.href = otherUrls[key];
     });
+
+    footerDonationAnchorEl.href = footerDonateUrl;
 </script>
 {{/contentFor}}

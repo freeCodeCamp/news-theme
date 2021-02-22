@@ -2322,7 +2322,7 @@ a.cta-button {
 /* 15. under-header-content donation
 /* ---------------------------------------------------------- */
 
-a.donation-banner {
+a.banner {
   position: fixed;
   top: var(--header-height);
   background-color: var(--blue-dark);
@@ -2339,24 +2339,24 @@ a.donation-banner {
   text-decoration: none;
 }
 
-a.donation-banner * {
+a.banner * {
   margin: 0px;
 }
 
-a.donation-banner span {
+a.banner span {
   text-decoration: underline;
 }
 
-a.donation-banner:hover {
+a.banner:hover {
   text-decoration: none;
 }
 
-a.donation-banner:hover span {
+a.banner:hover span {
   text-decoration: none;
 }
 
 @media (min-width: 500px) {
-  a.donation-banner {
+  a.banner {
     padding: 10px;
     font-size: 17px;
   }

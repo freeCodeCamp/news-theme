@@ -25,12 +25,12 @@
 <script>
     const {
         'forum-url': forumUrl,
-        'donate-url': donateUrl
+        'donate-url': navDonateUrl
     } = other;
     const navForumAnchorEl = document.getElementById('nav-forum');
     const navDonateAnchorEl = document.getElementById('nav-donate');
 
     navForumAnchorEl.href = forumUrl;
-    navDonateAnchorEl.href = donateUrl;
+    navDonateAnchorEl.href = navDonateUrl;
 </script>
 {{/contentFor}}

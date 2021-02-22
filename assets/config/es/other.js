@@ -4,5 +4,5 @@ const other = {
   'learn-to-code-cta-url': 'https://www.freecodecamp.org/espanol/learn/',
   'forum-url': 'https://forum.freecodecamp.org/c/espanol/522',
   'donate-url': 'https://www.freecodecamp.org/espanol/donate/',
-  'donation-banner-url': 'https://www.freecodecamp.org/espanol/'
+  'banner-url': 'https://www.freecodecamp.org/espanol/'
 };
