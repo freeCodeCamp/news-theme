@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const other = {
+const main = {
   'algolia-index-name': 'news',
   'learn-to-code-cta-url': 'https://www.freecodecamp.org/learn/',
   'forum-url': 'https://forum.freecodecamp.org/',
