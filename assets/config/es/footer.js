@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const footer = {
+export const footer = {
   trending: {
     article0title: 'Git Clone',
     article0link:

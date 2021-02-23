@@ -23,14 +23,15 @@
 
 {{#contentFor "scripts"}}
 <script>
-    const {
-        'forum-url': forumUrl,
-        'donate-url': navDonateUrl
-    } = main;
-    const navForumAnchorEl = document.getElementById('nav-forum');
-    const navDonateAnchorEl = document.getElementById('nav-donate');
+    const updateNav = async () => {
+        const { main } = await import('../assets/config/{{@site.lang}}/main.js');
+        const navForumAnchorEl = document.getElementById('nav-forum');
+        const navDonateAnchorEl = document.getElementById('nav-donate');
 
-    navForumAnchorEl.href = forumUrl;
-    navDonateAnchorEl.href = navDonateUrl;
+        navForumAnchorEl.href = main['forum-url'];
+        navDonateAnchorEl.href = main['donate-url'];
+    }
+
+    updateNav();
 </script>
 {{/contentFor}}

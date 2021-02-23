@@ -84,27 +84,32 @@
 
 {{#contentFor "scripts"}}
 <script>
-    const { trending, ...otherUrls } = footer;
-    const { 'donate-url': footerDonateUrl } = main;
-    const footerDonationAnchorEl = document.getElementById('footer-donation');
+    const updateFooter = async () => {
+        const { footer } = await import('../assets/config/{{@site.lang}}/footer.js');
+        const { main } = await import('../assets/config/{{@site.lang}}/main.js');
+        const { trending, ...otherUrls } = footer;
+        const footerDonationAnchorEl = document.getElementById('footer-donation');
 
-    Object.keys(footer.trending).forEach(key => {
-        const anchorId = key.replace(/link|title/, '');
-        const trendingAnchorEl = document.getElementById(anchorId);
+        Object.keys(footer.trending).forEach(key => {
+            const anchorId = key.replace(/link|title/, '');
+            const trendingAnchorEl = document.getElementById(anchorId);
 
-        if (key.includes('link')) {
-            trendingAnchorEl.href = trending[key]
-        } else if (key.includes('title')) {
-            trendingAnchorEl.textContent = trending[key];
-        }
-    });
+            if (key.includes('link')) {
+                trendingAnchorEl.href = trending[key]
+            } else if (key.includes('title')) {
+                trendingAnchorEl.textContent = trending[key];
+            }
+        });
 
-    Object.keys(otherUrls).forEach(key => {
-        const footerAnchorEl = document.getElementById(key);
+        Object.keys(otherUrls).forEach(key => {
+            const footerAnchorEl = document.getElementById(key);
 
-        footerAnchorEl.href = otherUrls[key];
-    });
+            footerAnchorEl.href = otherUrls[key];
+        });
 
-    footerDonationAnchorEl.href = footerDonateUrl;
+        footerDonationAnchorEl.href = main['donate-url'];
+    }
+
+    updateFooter();
 </script>
 {{/contentFor}}

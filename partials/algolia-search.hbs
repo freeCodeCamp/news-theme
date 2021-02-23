@@ -1,4 +1,4 @@
-<form id="search-form" onsubmit="submitSearch()">
+<form id="search-form">
   <div role="search" class="searchbox__wrapper">
     <input type="search" placeholder="{{t 'Search 6,000+ tutorials'}}" id="search-input" />
     <button type="submit" title="Submit your search query." class="ais-SearchBox-submit">
@@ -11,107 +11,114 @@
 </form>
 
 <script>
-  const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
-  const index = client.initIndex(main['algolia-index-name']);
-  const screenWidth = window.screen.width;
-  const screenHeight = window.screen.height;
-  const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
-  const searchForm = document.getElementById('search-form');
-  const input = document.getElementById('search-input');
-  const dropdownContainer = document.getElementById('dropdown-container');
-  let searchQuery, hitSelected, hits;
+  const initAlgoliaSearch = async () => {
+    const { main } = await import('../assets/config/{{@site.lang}}/main.js');
+    const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
+    const index = client.initIndex(main['algolia-index-name']);
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+    const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
+    const searchForm = document.getElementById('search-form');
+    const input = document.getElementById('search-input');
+    const dropdownContainer = document.getElementById('dropdown-container');
+    let searchQuery, hitSelected, hits;
 
-  input.addEventListener('input', e => {
-    searchQuery = e.target.value;
-  });
+    input.addEventListener('input', e => {
+      searchQuery = e.target.value;
+    });
 
-  // Prevent form from being submitted with magnifying
-  // glass or enter when there is no query or hits
-  searchForm.addEventListener('submit', e => {
-    e.preventDefault();
-  });
+    // Prevent form from being submitted with magnifying
+    // glass or enter when there is no query or hits
+    searchForm.addEventListener('submit', e => {
+      e.preventDefault();
 
-  const search = autocomplete('#search-input', { 
-      hint: false,
-      keyboardShortcuts: ['s', 191],
-      openOnFocus: true,
-      appendTo: dropdownContainer,
-      debug: true // allow tabbing through results
-    }, [
-    {
-      source: autocomplete.sources.hits(index, { hitsPerPage: hitsToRender }),
-      debounce: 250,
-      templates: {
-        suggestion: (suggestion, result) => {
-          hits = true;
-          return `
-            <a href="${suggestion.url}">
-              <div class="algolia-result">
-                <span>${suggestion._highlightResult.title.value}</span>
-              </div>
-            </a>
-          `;
-        },
-        empty: (options) => {
-          hits = false;
-          return `
-            <div class="aa-suggestion footer-suggestion no-hits-footer">
-              <div class="algolia-result">
-                <span>
-                  {{t "No tutorials found"}}
-                </span>
-              </div>
-            </div>
-          `;
-        },
-        footer: (query, result) => {
-          if (!query.isEmpty) {
+      submitSearch();
+    });
+
+    const search = autocomplete('#search-input', { 
+        hint: false,
+        keyboardShortcuts: ['s', 191],
+        openOnFocus: true,
+        appendTo: dropdownContainer,
+        debug: true // allow tabbing through results
+      }, [
+      {
+        source: autocomplete.sources.hits(index, { hitsPerPage: hitsToRender }),
+        debounce: 250,
+        templates: {
+          suggestion: (suggestion, result) => {
+            hits = true;
             return `
-              <div class="aa-suggestion footer-suggestion">
-                <a id="algolia-footer-selector" href="{{@site.url}}/search?query=${searchQuery}">
-                  <div class="algolia-result algolia-footer">
-                    <span>{{t "See all results for"}} ${searchQuery}</span>
-                  </div>
-                </a>
+              <a href="${suggestion.url}">
+                <div class="algolia-result">
+                  <span>${suggestion._highlightResult.title.value}</span>
+                </div>
+              </a>
+            `;
+          },
+          empty: (options) => {
+            hits = false;
+            return `
+              <div class="aa-suggestion footer-suggestion no-hits-footer">
+                <div class="algolia-result">
+                  <span>
+                    {{t "No tutorials found"}}
+                  </span>
+                </div>
               </div>
             `;
+          },
+          footer: (query, result) => {
+            if (!query.isEmpty) {
+              return `
+                <div class="aa-suggestion footer-suggestion">
+                  <a id="algolia-footer-selector" href="{{@site.url}}/search?query=${searchQuery}">
+                    <div class="algolia-result algolia-footer">
+                      <span>{{t "See all results for"}} ${searchQuery}</span>
+                    </div>
+                  </a>
+                </div>
+              `;
+            }
           }
         }
       }
-    }
-  ]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
-    // If article is selected, set to URL of the article. 
-    // If footer is selected, set to search results path
-    hitSelected = suggestion ? suggestion.url : `{{@site.url}}/search?query=${searchQuery}`;
+    ]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
+      // If article is selected, set to URL of the article. 
+      // If footer is selected, set to search results path
+      hitSelected = suggestion ? suggestion.url : `{{@site.url}}/search?query=${searchQuery}`;
 
-    // Let browser handle click, and do not go to selection on tab key press
-    if (context.selectionMethod === 'click' || context.selectionMethod === 'tabKey') {
-      return;
+      // Let browser handle click, and do not go to selection on tab key press
+      if (context.selectionMethod === 'click' || context.selectionMethod === 'tabKey') {
+        return;
+      }
+
+      // Go to selected article or footer path
+      if (hits) {
+        window.location.assign(hitSelected);
+      }
+    });
+
+    // Go to highlighted hit or search for current query
+    // when magnifying glass or enter is pressed
+    function submitSearch() {
+      hitSelected = document.getElementsByClassName('aa-cursor')[0];
+
+      if (hitSelected && searchQuery) {
+        const articleUrl = hitSelected.querySelector('a').href;
+        window.location.assign(articleUrl);
+      } else if (!hitSelected && searchQuery && hits) {
+        window.location.assign(`{{@site.url}}/search?query=${searchQuery}`);
+      }
     }
 
-    // Go to selected article or footer path
-    if (hits) {
-      window.location.assign(hitSelected);
-    }
-  });
-
-  // Go to highlighted hit or search for current query
-  // when magnifying glass or enter is pressed
-  function submitSearch() {
-    hitSelected = document.getElementsByClassName('aa-cursor')[0];
-
-    if (hitSelected && searchQuery) {
-      const articleUrl = hitSelected.querySelector('a').href;
-      window.location.assign(articleUrl);
-    } else if (!hitSelected && searchQuery && hits) {
-      window.location.assign(`{{@site.url}}/search?query=${searchQuery}`);
-    }
+    // close dropbar when clicking off 
+    document.addEventListener('click', e => {
+      if (e.target !== input) {
+        search.autocomplete.close();
+      }
+    });
   }
 
-  // close dropbar when clicking off 
-  document.addEventListener('click', e => {
-    if (e.target !== input) {
-      search.autocomplete.close();
-    }
-  });
+  initAlgoliaSearch();
 </script>
