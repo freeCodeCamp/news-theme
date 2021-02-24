@@ -10,144 +10,137 @@
 </main>
 
 <script>
-  const initSearchResultsPage = async () => {
-    const { main } = await import('../assets/config/{{@site.lang}}/main.js');
-    const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
-    const index = client.initIndex(main['algolia-index-name']);
-    const urlParams = new URLSearchParams(window.location.search);
-    const queryStr = urlParams.get('query');
-    const postFeed = document.querySelector('.post-feed');
-    let currPage = 0;
+  const urlParams = new URLSearchParams(window.location.search);
+  const queryStr = urlParams.get('query');
+  const postFeed = document.querySelector('.post-feed');
+  let currPage = 0;
 
-    function getHits(pageNo) {
-      return index.search({
-        query: queryStr,
-        hitsPerPage: 15,
-        page: pageNo
-      }).then(({ hits } = {}) => {
-        return hits;
-      }).catch(err => {
-        console.log(err);
-        console.log(err.debugData);
-      });
-    }
-
-    async function renderSearchResults(arr) {
-      arr.forEach((hit, i) => {
-        const featureImage = hit.featureImage || "#";
-        const url = hit.url || "#";
-        const title = hit.title || "#";
-        const authorName = hit.author.name;
-        const authorImage = hit.author.profileImage;
-        const authorUrl = hit.author.url;
-        const primaryTagCodeBlock = hit.tags.length === 0 ? "" : `
-            <a href="${hit.tags[0].url}">
-              #${hit.tags[0].name}
-            </a>
-          `;
-        const publishedAt = hit.publishedAt;
-        const dateStylingClassName = authorName === 'freeCodeCamp.org' ? 'meta-item-single' : 'meta-item';
-        const timeEl = `<time class="post-full-meta-date ${dateStylingClassName}" datetime="${publishedAt}"></time>`;
-        const displayAuthorAndTime = () => {
-          return authorName === 'freeCodeCamp.org' ? timeEl : `
-              <ul class="author-list">
-                <li class="author-list-item">
-                  <div class="author-name-tooltip">
-                    ${authorName}
-                  </div>
-                  <a href="${authorUrl}" class="static-avatar">
-                    <img class="author-profile-image" src="${authorImage}" alt="${authorName}">
-                  </a>
-                </li>
-              </ul>
-              <a class="meta-item" href="${authorUrl}">${authorName}</a>
-              ${timeEl}
-            `;
-        }
-
-        const articleItem = document.createElement('article');
-        articleItem.className = "post-card post tag-javascript tag-news featured post-card-large";
-        const codeBlock = `
-            <a class="post-card-image-link" href="${url}">
-              <img class="post-card-image" srcset="${featureImage} 300w,
-                ${featureImage} 600w,
-                ${featureImage} 1000w,
-                ${featureImage} 2000w" sizes="(max-width: 1000px) 400px, 700px" src="${featureImage}" alt="${title}"
-              >
-            </a>
-            <div class="post-card-content">
-              <div class="post-card-content-link">
-                <header class="post-card-header">
-                  <span class="post-card-tags">
-                    ${primaryTagCodeBlock}
-                  </span>
-                  <h2 class="post-card-title">
-                    <a href="${url}">
-                      ${title}
-                    </a>
-                  </h2>
-                </header>
-              </div>
-              <footer class="post-card-meta">
-                ${displayAuthorAndTime()}
-              </footer>
-            </div>
-          `;
-
-        articleItem.innerHTML = codeBlock;
-        postFeed.appendChild(articleItem);
-      });
-    }
-
-    function renderLoadMoreBtn() {
-      const inner = document.querySelector('.inner');
-
-      const readMoreRow = document.createElement('div');
-      readMoreRow.className = 'read-more-row';
-
-      const loadMoreBtn = document.createElement('button');
-      loadMoreBtn.innerHTML = "{{t 'Load More Articles'}}";
-      loadMoreBtn.id = 'readMoreBtn';
-
-      loadMoreBtn.addEventListener('click', (event) => {
-        // Iterate currPage and load next set of hits
-        populatePage(++currPage);
-      });
-
-      // Append row and button to page
-      readMoreRow.appendChild(loadMoreBtn);
-      inner.appendChild(readMoreRow);
-    }
-
-    function removeLoadMoreBtn() {
-      const readMoreRow = document.querySelector('.read-more-row');
-
-      readMoreRow.remove();
-    }
-
-    async function populatePage(pageNo) {
-      const hitsArr = await getHits(pageNo);
-
-      await renderSearchResults(hitsArr);
-
-      // Only render "Load More Articles" button
-      // if there are more than 15 hits, meaning
-      // that there are up to 15 more hits in the
-      // next API call
-      if (hitsArr.length === 15) {
-        // Check for existing button and render if none exists
-        document.querySelector('#readMoreBtn') ? '' : renderLoadMoreBtn();
-      } else {
-        // Remove readMoreRow if a button exists and there are less than 15 hits
-        document.querySelector('#readMoreBtn') ? removeLoadMoreBtn() : '';
-      }
-    }
-
-    // Render for search page 0
-    populatePage(currPage);
+  function getHits(pageNo) {
+    return index.search({
+      query: queryStr,
+      hitsPerPage: 15,
+      page: pageNo
+    }).then(({ hits } = {}) => {
+      return hits;
+    }).catch(err => {
+      console.log(err);
+      console.log(err.debugData);
+    });
   }
 
-  initSearchResultsPage();
+  async function renderSearchResults(arr) {
+    arr.forEach((hit, i) => {
+      const featureImage = hit.featureImage || "#";
+      const url = hit.url || "#";
+      const title = hit.title || "#";
+      const authorName = hit.author.name;
+      const authorImage = hit.author.profileImage;
+      const authorUrl = hit.author.url;
+      const primaryTagCodeBlock = hit.tags.length === 0 ? "" : `
+          <a href="${hit.tags[0].url}">
+            #${hit.tags[0].name}
+          </a>
+        `;
+      const publishedAt = hit.publishedAt;
+      const dateStylingClassName = authorName === 'freeCodeCamp.org' ? 'meta-item-single' : 'meta-item';
+      const timeEl = `<time class="post-full-meta-date ${dateStylingClassName}" datetime="${publishedAt}"></time>`;
+      const displayAuthorAndTime = () => {
+        return authorName === 'freeCodeCamp.org' ? timeEl : `
+            <ul class="author-list">
+              <li class="author-list-item">
+                <div class="author-name-tooltip">
+                  ${authorName}
+                </div>
+                <a href="${authorUrl}" class="static-avatar">
+                  <img class="author-profile-image" src="${authorImage}" alt="${authorName}">
+                </a>
+              </li>
+            </ul>
+            <a class="meta-item" href="${authorUrl}">${authorName}</a>
+            ${timeEl}
+          `;
+      }
+
+      const articleItem = document.createElement('article');
+      articleItem.className = "post-card post tag-javascript tag-news featured post-card-large";
+      const codeBlock = `
+          <a class="post-card-image-link" href="${url}">
+            <img class="post-card-image" srcset="${featureImage} 300w,
+              ${featureImage} 600w,
+              ${featureImage} 1000w,
+              ${featureImage} 2000w" sizes="(max-width: 1000px) 400px, 700px" src="${featureImage}" alt="${title}"
+            >
+          </a>
+          <div class="post-card-content">
+            <div class="post-card-content-link">
+              <header class="post-card-header">
+                <span class="post-card-tags">
+                  ${primaryTagCodeBlock}
+                </span>
+                <h2 class="post-card-title">
+                  <a href="${url}">
+                    ${title}
+                  </a>
+                </h2>
+              </header>
+            </div>
+            <footer class="post-card-meta">
+              ${displayAuthorAndTime()}
+            </footer>
+          </div>
+        `;
+
+      articleItem.innerHTML = codeBlock;
+      postFeed.appendChild(articleItem);
+    });
+  }
+
+  function renderLoadMoreBtn() {
+    const inner = document.querySelector('.inner');
+
+    const readMoreRow = document.createElement('div');
+    readMoreRow.className = 'read-more-row';
+
+    const loadMoreBtn = document.createElement('button');
+    loadMoreBtn.innerHTML = "{{t 'Load More Articles'}}";
+    loadMoreBtn.id = 'readMoreBtn';
+
+    loadMoreBtn.addEventListener('click', (event) => {
+      // Iterate currPage and load next set of hits
+      populatePage(++currPage);
+    });
+
+    // Append row and button to page
+    readMoreRow.appendChild(loadMoreBtn);
+    inner.appendChild(readMoreRow);
+  }
+
+  function removeLoadMoreBtn() {
+    const readMoreRow = document.querySelector('.read-more-row');
+
+    readMoreRow.remove();
+  }
+
+  async function populatePage(pageNo) {
+    const hitsArr = await getHits(pageNo);
+
+    await renderSearchResults(hitsArr);
+
+    // Only render "Load More Articles" button
+    // if there are more than 15 hits, meaning
+    // that there are up to 15 more hits in the
+    // next API call
+    if (hitsArr.length === 15) {
+      // Check for existing button and render if none exists
+      document.querySelector('#readMoreBtn') ? '' : renderLoadMoreBtn();
+    } else {
+      // Remove readMoreRow if a button exists and there are less than 15 hits
+      document.querySelector('#readMoreBtn') ? removeLoadMoreBtn() : '';
+    }
+  }
+
+  // Render for search page 0
+  populatePage(currPage);
 </script>
 
 {{!-- Day.js date localization for search results --}}

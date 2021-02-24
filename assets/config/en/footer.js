@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-export const footer = {
+const enFooter = {
   trending: {
     article0title: 'What is Docker?',
     article0link:

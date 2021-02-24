@@ -23,15 +23,10 @@
 
 {{#contentFor "scripts"}}
 <script>
-    const updateNav = async () => {
-        const { main } = await import('../assets/config/{{@site.lang}}/main.js');
-        const navForumAnchorEl = document.getElementById('nav-forum');
-        const navDonateAnchorEl = document.getElementById('nav-donate');
+    const navForumAnchorEl = document.getElementById('nav-forum');
+    const navDonateAnchorEl = document.getElementById('nav-donate');
 
-        navForumAnchorEl.href = main['forum-url'];
-        navDonateAnchorEl.href = main['donate-url'];
-    }
-
-    updateNav();
+    navForumAnchorEl.href = main['forum-url'];
+    navDonateAnchorEl.href = main['donate-url'];
 </script>
 {{/contentFor}}

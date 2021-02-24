@@ -6,13 +6,8 @@
 
 {{#contentFor "scripts"}}
 <script>
-    const updateBanner = async () => {
-        const { main } = await import('../assets/config/{{@site.lang}}/main.js');
-        const bannerAnchorEl = document.getElementById('banner');
+    const bannerAnchorEl = document.getElementById('banner');
 
-        bannerAnchorEl.href = main['banner-url'];
-    }
-
-    updateBanner();
+    bannerAnchorEl.href = main['banner-url'];
 </script>
 {{/contentFor}}

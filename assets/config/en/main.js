@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-export const main = {
+const enMain = {
   'algolia-index-name': 'news',
   'learn-to-code-cta-url': 'https://www.freecodecamp.org/learn/',
   'forum-url': 'https://forum.freecodecamp.org/',

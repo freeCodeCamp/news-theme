@@ -8,13 +8,8 @@
 
 {{#contentFor "scripts"}}
 <script>
-    const updateLearnToCodeCta = async () => {
-        const { main } = await import('../assets/config/{{@site.lang}}/main.js');
-        const learnToCodeCtaAnchorEl = document.getElementById('learn-to-code-cta');
+    const learnToCodeCtaAnchorEl = document.getElementById('learn-to-code-cta');
 
-        learnToCodeCtaAnchorEl.href = main['learn-to-code-cta-url'];
-    }
-
-    updateLearnToCodeCta();
+    learnToCodeCtaAnchorEl.href = main['learn-to-code-cta-url'];
 </script>
 {{/contentFor}}
