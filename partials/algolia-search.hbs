@@ -12,7 +12,7 @@
 
 <script>
   const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
-  const index = client.initIndex("{{t 'algolia-index-name'}}");
+  const index = client.initIndex(main['algolia-index-name']);
   const screenWidth = window.screen.width;
   const screenHeight = window.screen.height;
   const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
@@ -29,6 +29,8 @@
   // glass or enter when there is no query or hits
   searchForm.addEventListener('submit', e => {
     e.preventDefault();
+
+    submitSearch();
   });
 
   const search = autocomplete('#search-input', { 

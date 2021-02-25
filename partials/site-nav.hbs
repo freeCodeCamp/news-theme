@@ -11,12 +11,22 @@
     </div>
     <div class="site-nav-right">
         <div class="nav-group">
-            <a class="nav-forum" href={{t "forum-url"}}>{{t "Forum"}}</a>
+            <a class="nav-forum" id="nav-forum" rel="noopener noreferrer" target="_blank">{{t "Forum"}}</a>
 
-            <a class="toggle-button-nav" href="https://www.freecodecamp.org/donate/">
+            <a class="toggle-button-nav" id="nav-donate" rel="noopener noreferrer" target="_blank">
                 {{t "Donate"}}
             </a>
         </div>
 
     </div>
 </nav>
+
+{{#contentFor "scripts"}}
+<script>
+    const navForumAnchorEl = document.getElementById('nav-forum');
+    const navDonateAnchorEl = document.getElementById('nav-donate');
+
+    navForumAnchorEl.href = main['forum-url'];
+    navDonateAnchorEl.href = main['donate-url'];
+</script>
+{{/contentFor}}

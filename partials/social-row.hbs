@@ -23,7 +23,8 @@
         const title = `{{encode title}}`.replace(/'/g, '%27');
         const twitter = `{{primary_author.twitter}}`;
         const url = window.location;
-        const thanks = `{{t "Thank%20you%20{twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A" twitter="${twitter}"}}` + `${title}%0A%0A${url}`;
+        const thanks = `{{encode (t "Thank you {twitter} for writing this helpful article" twitter=primary_author.twitter)}}.` +
+            `%0A%0A${title}%0A%0A${url}`;
         const button = document.getElementById('tweet-btn');
         button.addEventListener('click', () => {
             if (twitter) {
@@ -34,8 +35,7 @@
                 window.open(`https://twitter.com/intent/tweet?text=${title}%0A%0A${url}`, `share-twitter`, `width=550, height=235`);
                 return false;
             }
-        })
-        console.log(twitter)
+        });
     }
 </script>
 {{/contentFor}}

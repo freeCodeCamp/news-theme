@@ -1,5 +1,13 @@
-<a class="donation-banner" id="donation-banner-link" href={{t "donation-banner-url"}}>
+<a class="banner" id="banner" rel="noopener noreferrer" target="_blank">
     <p>
-        {{{t "Learn to code — <span>free 3,000-hour curriculum</span>"}}}
+        {{{t "banner"}}}
     </p>
 </a>
+
+{{#contentFor "scripts"}}
+<script>
+    const bannerAnchorEl = document.getElementById('banner');
+
+    bannerAnchorEl.href = main['banner-url'];
+</script>
+{{/contentFor}}
