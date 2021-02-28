@@ -10,7 +10,7 @@ if (siteLang === 'en') {
 } else if (siteLang === 'es') {
   main = esMain;
   footer = esFooter;
-} else if (siteLang === 'zh') {
+} else if (siteLang === 'zh-cn') {
   main = zhMain;
   footer = zhFooter;
 }
