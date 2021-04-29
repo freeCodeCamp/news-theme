@@ -39,10 +39,10 @@
         "cssnano": "^4.1.10",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.10.1",
-        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-prefer-object-spread": "^1.2.1",
-        "eslint-plugin-prettier": "^3.1.2",
-        "eslint-plugin-react": "^7.19.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-react": "^7.23.2",
         "gscan": "^3.5.2",
         "gulp": "^4.0.2",
         "gulp-filter": "^6.0.0",
@@ -52,11 +52,11 @@
         "gulp-uglify": "^3.0.2",
         "gulp-util": "^3.0.8",
         "gulp-watch": "^5.0.1",
-        "gulp-zip": "^5.0.1",
+        "gulp-zip": "^5.1.0",
         "postcss-color-function": "^4.1.0",
         "postcss-custom-properties": "^9.1.1",
         "postcss-easy-import": "^3.0.0",
-        "prettier": "^2.0.4"
+        "prettier": "^2.2.1"
     },
     "browserslist": [
         "defaults"
