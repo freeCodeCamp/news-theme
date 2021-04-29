@@ -1,90 +1,88 @@
 {
-    "name": "freecodecamp-news-theme",
-    "description": "The Ghost theme for https://www.freecodecamp.org/news",
-    "demo": "https://www.freecodecamp.org/news",
-    "version": "2.9.0",
-    "engines": {
-        "ghost": ">=2.0.0",
-        "ghost-api": "v2"
-    },
-    "license": "MIT",
-    "scripts": {
-        "develop": "gulp",
-        "dev": "npm run develop",
-        "zip": "gulp zip",
-        "test": "gscan .",
-        "test:ci": "gscan --fatal --verbose .",
-        "start-ghost": "cd ../../.. && ghost start"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/freeCodeCamp/news-theme.git"
-    },
-    "bugs": "https://github.com/freeCodeCamp/news-theme/issues",
-    "contributors": [
-        "https://github.com/freeCodeCamp/news-theme/graphs/contributors"
-    ],
-    "author": {
-        "email": "team@freecodecamp.org",
-        "name": "freeCodeCamp.org",
-        "url": "https://www.freecodecamp.org"
-    },
-    "keywords": [
-        "ghost-theme"
-    ],
-    "devDependencies": {
-        "@freecodecamp/eslint-config": "^2.0.2",
-        "autoprefixer": "^9.7.6",
-        "babel-eslint": "^10.1.0",
-        "cssnano": "^4.1.10",
-        "eslint": "^6.8.0",
-        "eslint-config-prettier": "^6.10.1",
-        "eslint-plugin-import": "^2.22.1",
-        "eslint-plugin-prefer-object-spread": "^1.2.1",
-        "eslint-plugin-prettier": "^3.4.0",
-        "eslint-plugin-react": "^7.23.2",
-        "gscan": "^3.5.2",
-        "gulp": "^4.0.2",
-        "gulp-filter": "^6.0.0",
-        "gulp-livereload": "^4.0.2",
-        "gulp-postcss": "^8.0.0",
-        "gulp-sourcemaps": "^2.6.5",
-        "gulp-uglify": "^3.0.2",
-        "gulp-util": "^3.0.8",
-        "gulp-watch": "^5.0.1",
-        "gulp-zip": "^5.1.0",
-        "postcss-color-function": "^4.1.0",
-        "postcss-custom-properties": "^9.1.1",
-        "postcss-easy-import": "^3.0.0",
-        "prettier": "^2.2.1"
-    },
-    "browserslist": [
-        "defaults"
-    ],
-    "config": {
-        "posts_per_page": 25,
-        "image_sizes": {
-            "xxs": {
-                "width": 30
-            },
-            "xs": {
-                "width": 100
-            },
-            "profile": {
-                "width": 150
-            },
-            "s": {
-                "width": 300
-            },
-            "m": {
-                "width": 600
-            },
-            "l": {
-                "width": 1000
-            },
-            "xl": {
-                "width": 2000
-            }
-        }
+  "name": "freecodecamp-news-theme",
+  "description": "The Ghost theme for https://www.freecodecamp.org/news",
+  "demo": "https://www.freecodecamp.org/news",
+  "version": "2.9.0",
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm run develop",
+    "develop": "gulp",
+    "format": "npx eslint . --fix",
+    "lint": "npx eslint .",
+    "test:ci": "gscan --fatal --verbose .",
+    "test": "gscan .",
+    "zip": "gulp zip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeCodeCamp/news-theme.git"
+  },
+  "bugs": "https://github.com/freeCodeCamp/news-theme/issues",
+  "contributors": [
+    "https://github.com/freeCodeCamp/news-theme/graphs/contributors"
+  ],
+  "author": {
+    "email": "team@freecodecamp.org",
+    "name": "freeCodeCamp.org",
+    "url": "https://www.freecodecamp.org"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "devDependencies": {
+    "@freecodecamp/eslint-config": "^2.0.2",
+    "autoprefixer": "^9.7.6",
+    "babel-eslint": "^10.1.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "gscan": "^3.5.2",
+    "gulp": "^4.0.2",
+    "gulp-filter": "^6.0.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^5.0.1",
+    "gulp-zip": "^5.1.0",
+    "postcss-color-function": "^4.1.0",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-easy-import": "^3.0.0",
+    "prettier": "^2.2.1"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "config": {
+    "posts_per_page": 25,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
     }
+  }
 }

@@ -2,64 +2,64 @@
  * Infinite Scroll
  */
 
-(function(window, document) {
-    // next link element
-    var nextElement = document.querySelector("link[rel=next]");
-    if (!nextElement) {
-        document.querySelector(".read-more-row").remove();
-        return;
+(function (window, document) {
+  // next link element
+  var nextElement = document.querySelector('link[rel=next]');
+  if (!nextElement) {
+    document.querySelector('.read-more-row').remove();
+    return;
+  }
+
+  // post feed element
+  var feedElement = document.querySelector('.post-feed');
+  if (!feedElement) return;
+
+  var loading = false;
+
+  function onPageLoad() {
+    if (this.status === 404) {
+      document
+        .getElementById('readMoreBtn')
+        .removeEventListener('click', onUpdate);
+      return;
+    }
+    // append contents
+    var postElements = this.response.querySelectorAll('.post-card');
+    postElements.forEach(function (item) {
+      feedElement.appendChild(item);
+    });
+
+    // set next link
+    var resNextElement = this.response.querySelector('link[rel=next]');
+    if (resNextElement) {
+      nextElement.href = resNextElement.href;
+    } else {
+      document
+        .getElementById('readMoreBtn')
+        .removeEventListener('click', onUpdate);
+      document.querySelector('.read-more-row').remove();
     }
 
-    // post feed element
-    var feedElement = document.querySelector(".post-feed");
-    if (!feedElement) return;
+    // sync status
+    loading = false;
+  }
 
-    var loading = false;
+  function onUpdate() {
+    // return if already loading
+    if (loading) return;
 
-    function onPageLoad() {
-        if (this.status === 404) {
-            document
-                .getElementById("readMoreBtn")
-                .removeEventListener("click", onUpdate);
-            return;
-        }
-        // append contents
-        var postElements = this.response.querySelectorAll(".post-card");
-        postElements.forEach(function(item) {
-            feedElement.appendChild(item);
-        });
+    loading = true;
 
-        // set next link
-        var resNextElement = this.response.querySelector("link[rel=next]");
-        if (resNextElement) {
-            nextElement.href = resNextElement.href;
-        } else {
-            document
-                .getElementById("readMoreBtn")
-                .removeEventListener("click", onUpdate);
-            document.querySelector(".read-more-row").remove();
-        }
+    var xhr = new window.XMLHttpRequest();
+    xhr.responseType = 'document';
 
-        // sync status
-        loading = false;
-    }
+    xhr.addEventListener('load', onPageLoad);
 
-    function onUpdate() {
-        // return if already loading
-        if (loading) return;
+    xhr.open('GET', nextElement.href);
+    xhr.send(null);
+  }
 
-        loading = true;
-
-        var xhr = new window.XMLHttpRequest();
-        xhr.responseType = "document";
-
-        xhr.addEventListener("load", onPageLoad);
-
-        xhr.open("GET", nextElement.href);
-        xhr.send(null);
-    }
-
-    document
-        .getElementById("readMoreBtn")
-        .addEventListener("click", onUpdate, { passive: true });
+  document
+    .getElementById('readMoreBtn')
+    .addEventListener('click', onUpdate, { passive: true });
 })(window, document);
