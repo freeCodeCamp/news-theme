@@ -44,7 +44,7 @@
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
-    "gscan": "^3.5.2",
+    "gscan": "^4.0.2",
     "gulp": "^4.0.2",
     "gulp-filter": "^7.0.0",
     "gulp-livereload": "^4.0.2",
