@@ -5,7 +5,7 @@
 {{!-- Everything inside the #author tags pulls data from the author --}}
 <div class="under-header-content">
     {{#if profile_image}}
-    <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+    <img class="author-profile-image" src="{{img_url profile_image size="profile"}}" alt="{{name}}" />
     {{/if}}
     <h1 class="site-title">{{name}}</h1>
     {{#if bio}}
