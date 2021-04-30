@@ -18,7 +18,7 @@
     const hideSocialRowList = ['zh-cn'];
     const socialRow = document.getElementsByClassName('social-row')[0];
 
-    if (hideSocialRowList.includes(`{{@site.lang}}`)) socialRow.remove();
+    if (hideSocialRowList.includes(`{{@site.locale}}`)) socialRow.remove();
     else {
         const title = `{{encode title}}`.replace(/'/g, '%27');
         const twitter = `{{primary_author.twitter}}`;

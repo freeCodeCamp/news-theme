@@ -3,7 +3,7 @@
     // Conditionally show comments section based on publication language setting
     const showCommentsList = ['zh-cn'];
 
-    if (showCommentsList.includes(`{{@site.lang}}`)) {
+    if (showCommentsList.includes(`{{@site.locale}}`)) {
       const hostname = window.location.hostname;
       const discourseEmbedMap = {
         'www.freecodecamp.org': {

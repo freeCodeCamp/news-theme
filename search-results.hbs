@@ -151,7 +151,7 @@
     // Load dayjs plugins and set locale
     dayjs.extend(dayjs_plugin_localizedFormat);
     dayjs.extend(dayjs_plugin_relativeTime);
-    dayjs.locale(`{{@site.lang}}`);
+    dayjs.locale(`{{@site.locale}}`);
 
     const localizeDates = datesList => {
     datesList.forEach(date => {
@@ -179,12 +179,12 @@
     // and localize their dates
     const newNodes = mutations.map(mutation => [...mutation.addedNodes]).flat();
     const newPostDates = newNodes.map(node => [...node.querySelectorAll('.post-full-meta-date')]).flat(1);
-    
+
     observer.disconnect();
     localizeDates(newPostDates);
     observer.observe(postFeed, config);
     });
-    
+
     // Only observe mutations on front page and search results page
     if (postFeed) observer.observe(postFeed, config);
   });

@@ -2,20 +2,30 @@
   "name": "freecodecamp-news-theme",
   "description": "The Ghost theme for https://www.freecodecamp.org/news",
   "demo": "https://www.freecodecamp.org/news",
-  "version": "2.9.0",
+  "version": "0.0.1-alpha.0",
   "engines": {
-    "ghost": ">=2.0.0",
-    "ghost-api": "v2"
+    "ghost": ">=4.0.0",
+    "ghost-api": "v4"
   },
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "scripts": {
-    "dev": "npm run develop",
-    "develop": "gulp",
-    "format": "npx eslint . --fix",
+    "dev": "gulp",
+    "pretest": "gulp build",
+    "test": "gscan --verbose .",
     "lint": "npx eslint .",
-    "test:ci": "gscan --fatal --verbose .",
-    "test": "gscan .",
-    "zip": "gulp zip"
+    "format": "npx eslint . --fix",
+    "zip": "gulp zip",
+    "version": "npm run lint && npm run test && git add assets",
+    "prerelease": "npm run version",
+    "release": "np"
+  },
+  "files": [
+    "dist"
+  ],
+  "np": {
+    "yarn": false,
+    "contents": "dist",
+    "publish": false
   },
   "repository": {
     "type": "git",
@@ -37,6 +47,7 @@
     "@freecodecamp/eslint-config": "^2.0.2",
     "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
+    "beeper": "^2.1.0",
     "cssnano": "^5.0.2",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
@@ -46,19 +57,17 @@
     "eslint-plugin-react": "^7.23.2",
     "gscan": "^4.0.2",
     "gulp": "^4.0.2",
-    "gulp-filter": "^7.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-livereload": "^4.0.2",
     "gulp-postcss": "^9.0.0",
-    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-util": "^3.0.8",
-    "gulp-watch": "^5.0.1",
     "gulp-zip": "^5.1.0",
+    "np": "^7.5.0",
     "postcss": "^8.2.13",
-    "postcss-color-function": "^4.1.0",
-    "postcss-custom-properties": "^11.0.0",
+    "postcss-color-mod-function": "^3.0.3",
     "postcss-easy-import": "^3.0.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "pump": "^3.0.0"
   },
   "browserslist": [
     "defaults"

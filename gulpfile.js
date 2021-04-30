@@ -1,84 +1,95 @@
-var gulp = require('gulp');
+const { series, watch, src, dest, parallel } = require('gulp');
+const pump = require('pump');
+const beeper = require('beeper');
 
 // gulp plugins and utils
-var gutil = require('gulp-util');
-var livereload = require('gulp-livereload');
-var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
-var gulpZip = require('gulp-zip');
-var uglify = require('gulp-uglify');
-var filter = require('gulp-filter');
+const livereload = require('gulp-livereload');
+const postcss = require('gulp-postcss');
+const zip = require('gulp-zip');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 
 // postcss plugins
-var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-function');
-var cssnano = require('cssnano');
-var customProperties = require('postcss-custom-properties');
-var easyimport = require('postcss-easy-import');
+const autoprefixer = require('autoprefixer');
+const colorFunction = require('postcss-color-mod-function');
+const cssnano = require('cssnano');
+const easyimport = require('postcss-easy-import');
 
-var swallowError = function swallowError(error) {
-  gutil.log(error.toString());
-  gutil.beep();
-  this.emit('end');
+function serve(done) {
+  livereload.listen();
+  done();
+}
+
+const handleError = (done) => {
+  return function (err) {
+    if (err) {
+      beeper();
+    }
+    return done(err);
+  };
 };
 
-const initLivereload = function (cb) {
-  livereload.listen(1234);
-  cb();
-};
+function hbs(done) {
+  pump([src(['*.hbs', 'partials/**/*.hbs']), livereload()], handleError(done));
+}
 
-const css = () => {
-  var processors = [
-    easyimport,
-    customProperties,
-    colorFunction(),
-    autoprefixer(),
-    cssnano()
-  ];
+function css(done) {
+  pump(
+    [
+      src('assets/css/*.css', { sourcemaps: true }),
+      postcss([easyimport, colorFunction(), autoprefixer(), cssnano()]),
+      dest('assets/built/', { sourcemaps: '.' }),
+      livereload()
+    ],
+    handleError(done)
+  );
+}
 
-  return gulp
-    .src('assets/css/*.css')
-    .on('error', swallowError)
-    .pipe(sourcemaps.init())
-    .pipe(postcss(processors))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/built/'))
-    .pipe(livereload());
-};
+function js(done) {
+  pump(
+    [
+      src(
+        [
+          // pull in lib files first so our own code can depend on it
+          'assets/js/lib/*.js',
+          'assets/js/*.js'
+        ],
+        { sourcemaps: true }
+      ),
+      concat('bundle.js'),
+      uglify(),
+      dest('assets/built/', { sourcemaps: '.' }),
+      livereload()
+    ],
+    handleError(done)
+  );
+}
 
-const js = () => {
-  var jsFilter = filter(['**/*.js'], { restore: true });
+function zipper(done) {
+  const filename = require('./package.json').name + '.zip';
 
-  return gulp
-    .src('assets/js/*.js')
-    .on('error', swallowError)
-    .pipe(sourcemaps.init())
-    .pipe(jsFilter)
-    .pipe(uglify())
-    .pipe(jsFilter.restore)
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/built/'))
-    .pipe(livereload());
-};
+  pump(
+    [
+      src([
+        '**',
+        '!node_modules',
+        '!node_modules/**',
+        '!dist',
+        '!dist/**',
+        '!yarn-error.log'
+      ]),
+      zip(filename),
+      dest('dist/')
+    ],
+    handleError(done)
+  );
+}
 
-const watch = (cb) => {
-  gulp.watch('assets/css/**', css);
-  cb();
-};
+const cssWatcher = () => watch('assets/css/**', css);
+const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
+const watcher = parallel(cssWatcher, hbsWatcher);
+const build = series(css, js);
 
-const zip = gulp.series(gulp.parallel(css, js), function zipToDest() {
-  var targetDir = 'dist/';
-  var themeName = require('./package.json').name;
-  var filename = themeName + '.zip';
-
-  return gulp
-    .src(['**', '!node_modules', '!node_modules/**', '!dist', '!dist/**'])
-    .pipe(gulpZip(filename))
-    .pipe(gulp.dest(targetDir));
-});
-
-const build = gulp.series(gulp.parallel(css, js), initLivereload);
-
-exports.zip = zip;
-
-exports.default = gulp.series(build, watch);
+exports.build = build;
+exports.zip = series(build, zipper);
+exports.default = series(build, serve, watcher);
