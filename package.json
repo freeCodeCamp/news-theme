@@ -70,6 +70,9 @@
             "xs": {
                 "width": 100
             },
+            "profile": {
+                "width": 150
+            },
             "s": {
                 "width": 300
             },
