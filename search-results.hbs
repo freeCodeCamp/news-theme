@@ -11,6 +11,8 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    const client = algoliasearch('QMJYL5WYTI', '89770b24481654192d7a5c402c6ad9a0');
+    const index = client.initIndex(main['algolia-index-name']);
   const urlParams = new URLSearchParams(window.location.search);
   const queryStr = urlParams.get('query');
   const postFeed = document.querySelector('.post-feed');
