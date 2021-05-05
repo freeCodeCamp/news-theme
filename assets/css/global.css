@@ -196,6 +196,7 @@ kbd,
 pre,
 samp {
   font-family: 'Roboto Mono', monospace;
+  font-display: swap;
   font-size: 1em;
 }
 button,

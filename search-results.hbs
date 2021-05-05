@@ -10,6 +10,9 @@
 </main>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const client = algoliasearch('QMJYL5WYTI', '89770b24481654192d7a5c402c6ad9a0');
+  const index = client.initIndex(main['algolia-index-name']);
   const urlParams = new URLSearchParams(window.location.search);
   const queryStr = urlParams.get('query');
   const postFeed = document.querySelector('.post-feed');
@@ -141,6 +144,7 @@
 
   // Render for search page 0
   populatePage(currPage);
+});
 </script>
 
 {{!-- Day.js date localization for search results --}}
@@ -179,12 +183,12 @@
     // and localize their dates
     const newNodes = mutations.map(mutation => [...mutation.addedNodes]).flat();
     const newPostDates = newNodes.map(node => [...node.querySelectorAll('.post-full-meta-date')]).flat(1);
-    
+
     observer.disconnect();
     localizeDates(newPostDates);
     observer.observe(postFeed, config);
     });
-    
+
     // Only observe mutations on front page and search results page
     if (postFeed) observer.observe(postFeed, config);
   });
