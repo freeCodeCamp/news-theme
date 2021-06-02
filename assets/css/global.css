@@ -494,3 +494,9 @@ h6 {
   font-size: 1.4rem;
   font-weight: 500;
 }
+
+/* lazysizes */
+
+img.lazyload:not([src]) {
+	visibility: hidden;
+}
