@@ -54,7 +54,7 @@
         "gulp-watch": "5.0.1",
         "gulp-zip": "5.1.0",
         "postcss-color-function": "4.1.0",
-        "postcss-custom-properties": "9.1.1",
+        "postcss-custom-properties": "9.2.0",
         "postcss-easy-import": "3.0.0",
         "prettier": "2.3.0"
     },
