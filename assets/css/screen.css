@@ -1291,12 +1291,12 @@ pre.runkit-element {
   justify-content: center;
 }
 
-.author-card-content h4 {
+.author-card-content span {
   margin-top: 0px;
   font-size: 2rem;
 }
 
-.author-card-content h4 a {
+.author-card-content span a {
   text-decoration: none;
 }
 
@@ -1421,7 +1421,7 @@ pre.runkit-element {
   background: var(--gray85);
 }
 
-.author-card .basic-info h2 {
+.author-card .basic-info span {
   margin: 1em 0 0.5em;
 }
 
