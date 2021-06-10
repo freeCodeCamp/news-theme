@@ -8,6 +8,10 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
+{{#contentFor "seo"}}
+    <meta name="description" content="{{excerpt}}">
+{{/contentFor}}
+
 <main id="site-main" class="site-main outer">
     <div class="inner">
 
