@@ -2,7 +2,7 @@
     class="post-card {{post_class}} {{#unless feature_image}}no-image{{else}}{{#is "home"}}{{#if featured}}post-card-large{{/if}}{{/is}}{{/unless}}">
 
     {{#if feature_image}}
-    <a class="post-card-image-link" href="{{url}}">
+    <a class="post-card-image-link" href="{{url}}" aria-label="{{title}}">
         {{!-- This is a responsive image, it loads different sizes depending on device
         https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
         <img class="post-card-image lazyload" data-srcset="{{img_url feature_image size="s"}} 300w,
@@ -10,7 +10,7 @@
                     {{img_url feature_image size="l"}} 1000w,
                     {{img_url feature_image size="xl"}} 2000w"
             sizes="(max-width: 360px) 300px, (max-width: 655px) 600px, (max-width: 767px) 1000px, (min-width: 768px) 300px, 92vw"
-            onerror="this.style.display='none'" data-src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+            onerror="this.style.display='none'" data-src="{{img_url feature_image size="m"}}" alt="" />
     </a>
     {{else}}
     <div class="no-feature-image-offsetter"></div>
