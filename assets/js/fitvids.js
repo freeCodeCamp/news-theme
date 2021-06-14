@@ -17,11 +17,6 @@ if (window) {
     head.appendChild(div.childNodes[1]);
   }
 
-  if (options) {
-    Object.keys(options).forEach((key) => {
-      settings[key] = options[key];
-    });
-  }
 
   [...postContent.children].forEach((node) => {
     const selectors = [
