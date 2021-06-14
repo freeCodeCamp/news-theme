@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-inline-comments */
-const fitVids = (postContent, options) => {
+if (window) {
+ window.fitVids = (postContent) => {
   let count = 0;
   const settings = {
     customSelector: null,
