@@ -60,7 +60,8 @@ const js = () => {
           [
             '@babel/env',
             {
-              modules: false
+              modules: false,
+              targets: "> 0.25%, not dead"
             }
           ]
         ]
