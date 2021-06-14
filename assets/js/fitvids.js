@@ -26,9 +26,6 @@ if (window) {
 
       let allVideos = [...node.querySelectorAll(selectors.join(','))];
       allVideos = allVideos.filter((node) => node !== 'object object');
-      allVideos = allVideos.filter(
-        (node) => !ignoreList.some((str) => node.className.includes(str))
-      ); // Disable FitVids on this video
 
       allVideos.forEach((videoNode) => {
         if (
