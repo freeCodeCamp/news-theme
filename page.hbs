@@ -50,10 +50,4 @@ into the {body} of the default.hbs template --}}
 
 {{#contentFor "scripts"}}
     <script defer type="text/javascript" src="{{asset "built/fitvids.js"}}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const postContent = document.querySelector('.post-full-content');
-            if (postContent) fitVids(postContent);
-        });
-    </script>
 {{/contentFor}}
