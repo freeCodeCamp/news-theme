@@ -85,7 +85,3 @@ if (window) {
     });
   };
 }
-
-const postContent = document.querySelector('.post-full-content');
-// eslint-disable-next-line no-undef
-if (postContent) fitVids(postContent);
