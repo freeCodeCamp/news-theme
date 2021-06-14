@@ -48,12 +48,12 @@ into the {body} of the default.hbs template --}}
 
 {{/post}}
 
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-<script>
-    $(function () {
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-    });
-</script>
+    <script defer type="text/javascript" src="{{asset "built/fitvids.js"}}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const postContent = document.querySelector('.post-full-content');
+            if (postContent) fitVids(postContent);
+        });
+    </script>
 {{/contentFor}}

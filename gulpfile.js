@@ -8,6 +8,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var gulpZip = require('gulp-zip');
 var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
+var babel = require('gulp-babel');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
@@ -53,6 +54,19 @@ const js = () => {
     .src('assets/js/*.js')
     .on('error', swallowError)
     .pipe(sourcemaps.init())
+    .pipe(
+      babel({
+        presets: [
+          [
+            '@babel/env',
+            {
+              modules: false,
+              targets: "> 0.25%, not dead"
+            }
+          ]
+        ]
+      })
+    )
     .pipe(jsFilter)
     .pipe(uglify())
     .pipe(jsFilter.restore)
