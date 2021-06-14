@@ -2,10 +2,6 @@
 if (window) {
  window.fitVids = (postContent) => {
   let count = 0;
-  const settings = {
-    customSelector: null,
-    ignore: null
-  };
 
   if (!document.getElementById('fit-vids-style')) {
     const head = document.head || document.getElementsByTagName('head')[0];
