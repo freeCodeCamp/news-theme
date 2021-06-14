@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const footer = {
+const zhFooter = {
   trending: {
     article0title: 'Golang Benchmark',
     article0link: 'https://chinese.freecodecamp.org/news/golang-benchmark/',

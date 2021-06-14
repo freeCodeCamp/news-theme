@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const footer = {
+const enFooter = {
   trending: {
     article0title: '10 to the Power of 0',
     article0link:
