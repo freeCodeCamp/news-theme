@@ -8,8 +8,10 @@
 
 {{#contentFor "scripts"}}
 <script>
-    const learnToCodeCtaAnchorEl = document.getElementById('learn-to-code-cta');
+    document.addEventListener('DOMContentLoaded', () => {
+        const learnToCodeCtaAnchorEl = document.getElementById('learn-to-code-cta');
 
-    learnToCodeCtaAnchorEl.href = main['learn-to-code-cta-url'];
+        learnToCodeCtaAnchorEl.href = main['learn-to-code-cta-url'];
+    });
 </script>
 {{/contentFor}}
