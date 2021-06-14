@@ -41,11 +41,6 @@ if (window) {
 
     allVideos.forEach((videoNode) => {
       if (
-        ignoreList.some((str) => videoNode.parentNode.className.includes(str))
-      ) {
-        return; // Disable FitVids on this video
-      }
-      if (
         (videoNode.tagName.toLowerCase() === 'embed' &&
           videoNode.parentNode.getAttribute('object').length) ||
         videoNode.parentNode.classList.contains('fluid-width-video-wrapper')
