@@ -23,10 +23,12 @@
 
 {{#contentFor "scripts"}}
 <script>
-    const navForumAnchorEl = document.getElementById('nav-forum');
-    const navDonateAnchorEl = document.getElementById('nav-donate');
+    document.addEventListener('DOMContentLoaded', () => {
+        const navForumAnchorEl = document.getElementById('nav-forum');
+        const navDonateAnchorEl = document.getElementById('nav-donate');
 
-    navForumAnchorEl.href = main['forum-url'];
-    navDonateAnchorEl.href = main['donate-url'];
+        navForumAnchorEl.href = main['forum-url'];
+        navDonateAnchorEl.href = main['donate-url'];
+    });
 </script>
 {{/contentFor}}
