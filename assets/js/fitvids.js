@@ -114,4 +114,5 @@ if (window) {
       if (videoNode.getAttribute('width')) videoNode.removeAttribute('width');
     });
   });
-};
+  };
+}
