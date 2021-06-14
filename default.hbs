@@ -32,19 +32,6 @@
     <script defer src="https://cdn.freecodecamp.org/news-assets/algolia/algoliasearch-3-33-0/algoliasearch.min.js"></script>
     <script defer src="https://cdn.freecodecamp.org/news-assets/algolia/autocomplete-0-36-0/autocomplete.min.js"></script>
 
-    {{!-- i18n links, trending links, and Algolia index --}}
-    <script type="text/javascript" src="{{asset "config/en/main.js"}}"></script>
-    <script type="text/javascript" src="{{asset "config/en/footer.js"}}"></script>
-
-    <script type="text/javascript" src="{{asset "config/es/main.js"}}"></script>
-    <script type="text/javascript" src="{{asset "config/es/footer.js"}}"></script>
-
-    <script type="text/javascript" src="{{asset "config/zh-cn/main.js"}}"></script>
-    <script type="text/javascript" src="{{asset "config/zh-cn/footer.js"}}"></script>
-
-    {{!-- Setup global links and index objects for locale --}}
-    <script type="text/javascript" src="{{asset "config/setup-locale.js"}}"></script>
-
     {{!-- Runkit embeds - NOT WORKING? TODO --}}
     {{!--
     <script src="https://embed.runkit.com"></script>
@@ -164,6 +151,19 @@
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-typescript.min.js"></script>
     <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-yaml.min.js"></script>
+    
+    {{!-- i18n links, trending links, and Algolia index --}}
+    <script type="text/javascript" src="{{asset "config/en/main.js"}}"></script>
+    <script type="text/javascript" src="{{asset "config/en/footer.js"}}"></script>
+
+    <script type="text/javascript" src="{{asset "config/es/main.js"}}"></script>
+    <script type="text/javascript" src="{{asset "config/es/footer.js"}}"></script>
+
+    <script type="text/javascript" src="{{asset "config/zh-cn/main.js"}}"></script>
+    <script type="text/javascript" src="{{asset "config/zh-cn/footer.js"}}"></script>
+
+    {{!-- Setup global links and index objects for locale --}}
+    <script type="text/javascript" src="{{asset "config/setup-locale.js"}}"></script>
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. --}}
     {{{block "scripts"}}}
