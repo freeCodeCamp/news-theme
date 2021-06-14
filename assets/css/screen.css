@@ -805,6 +805,12 @@ make sure this only happens on large viewports / desktop-ish devices.
   }
 }
 
+@media (max-width: 700px) {
+  .post-full-image {
+    display: none;
+  }
+}
+
 .post-full-content {
   position: relative;
   margin: 0 auto;
