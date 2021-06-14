@@ -25,13 +25,6 @@ if (window) {
       'embed'
     ];
 
-    let ignoreList = ['fitvidsignore'];
-
-    if (settings.ignore) {
-      settings.ignore
-        .split(',')
-        .forEach((str) => ignoreList.push(str.replace('.', '').trim()));
-    }
 
     let allVideos = [...node.querySelectorAll(selectors.join(','))];
     allVideos = allVideos.filter((node) => node !== 'object object');
