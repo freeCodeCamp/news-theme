@@ -29,12 +29,6 @@ if (window) {
       'embed'
     ];
 
-    if (settings.customSelector) {
-      settings.customSelector
-        .split(',')
-        .forEach((str) => selectors.push(str.trim()));
-    }
-
     let ignoreList = ['fitvidsignore'];
 
     if (settings.ignore) {
