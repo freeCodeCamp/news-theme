@@ -1261,9 +1261,10 @@ pre.runkit-element {
   padding-bottom: 20px;
 }
 
-.author-card .author-profile-image,
+.author-card img.author-profile-image,
 .author-card .avatar-wrapper {
-  margin-right: 15px;
+  position: relative;
+  margin: 0 15px 0 0;
   width: 60px;
   height: 60px;
 }
@@ -1366,12 +1367,6 @@ pre.runkit-element {
 .post-full-footer .author-list {
   justify-content: center;
   padding: 10px 20px;
-}
-
-.author-card .author-profile-image,
-.author-card .avatar-wrapper {
-  position: relative;
-  margin: 0 15px 0 0;
 }
 
 .author-list-item .author-card {
