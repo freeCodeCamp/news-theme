@@ -41,6 +41,12 @@
               d.async = true;
               d.src = discourseUrl + 'javascripts/embed.js';
               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+
+              // Remove deprecated scrolling attribute and handle with embedded CSS
+              d.onload = () => {
+                const discourseEmbedFrame = document.querySelector('#discourse-embed-frame');
+                discourseEmbedFrame.removeAttribute('scrolling');
+              }
             } else {
               document.getElementById('discourse-comments').innerHTML =
                 '<div style="text-align: center;">{{t "Sorry, we could not load the comments. Please try again after some time."}}</div>';
