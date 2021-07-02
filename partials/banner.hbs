@@ -6,8 +6,9 @@
 
 {{#contentFor "scripts"}}
 <script>
-    const bannerAnchorEl = document.getElementById('banner');
-
-    bannerAnchorEl.href = main['banner-url'];
+    document.addEventListener('DOMContentLoaded', () => {
+        const bannerAnchorEl = document.getElementById('banner');
+        bannerAnchorEl.href = main['banner-url'];
+    });
 </script>
 {{/contentFor}}

@@ -84,26 +84,28 @@
 
 {{#contentFor "scripts"}}
 <script>
-    const { trending, ...otherUrls } = footer;
-    const footerDonationAnchorEl = document.getElementById('footer-donation');
+    document.addEventListener('DOMContentLoaded', () => {
+        const { trending, ...otherUrls } = footer;
+        const footerDonationAnchorEl = document.getElementById('footer-donation');
 
-    Object.keys(trending).forEach(key => {
-        const anchorId = key.replace(/link|title/, '');
-        const trendingAnchorEl = document.getElementById(anchorId);
+        Object.keys(trending).forEach(key => {
+            const anchorId = key.replace(/link|title/, '');
+            const trendingAnchorEl = document.getElementById(anchorId);
 
-        if (key.includes('link')) {
-            trendingAnchorEl.href = trending[key]
-        } else if (key.includes('title')) {
-            trendingAnchorEl.textContent = trending[key];
-        }
+            if (key.includes('link')) {
+                trendingAnchorEl.href = trending[key]
+            } else if (key.includes('title')) {
+                trendingAnchorEl.textContent = trending[key];
+            }
+        });
+
+        Object.keys(otherUrls).forEach(key => {
+            const footerAnchorEl = document.getElementById(key);
+
+            footerAnchorEl.href = otherUrls[key];
+        });
+
+        footerDonationAnchorEl.href = main['donate-url'];
     });
-
-    Object.keys(otherUrls).forEach(key => {
-        const footerAnchorEl = document.getElementById(key);
-
-        footerAnchorEl.href = otherUrls[key];
-    });
-
-    footerDonationAnchorEl.href = main['donate-url'];
 </script>
 {{/contentFor}}
