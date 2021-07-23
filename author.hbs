@@ -2,6 +2,15 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{#author}}
+{{^if cover_image}}
+    {{#contentFor "seo"}}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png">
+        <meta name="twitter:image" content="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png">
+        <meta property="og:image:width" content="1920">
+        <meta property="og:image:height" content="1080">
+    {{/contentFor}}
+{{/if}}
 {{!-- Everything inside the #author tags pulls data from the author --}}
 <div class="under-header-content">
     {{#if profile_image}}
