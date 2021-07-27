@@ -48,7 +48,7 @@
         "gscan": "4.2.1",
         "gulp": "4.0.2",
         "gulp-babel": "8.0.0",
-        "gulp-filter": "6.0.0",
+        "gulp-filter": "7.0.0",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.0",
         "gulp-sourcemaps": "2.6.5",
