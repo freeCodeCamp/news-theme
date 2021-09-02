@@ -33,8 +33,8 @@
         "ghost-theme"
     ],
     "devDependencies": {
-        "@babel/core": "7.15.0",
-        "@babel/preset-env": "7.15.0",
+        "@babel/core": "7.15.4",
+        "@babel/preset-env": "7.15.4",
         "@freecodecamp/eslint-config": "2.0.2",
         "autoprefixer": "10.3.3",
         "babel-eslint": "10.1.0",
