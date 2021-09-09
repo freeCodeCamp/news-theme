@@ -60,7 +60,7 @@
         "postcss-color-function": "4.1.0",
         "postcss-custom-properties": "11.0.0",
         "postcss-easy-import": "3.0.0",
-        "prettier": "2.3.2"
+        "prettier": "2.4.0"
     },
     "browserslist": [
         "defaults"
