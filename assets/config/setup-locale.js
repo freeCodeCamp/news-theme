@@ -13,4 +13,7 @@ if (siteLang === 'en') {
 } else if (siteLang === 'zh-cn') {
   main = zhMain;
   footer = zhFooter;
+} else if (siteLang === 'pt-br') {
+  main = ptBrMain;
+  footer = ptBrFooter;
 }
