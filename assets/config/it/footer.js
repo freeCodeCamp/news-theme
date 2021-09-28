@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const enFooter = {
+const itFooter = {
   trending: {
     article0title: 'Big O Notation',
     article0link:
