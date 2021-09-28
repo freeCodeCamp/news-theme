@@ -96,7 +96,7 @@ const itFooter = {
   support: 'https://www.freecodecamp.org/news/support/',
   sponsors: 'https://www.freecodecamp.org/news/sponsors/',
   honesty: 'https://www.freecodecamp.org/news/academic-honesty-policy/',
-  coc: 'https://www.freecodecamp.org/news/code-of-conduct/',
+  coc: 'https://www.freecodecamp.org/italian/news/codice-di-condotta/',
   privacy: 'https://www.freecodecamp.org/news/privacy-policy/',
   tos: 'https://www.freecodecamp.org/news/terms-of-service/',
   copyright: 'https://www.freecodecamp.org/news/copyright-policy/'
