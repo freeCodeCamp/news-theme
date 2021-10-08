@@ -32,13 +32,12 @@
     {{> "i18n"}}
 
     {{!-- Day.js and plugins for search results page date localization --}}
-    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/dayjs.min.js"></script>
-    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/localizedFormat.min.js"></script>
-    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/relativeTime.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs/1.10.4/dayjs.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs/1.10.4/localizedFormat.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs/1.10.4/relativeTime.min.js"></script>
 
-    {{!-- Day.js locales --}}
-    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/locale/zh-cn.min.js"></script>
-    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/locale/es.min.js"></script>
+    {{!-- Dynamically load Day.js locale for search page --}}
+    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs/1.10.4/locale/{{@site.lang}}.min.js"></script>
 
     {{#is "home"}}
         <meta name='keywords' content="{{t 'keyword-meta'}}" >
