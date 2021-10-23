@@ -12,7 +12,7 @@ const esFooter = {
       'https://www.freecodecamp.org/espanol/news/python-if-name-main/',
     article3title: 'Callback',
     article3link:
-      'https://www.freecodecamp.org/news/what-is-a-callback-function-in-javascript/',
+      'https://www.freecodecamp.org/espanol/news/que-es-una-funcion-callback-javascript/',
     article4title: 'Debounce',
     article4link:
       'https://www.freecodecamp.org/espanol/news/curso-debounce-javascript-como-hacer-que-tu-js-espere/',
