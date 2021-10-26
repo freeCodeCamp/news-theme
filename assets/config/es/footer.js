@@ -12,7 +12,7 @@ const esFooter = {
       'https://www.freecodecamp.org/espanol/news/python-if-name-main/',
     article3title: 'Callback',
     article3link:
-      'https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/',
+      'https://www.freecodecamp.org/espanol/news/que-es-una-funcion-callback-javascript/',
     article4title: 'Debounce',
     article4link:
       'https://www.freecodecamp.org/espanol/news/curso-debounce-javascript-como-hacer-que-tu-js-espere/',
@@ -43,9 +43,9 @@ const esFooter = {
     article13title: 'Diseño de Producto',
     article13link:
       'https://www.freecodecamp.org/espanol/news/product-design-explicado-en-un-espanol-sencillo/',
-    article14title: 'Digital Design',
+    article14title: 'Diseño Digital',
     article14link:
-      'https://www.freecodecamp.org/news/what-is-digital-design-and-why-does-it-matter/',
+      'https://www.freecodecamp.org/espanol/news/que-es-diseno-digital-y-por-que-es-importante/',
     article15title: 'Juegos de Código',
     article15link:
       'https://www.freecodecamp.org/espanol/news/los-mejores-juegos-online-para-aprender-programar/',
@@ -54,10 +54,10 @@ const esFooter = {
       'https://www.freecodecamp.org/news/svm-machine-learning-tutorial-what-is-the-support-vector-machine-algorithm-explained-with-code-examples/',
     article17title: 'JavaScript forEach',
     article17link:
-      'https://www.freecodecamp.org/news/javascript-foreach-how-to-loop-through-an-array-in-js/',
+      'https://www.freecodecamp.org/espanol/news/tutorial-de-javascript-arrayforeach-como-iterar-a-traves-de-elementos-en-un-arreglo/',
     article18title: 'Google BERT',
     article18link:
-      'https://www.freecodecamp.org/news/google-bert-nlp-machine-learning-tutorial/',
+      'https://www.freecodecamp.org/espanol/news/tutorial-de-google-bert-para-pnl-con-aprendizaje-automatico/',
     article19title: 'Create Table SQL',
     article19link:
       'https://www.freecodecamp.org/espanol/news/create-table-sql-server-con-ejemplo/',
