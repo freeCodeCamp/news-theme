@@ -43,7 +43,7 @@ const esFooter = {
     article13title: 'Diseño de Producto',
     article13link:
       'https://www.freecodecamp.org/espanol/news/product-design-explicado-en-un-espanol-sencillo/',
-    article14title: 'Digital Design',
+    article14title: 'Diseño Digital',
     article14link:
       'https://www.freecodecamp.org/espanol/news/que-es-diseno-digital-y-por-que-es-importante/',
     article15title: 'Juegos de Código',
