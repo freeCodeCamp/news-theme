@@ -19,4 +19,10 @@ if (siteLang === 'en') {
 } else if (siteLang === 'it') {
   main = itMain;
   footer = itFooter;
+} else if (siteLang === 'ja') {
+  main = jaMain;
+  footer = jaFooter;
+} else if (siteLang === 'uk') {
+  main = ukMain;
+  footer = ukFooter;
 }
