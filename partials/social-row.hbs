@@ -23,7 +23,7 @@
         const title = `{{encode title}}`.replace(/'/g, '%27');
         const twitter = `{{primary_author.twitter}}`;
         const url = window.location;
-        const thanks = `{{encode (t "Thank you {twitter} for writing this helpful article" twitter=primary_author.twitter)}}.` +
+        const thanks = `{{encode (t "Thank you {twitter} for writing this helpful article." twitter=primary_author.twitter)}}` +
             `%0A%0A${title}%0A%0A${url}`;
         const button = document.getElementById('tweet-btn');
         button.addEventListener('click', () => {

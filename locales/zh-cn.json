@@ -6,7 +6,7 @@
   "<a href='{url}'>More posts</a> by {name}": "<a href='{url}'>更多文章</a> by {name}",
   "No posts": "没有文章",
   "Continue reading about": "继续阅读",
-  "Read <a href='{url}'>more posts</a> by this author": "阅读该作者的<a href='{url}'>更多文章</a>",
+  "Read <a href='{url}'>more posts</a> by this author.": "阅读该作者的<a href='{url}'>更多文章</a>。",
   "See all % posts": "查看所有 % 篇文章",
   "1 post": "1 篇文章",
   "% posts": "% 篇文章",
