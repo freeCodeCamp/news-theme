@@ -38,7 +38,7 @@
         "@freecodecamp/eslint-config": "2.0.2",
         "autoprefixer": "10.4.0",
         "babel-eslint": "10.1.0",
-        "cssnano": "5.0.8",
+        "cssnano": "5.0.9",
         "eslint": "8.1.0",
         "eslint-config-prettier": "8.3.0",
         "eslint-plugin-import": "2.25.2",
