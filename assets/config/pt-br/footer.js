@@ -89,14 +89,14 @@ const ptBrFooter = {
     article29link:
       'https://www.freecodecamp.org/news/javascript-projects-for-beginners/'
   },
-  about: 'https://www.freecodecamp.org/news/about/',
+  about: 'https://www.freecodecamp.org/portuguese/news/sobre-o-freecodecamp-perguntas-frequentes/',
   alumni: 'https://www.linkedin.com/school/free-code-camp/people/',
   'open-source': 'https://github.com/freeCodeCamp/',
   shop: 'https://www.freecodecamp.org/shop/',
-  support: 'https://www.freecodecamp.org/news/support/',
+  support: 'https://www.freecodecamp.org/portuguese/news/perguntas-frequentes-sobre-suporte-tecnico-faq-do-freecodecamp/',
   sponsors: 'https://www.freecodecamp.org/news/sponsors/',
-  honesty: 'https://www.freecodecamp.org/news/academic-honesty-policy/',
-  coc: 'https://www.freecodecamp.org/news/code-of-conduct/',
+  honesty: 'https://www.freecodecamp.org/portuguese/news/politica-de-honestidade-academica-do-freecodecamp/',
+  coc: 'https://www.freecodecamp.org/portuguese/news/codigo-de-conduta-do-freecodecamp/',
   privacy: 'https://www.freecodecamp.org/news/privacy-policy/',
   tos: 'https://www.freecodecamp.org/news/terms-of-service/',
   copyright: 'https://www.freecodecamp.org/news/copyright-policy/'
