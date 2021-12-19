@@ -28,7 +28,7 @@
   "footer-desc-1": "freeCodeCamp は皆様のご寄付により支えられている非課税の 501(c)(3) 非営利団体です。(United States Federal Tax Identification Number: 82-0779546)",
   "footer-desc-2": "私たちのミッション: 人々が無料でコーディングを学べるよう支援することです。その実現のため、何千もの動画、記事、インタラクティブなコーディングレッスンを作成し、すべて無料で公開しています。さらに、数千の freeCodeCamp スタディグループが世界中に存在します。",
   "footer-desc-3": "freeCodeCamp へのご寄付は教育活動のために用いられ、サーバー、サービス、スタッフなどの費用に充てられます。",
-  "footer-donation": "<a id='footer-donation' class='inline' rel='noopener noreferrer' target='_blank'>所得控除対象のご寄付はこちらから</a>",
+  "footer-donation": "<a id='footer-donation' class='inline' rel='noopener noreferrer' target='_blank'>こちらからご寄付を賜りますよう</a>お願い申し上げます。(場合により税控除可能)",
   "footer-trending-guides-header": "人気の記事",
   "footer-our-nonprofit-header": "組織情報",
   "footer-about": "私たちについて",
