@@ -89,14 +89,14 @@ const jaFooter = {
     article29link:
       'https://www.freecodecamp.org/news/ternary-operator-javascript-if-statement-tutorial/'
   },
-  about: 'https://www.freecodecamp.org/news/about/',
+  about: 'https://www.freecodecamp.org/japanese/news/about/',
   alumni: 'https://www.linkedin.com/school/free-code-camp/people/',
   'open-source': 'https://github.com/freeCodeCamp/',
   shop: 'https://www.freecodecamp.org/shop/',
   support: 'https://www.freecodecamp.org/news/support/',
   sponsors: 'https://www.freecodecamp.org/news/sponsors/',
-  honesty: 'https://www.freecodecamp.org/news/academic-honesty-policy/',
-  coc: 'https://www.freecodecamp.org/news/code-of-conduct/',
+  honesty: 'https://www.freecodecamp.org/japanese/news/academic-honesty-policy/',
+  coc: 'https://www.freecodecamp.org/japanese/news/code-of-conduct/',
   privacy: 'https://www.freecodecamp.org/news/privacy-policy/',
   tos: 'https://www.freecodecamp.org/news/terms-of-service/',
   copyright: 'https://www.freecodecamp.org/news/copyright-policy/'
