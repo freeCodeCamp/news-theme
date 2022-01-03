@@ -33,6 +33,8 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 
 @import 'global.css';
+/* Japanese font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 body {
   background: #fff;
@@ -821,6 +823,11 @@ make sure this only happens on large viewports / desktop-ish devices.
   font-size: 2.2rem;
   line-height: 1.6em;
   background: #fff;
+}
+
+/* Japanese font */
+.post-full-content:lang(ja) {
+    font-family: 'Lato', 'Noto Sans JP', sans-serif;
 }
 
 @media (max-width: 500px) {
