@@ -52,18 +52,6 @@ It's a good idea to keep this template as minimal as possible in terms of both f
                     </section>
                 </div>
             </main>
-
-            {{#get "posts" include="tags,authors" limit="4"}}
-            <aside class="outer">
-                <div class="inner">
-                    <div class="post-feed">
-                        {{#foreach posts}}
-                        {{> "post-card"}}
-                        {{/foreach}}
-                    </div>
-                </div>
-            </aside>
-            {{/get}}
         </div>
 
         {{!-- The footer at the very bottom of the screen --}}
